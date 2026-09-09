@@ -16,8 +16,20 @@ theme:
     - search.suggest
 
 nav:
-  - Accueil: docs_edimbourg\Réseaux - Systèmes\Situation 1\Déploiement d'une VM Windows Core.md
-  - Documentation: docs_edimbourg\Réseaux - Systèmes\Situation 1\Déploiement d'une VM Windows Core.md
+  - Accueil: readme.md
+  - Documentation:
+    - Réseaux - Systèmes:
+        - Situation 1:
+            - Réseaux - Systèmes\Situation 1\Déploiement d'une VM Windows Core.md
+            - Réseaux - Systèmes\Situation 1\Préparation de la maquette.md
+        - Situation 2:
+            - Réseaux - Systèmes\Situation 2\WAC - Windows Admin Center.md
+    - Cybersecuriter :
+        - Cybersecuriter\Phase d'analyse Préalable.md
+    - Services :
+        - Services\Mise en place d'une machine Debian 13 servant de modèle.md
+    - Table de Routage.md
+    - Table NAT.md
 
 markdown_extensions:
   - admonition
