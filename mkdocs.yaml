@@ -16,7 +16,7 @@ theme:
     - search.suggest
 
 nav:
-  - Accueil: Readme.md
+  - Accueil: docs_edimbourg\Réseaux - Systèmes\Situation 1\Déploiement d'une VM Windows Core.md
   - Documentation: docs_edimbourg\Réseaux - Systèmes\Situation 1\Déploiement d'une VM Windows Core.md
 
 markdown_extensions:
