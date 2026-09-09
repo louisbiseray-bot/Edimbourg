@@ -1,0 +1,1163 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BTS SIO SISR - Mise en place d'une agence à Edimbourg">
+      
+      
+        <meta name="author" content="Louis Biseray">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>TOTP - Projet Edimbourg</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#excalidraw-data" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Projet Edimbourg" class="md-header__button md-logo" aria-label="Projet Edimbourg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Projet Edimbourg
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TOTP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/louisbiseray-bot/Edimbourg" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../readme.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%201/D%C3%A9ploiement%20d%27une%20VM%20Windows%20Core/" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Projet Edimbourg" class="md-nav__button md-logo" aria-label="Projet Edimbourg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Projet Edimbourg
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/louisbiseray-bot/Edimbourg" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../readme.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réseaux - Systèmes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Réseaux - Systèmes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%201/D%C3%A9ploiement%20d%27une%20VM%20Windows%20Core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Déploiement d'une VM Windows Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%201/Pr%C3%A9paration%20de%20la%20maquette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préparation de la maquette
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%202/WAC%20-%20Windows%20Admin%20Center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAC   Windows Admin Center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cybersecuriter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cybersecuriter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cybersecuriter/Phase%20d%27analyse%20Pr%C3%A9alable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase d'analyse Préalable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Services/Mise%20en%20place%20d%27une%20machine%20Debian%2013%20servant%20de%20mod%C3%A8le/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en place d'une machine Debian 13 servant de modèle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Table de Routage.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Table NAT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#text-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Elements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drawing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p>==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'</p>
+<h1 id="excalidraw-data">Excalidraw Data<a class="headerlink" href="#excalidraw-data" title="Permanent link">&para;</a></h1>
+<h2 id="text-elements">Text Elements<a class="headerlink" href="#text-elements" title="Permanent link">&para;</a></h2>
+<p>Temp sur le client ^pl20Uka9</p>
+<p>Clé secrète ^KkulpEvU</p>
+<p>Algorithme TOTP
+(HMAC256) ^LKTxGDdG</p>
+<p>TOTP ^ZOevamBB</p>
+<p>Clé secrète ^iccNb2UO</p>
+<p>Temp sur le serveur ^7iM6eBJm</p>
+<p>Algorithme TOTP
+(HMAC256) ^J3UUucOq</p>
+<p>Même TOTP ^ZZBFSzMX</p>
+<p>Partage de Clé ^0PFOMuhd</p>
+<p>Application TOTP Cliente ^VuzCpHNA</p>
+<p>Service d'Authentification ^EUbkUG7N</p>
+<p>Authentification refusée ^0xCNpMZe</p>
+<p>Authentification accepter ^5rszHSEy</p>
+<p>Oui ^82QIWgNn</p>
+<p>Non ^z2fYbsGb</p>
+<p>Code TOTP du client
+ex : 213756 ^L3N2npke</p>
+<p>%%</p>
+<h2 id="drawing">Drawing<a class="headerlink" href="#drawing" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">N4KAkARALgngDgUwgLgAQQQDwMYEMA2AlgCYBOuA7hADTgQBuCpAzoQPYB2KqATLZMzYBXUtiRoIACyhQ4zZAHoFAc0JRJQgEYA6bGwC2CgF7N6hbEcK4OCtptbErHALRY8RMpWdx8Q1TdIEfARcZgRmBShcZQUebR4ABniaOiCEfQQOKGZuAG1wMFAwYogSbgYARiEAZWwhACs4FOLIWERywOwojmVg5pLMbmcAZgqANm0EngAWCuGAdgWEioBO</span>
+
+<span class="n">afmAVn4SmCGeDZXtAA4xlc2eMYSjhOGj4e3IChJ1bgqeI</span><span class="o">+</span><span class="mi">0</span><span class="n">Nt7GefbH1g7TLYFSCSBCEZTSbhHYEtCDWXriVAJB4QZhQUhsADWCAAwmx8GxSOUAMQVBDk8n9SCaXDYLHKTFCDjEfGE4kSDHWZhwXCBLLUiAAM0I</span><span class="o">+</span><span class="n">Hw1VgfQkgg8gvRmJxAHVnpJuHwQWiMdiEBKYFL0DKyqimZCOOEcmgKqi2LzsGpdpaEiiNYzhHAAJLEC2oXIAXVRQvIGU93A4</span>
+
+<span class="n">QjFqMILKw5VwCUFTJZZuY3qKcLaSOGIIAvqiwghiNDhgkVgsxht1XDGCx2FxHWNUdXWJwAHKcMRqq5TYb</span><span class="o">/</span><span class="n">d6R5gAETSUAL3CFBDCqM0whZAFFghkst78i1CiCShnyiPMFBqSUyhIfIkAKpY3ArCDr3PrtNwg</span><span class="o">/</span><span class="n">oCj1HgAGWI00kwz3rXgSPhpExVBXiC</span><span class="o">/</span><span class="n">oakIcDELgI6Fpa8xHEc0zTCscxAissIlEQHBYqG4b4KihL0qOaDjvgYQFNexS3qU0HoE</span>
+
+<span class="n">eCSnuegqbpyWC7qigxoCMCTzJ8GzzLBcEbGMPZnKiDqoM4MxxMJ5yXNctz3BqTzEC8loVBUnzzCsKz7BsCwVCWtyomCEJQmgGzOnCCL6hZJTytqbJEqSlIUkgU50gyiasgSjmcuQHA8nymSsRqIpirq</span><span class="o">+</span><span class="n">pogSRoanZSoqmqeZaji4W</span><span class="o">/</span><span class="n">oahbGsIprmq81q2varxOqirpgZ6y4gXCga4MG1FhhGGpRsQMYSLgFQJjOxDJt6tW4TFCCEagFRfAkYwVPB</span>
+
+<span class="n">iSNkwzZ1qgIkak2tZthwHZoIsPDjAkFbTP2Q7BFBY4TggU7tfO6RBV1OGomBEF7TBcEIUhFTzGMQl4WwBHUcRk4atuu4SAAKukcCoMwIioMEAA6S1EEFCaUADO7lAD</span><span class="o">+</span><span class="n">hAyDpBgwgqDYNDAoBpwUDVIQRhIuNIV4wAYlVopiWhrQsQAgkQyjTRAYhZEwgrVlA5gEAzELM</span><span class="o">/</span><span class="n">oJDEH0qJ6FkuBRkwIYSPQVS1A0TTWqQEJRgQ8O</span><span class="o">/</span><span class="n">egSMo6DwSY9jwWWU</span>
+
+<span class="n">IUBsAASuEhNIhiQiHRqGEIAAEuCkLq</span><span class="o">+</span><span class="n">p</span><span class="o">+</span><span class="n">xGaEavPlGWFEQdZHbJR94QGMdOCSKCT4IxP4dAgXRWa5GrseJYwfEJowrKcPDzE6VxHKJeyXMcKx3OnNwJOsCyokpKkDdMwzaGMizXBtiHXPBNNSI7pmoDCnzrPMPDaUcMxCUXqJx9wNkCEleLeRy6Bki5VJufSxUsg5c</span><span class="o">/</span><span class="n">QH5AX8vrJSheKkqpVF6UxdPyrKaqaCVrZ08peUaVtX4kidTlGo2nS</span><span class="o">+</span><span class="n">WOp</span>
+
+<span class="n">PEDFR6Xp5OVPeQYEBS1QN1SM0ZE7wk</span><span class="o">/</span><span class="n">BlZkHVspoFvN</span><span class="o">+</span><span class="n">doaAswtHIrZPq1Fxh3EEk9ZOE0aycFeFnQhU1FrLQGhWDYswNhD2</span><span class="o">/</span><span class="n">oQQcw5</span><span class="o">+</span><span class="n">qfWtnCaccCTqLmyHkG865kG</span><span class="o">/</span><span class="n">h</span><span class="o">+</span><span class="n">l</span><span class="o">+</span><span class="n">Ki5QADSWJwxwFnPQY8l5VwYIovwkRh4WwAEdnz4GwJIBWSimLoD5ABOR6CHhrlXJAQOmBmBCnmKQIuMDdFR2av</span><span class="o">+</span><span class="n">NggF5EmKQeY6i0BCBjCFPoAAQhweYwi9F</span><span class="o">/</span><span class="n">kMU</span>
+
+<span class="n">BFogDIBXUgv1R6d1EI8GGMJLaNsvbYTqnCfCOIPq</span><span class="o">+</span><span class="mi">2</span><span class="n">KBggOXjxGSOkbI1EoShFsSGF8eI4wZgrDLtMBu6xc4ajEhJYs9cZi6TmEcbSsx5iV3io6D4xcGktK</span><span class="o">+</span><span class="n">IJV2GpjJOzVO3ceaBv6xRnuyJyi947sPcqvLyazfLcl5DvQU</span><span class="o">+</span><span class="mi">877</span><span class="n">SmPnKM</span><span class="o">+</span><span class="n">wzeCJQVDqQ</span><span class="o">+</span><span class="mi">99</span><span class="n">zmwKyimV</span><span class="o">+</span><span class="n">cJ352lgAVb</span><span class="o">+</span><span class="n">v9SoAIDMA0B4D6qQNjNMR</span><span class="o">+</span><span class="n">SYEFgIur1OJGxATDV</span><span class="o">+</span><span class="n">N</span><span class="o">/</span><span class="n">ea</span>
+
+<span class="n">xDLQITIQtdsxN5jTCOHxYarS7xMN2iwg6R1OELjOhknqcIYk3QGvxe6akfhzFeu9faJE2EbhYuUXE</span><span class="o">+</span><span class="n">AACXwMY6kAABcjlhhQNWPL</span><span class="o">+</span><span class="n">WCuwCKsVuMsgEyJp2BVUAKYC3wNTcp9NGbM1ZiOYkhCubuF5kzcoAtiBC02SUUWUQJakFAUHEOvjCDh0FESZWHBVbcokLygVYRZWiutZAXAhsTZm2VWgS2nLIC2wdiZZ28R26SHdixT2mF2WkXyf7eqRSui</span>
+
+<span class="mi">4</span><span class="n">k0MQRUJ90yOPQI4KqnAS0DHznXBp</span><span class="o">/</span><span class="n">xNI4pxX0nsecOL6XUjQoEA9xgHAuBWIZF95ncThTQmhj0gSXA2kZTu6s1rcXmPpZuqFtLDH7WPHo1kbn2Vnus5ygpaQr08uvLcW9DkwwDKKA</span><span class="o">+</span><span class="n">eoj6ym3XFIdV9713JvQ8u9GoTTP0hVaN</span><span class="o">+</span><span class="n">eVPlfyKkyP</span><span class="o">+</span><span class="n">ZV</span><span class="o">/</span><span class="n">lVRATVaFd4QXNWCbAiFLzEHrmgGWngOY8xYO4NpM4ywLhIsmrWNU0yqz4dbJi7gi6Th9PG</span>
+
+<span class="n">KkwlO0EB0tYWSucFKly8NXB45DKD0CVKUYHZ8oi</span><span class="o">/</span><span class="n">qYAAOIDmIEJox2a</span><span class="o">+</span><span class="n">FmOUQ</span><span class="o">+</span><span class="n">J8r53z2Ok6EgxLiJNgAUaY1cMmIBwDURorROilNlrCapq87jeNFNwIqFYmgBz</span><span class="o">+</span><span class="n">IAJohOMyp1x6DgKXXArE7BDLEIVD7mXPC6S0BAqyW9HJmaEB</span><span class="o">+</span><span class="n">wKIU8o</span><span class="o">/</span><span class="n">HBMibE5HLj0BuVVPbX07QTTNjYuxfsUacE23iU6WpLOg1pgXDUncQZikrn6VGVpJCT0pi6XrTOhN</span>
+
+<span class="mi">5</span><span class="n">GFmbqRMs6eJ6JAL33cvDy7U</span><span class="o">+</span><span class="n">vcbPYFHGIUr2nINI80</span><span class="o">+</span><span class="n">tzz7V2vlPW5M3IrvrhJ</span><span class="o">+</span><span class="n">l</span><span class="o">+</span><span class="n">lpcof3</span><span class="o">/</span><span class="n">QNQqLogO</span><span class="o">/</span><span class="n">LQH6UD1UqUQMalA3A8wABq4L4EIahZkzBcSkllyuD8AlJRkXTX2MthgJGOAUKRAhXBdSfvmKJfRklHKmPEC4ZS4LkGSi0riT5pC7x9IrFZeFn28Pvo</span><span class="o">+</span><span class="n">vQAzZQHr1AZEhn9AA8n9AACpDAAFHbAAsnTXEfwACU4rJUSFJ</span><span class="o">+</span><span class="n">TyQGRUA0</span><span class="o">/</span>
+
+<span class="n">p0z1n7OufHLxkq4m38hTk0ppq7g7cfqmr1UFdmRrub4DV</span><span class="o">+</span><span class="n">awWwsNS2vFmaB1eaoAFqLdWyAHr</span><span class="o">/</span><span class="n">DeoRnz</span><span class="o">/</span><span class="n">AZOlYU4xiLhnHBmds454JbnY8w2m1YJG1A0bAtmnjXMy0Sa3bMA9kF1ArCouKLvF46nICAD6CRcDPlIGnzAx4hT</span><span class="o">+</span><span class="n">KOIQNPvIWcDiMEl38nRuiIkFInCSaltDJMRdMZYCw</span><span class="o">+</span><span class="n">K6UK6sDYnxriLBGusOYXEocQCrpfGudcG63CdDQouVwgR</span>
+
+<span class="n">tYj93HvNC</span><span class="o">+</span><span class="n">ID3eMPYYo8NSLORM</span><span class="o">+</span><span class="mi">0</span><span class="n">bEABsuQPds49u79n</span><span class="o">+</span><span class="n">XPZNiq037lnI2zfBbVzAcrLWw</span><span class="o">/</span><span class="n">J5X7ns</span><span class="o">/</span><span class="n">reX</span><span class="o">+</span><span class="n">sSS7ANugnY</span><span class="o">+</span><span class="n">hRLCgAoQavbmLQb6IXhwZPaphIZ6JoKSZwj5jUQITjoIRvDoooq8B8TYEg5kYrRNJfADxXDbTMK5KE7sLHQsY8KnZSZaYVKpYWblAABaqe9AVU</span><span class="o">/</span><span class="n">i</span><span class="o">/</span><span class="n">iamGmHGgcoiVmNmdmjmJiAisYzirmyBLQ</span><span class="o">/</span><span class="n">BXiA41OWIqi1Qz4s</span>
+
+<span class="mi">4</span><span class="n">rUYhnGv4LmvB7moEnmdK8S8EiEOKJYSSoe3sL21K6EYWcOX0cIKaMeaaceCe0hMWEg7BCAnBASPB5SxmPGcI9ej0LsMIA8Wc</span><span class="o">+</span><span class="n">wToI0gOYkvwPeMITSTo</span><span class="o">/</span><span class="n">EPYmc7cY</span><span class="o">+</span><span class="mi">3</span><span class="n">AQkGkWkJwvEvw5YPwyas68yG6teSy</span><span class="o">++</span><span class="mi">5</span><span class="o">+</span><span class="mi">88</span><span class="n">zkS8Goh6w2cCB</span><span class="o">+</span><span class="n">XIl</span><span class="o">+</span><span class="n">E2u8kAJyd</span><span class="o">+</span><span class="n">s2D</span><span class="o">+</span><span class="n">K22oi24</span><span class="o">+</span><span class="n">L</span><span class="o">+</span><span class="n">t8LR620Um2mUn</span><span class="o">+</span><span class="mi">3</span><span class="n">o3</span><span class="o">+</span><span class="n">JQ7yn8B23yx2</span><span class="o">/</span><span class="mi">8</span><span class="n">p2IBlUF2KOEBpQUB8Id</span>
+
+<span class="n">Mj222Fh6G</span><span class="o">/</span><span class="n">USSJwSSCwgOf2w6</span><span class="o">+</span><span class="n">BoOrwpwbwCwDSDCMODGpKlRNBp0rGMxHm10GOCSSEXwRwLKNs1hlBthXK9uGstOdOPOxOEAbuUuiq5sKqpMWQ6qVMyu2qO4uuEg</span><span class="o">+</span><span class="n">qmuc0TAxqPMuqeulqBucIRu9qjqqe7oGeWeOeeeBeReJeuAZeFeisnqdu6soJgJgooaRsAekJUapAVsoe9s</span><span class="o">+</span><span class="n">RkeRGJQ9hseGaBOWa6mOaye5Qj4L4b4H4leEhhiaW4kMw0</span>
+
+<span class="n">wmWgkdCDcWkiQ</span><span class="o">/</span><span class="n">wCkcI7S4wdcJwZwFYskNwdwg61cdCXSsw5YRcmcreI0i</span><span class="o">+</span><span class="n">XcDS2gqExB6cW</span><span class="o">+</span><span class="n">i6JY1WlkXWE8JReyZRGyJ</span><span class="o">+</span><span class="n">R6I2pRm8ByDRxyt</span><span class="o">+</span><span class="n">r69</span><span class="o">+/</span><span class="n">Rj</span><span class="o">+</span><span class="n">HRz</span><span class="o">+</span><span class="n">z6b</span><span class="o">+</span><span class="n">c2AxT86xIx1uv</span><span class="o">+</span><span class="n">XyABJU0xwB524Gl2wK12sY3hH67U6xSCGhaoaGMK1EcKo0ak8</span><span class="o">++</span><span class="n">B3ATSRxhBVCySBwUw8E5BxKPxMaEAHCzG9xdBGxuhzx3mrxfmvmPp6EceIWVhbKo</span>
+
+<span class="n">pQ5cAbAUY45K4LQ25LQk8xQCQ64USYAu5xQVpPwNpBwQ82Kw0mZxQLpbptpI8XpZwR5OhKBUQpAUA</span><span class="o">/</span><span class="n">iDUUYyg3A1ZaQ3CjqMsNQdQjQe4EA</span><span class="o">+</span><span class="n">gbAjU5QRImgagkFIomABYdOG5Ao9BZiSQww5ko0mcUwmkHxA86cYhSQ</span><span class="o">/</span><span class="n">wRcj0IRiQo0oRb5xiGomQxAP5LIf5AFSGQFQUjqoi</span><span class="o">+</span><span class="n">ahaxakF0FsFEg8FiFJiwohAKFxAaFm5bGq4SQ5kywpFmWpYUwZ</span>
+
+<span class="n">co0dC1GySYwdF0hU8fIUAdMkhYIuA4BlhkAjFBlAERlXiWhqIQQ04FANhkWLhua5Qum6imi2i8pTiipCcQw4w2gWcTSdSreUwc</span><span class="o">+</span><span class="mi">85</span><span class="n">kA</span><span class="o">+</span><span class="n">p</span><span class="o">/</span><span class="n">wTe5kz0zSTcs0cIKRaADcAV5YXavwhFw0DYMyfJM06kX2uKukgkZwmw2VvpRRe</span><span class="o">+</span><span class="mi">82</span><span class="n">O6gZh</span><span class="o">+</span><span class="mi">5</span><span class="n">Rwaw5p</span><span class="o">+</span><span class="n">YZNVdR28F6U2YUvR7</span><span class="o">+</span><span class="n">VVD6S2yZnVqZJQW236u2Hyf</span><span class="o">+</span><span class="n">h2cIPy</span><span class="o">+</span><span class="n">ZZ2IUYBxZUGpZzUuIaxkK1</span>
+
+<span class="n">ZeiqG9FKBGGqCOKJWtwI</span><span class="o">+</span><span class="n">BxaAtcHZS0SIqw</span><span class="o">/</span><span class="n">eI0dW</span><span class="o">/</span><span class="n">ZsOg5COSODxE5NKehLxhhSEW</span><span class="o">+</span><span class="n">q6Zhc1y5</span><span class="o">+</span><span class="n">O8eNxcI65m5y464p5YA</span><span class="o">+</span><span class="mi">5</span><span class="n">INR5JiwNzgKVT0cKCEGVc</span><span class="o">+</span><span class="n">z0YhSEkwlGmwOFpwHeWlq4vo75N8elzFjgPQbFWmHFWQjqwcocrqEcolAlv4wljRTR4lqF6F6swNclWkwwsw6cawvwSSo0ilBwpYXNpw5Wvwow8w2l4pDFLIBNrFiGJNtBXFPFlu</span><span class="o">/</span>
+
+<span class="n">FMFdNpACFDNYlElUlGFPo</span><span class="o">/</span><span class="n">CclTod5INmW5W5kpY</span><span class="o">+</span><span class="n">w</span><span class="o">/</span><span class="n">ccKa061kSdZH5elFlLiVln1ZlLITtFALt3lqmtl</span><span class="o">+</span><span class="n">A9ljliemmniYiQhtmDmXl</span><span class="o">+</span><span class="n">ikhdeflySmWfEJwuWiQOW7cf</span><span class="o">+</span><span class="n">iQTe3wRhXEa6mc4Vo</span><span class="o">+</span><span class="n">tWTeDafE5xfmfEDceR7WyVqpFwrcU</span><span class="o">+</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="n">wmZ8IfpxR3VqyPkQZg2lRjVNR4ZLVV</span><span class="o">+</span><span class="n">jRYlHVsZrR8Z7RPVXRfVQ9fRVuEAQ1X</span><span class="o">+</span><span class="n">I14x</span><span class="o">/+</span><span class="n">R2gBU1s</span>
+
+<span class="n">xs1CxplSxC1</span><span class="o">+</span><span class="n">iA4y1z2q1KG9tb22C2pG</span><span class="o">+</span><span class="n">AOrZyV</span><span class="o">+</span><span class="mi">1</span><span class="n">wOxxK08E6cfNZV</span><span class="o">+</span><span class="mi">4</span><span class="n">Vxjlt1tB50ix6O05L1ZWWOH169eOz9Go</span><span class="o">/</span><span class="mi">191</span><span class="n">p5bNpF4NQN</span><span class="o">/</span><span class="n">C6kPYfciwmkJdT0mwYhUV1dX2iwddywktIB6I</span><span class="o">+</span><span class="n">Nv5RN8tcIpNUASt5uvFVukAtNcFGtIlSGyFzN0lmFslnwRtilz0</span><span class="o">/</span><span class="n">cjWvEmwCEpwRwktCiGAMtuD</span><span class="o">/</span><span class="mi">5</span><span class="o">+</span><span class="n">DJQhDhJ6eme2eue</span><span class="o">+</span><span class="n">ehexepe5eqtgl6A9NSFT</span>
+
+<span class="n">NklLNMle5PERp6c4OQtxYD9mjmBxYNwjZw0gkfSGwvDiUjthlIQJltl7ttjxlCpPtDFftLiADcI0FjALOJAut2Qyo6gd16szhUtSe</span><span class="o">+</span><span class="mi">4</span><span class="n">Xid2aqr47o9AAAinAAAFIrB048AcAAAa9mZMf0YgO9PhyW1e48Sp86rpI8RcWc4ROKkRewgkrpgValJjwtFp4</span><span class="o">+</span><span class="n">bwHwJBPwfwAIaw5dS</span><span class="o">+</span><span class="n">MIhRW6LdB</span><span class="o">+</span><span class="n">R</span><span class="o">+</span><span class="n">FRWyoZ3dzV42Ryl6g9EUXVH5T</span><span class="o">+</span><span class="n">j61yLdKZbRM</span>
+
+<span class="mi">9</span><span class="n">gxGZ89</span><span class="o">+</span><span class="mi">2</span><span class="n">i9E1UxIGM1YGgKqOkBW98IZMu98BjBZaSBYTR9qRiROFreNGv2wOaonxxGRCBBJ1mGXYAIreV11xVBJQI5iOr9GjQdG4vhzB0mgc5g2ALYmgPAx41OvB5m0LXiLOz0Zgoi8w1OhAwwRgygdszgkgaeChuAwwxsTmyWWhZmDBkpEgli1itidwVLmhUdtL7GLBnIPifigSsGDi1L7L8iuN0ST1n990</span><span class="o">+</span><span class="n">wtcClaSIpD1X1njgpqaO46a5ho</span>
+
+<span class="n">TBSLlEgsL8LiLyL</span><span class="o">+</span><span class="n">TgiULNaV8mcxwToOFmwfSJwvYhWEkFwdTqlMIjTqwBjedizdWxwb1ZcsEkyuRTpc6nWFVPWtyQzdVIZ1Ra8PdkzbVN</span><span class="o">+</span><span class="n">Mzt6I9moCzvVyz</span><span class="o">/</span><span class="n">Vqzs9wxmzY1kxy9ezFUa9crxzTU</span><span class="o">+</span><span class="n">i4msB6xS5AgW1qADcJYFj1w59vAxYx1lCj0owcwA8Nb9UT9N1tx5KY52baOYrJCrxkrxYDd2SCrtM</span><span class="o">/</span><span class="n">xEAfqMqcq9V5AEqIJU7AaM74J</span><span class="o">+</span><span class="n">MH</span>
+
+<span class="n">JvAcuCuGqWqROiJWJyJGuhqaJX52uSJ6AFqVqgo</span><span class="o">+</span><span class="n">JJujqUTZMMT8TSTKTaTmT2TuT7qSstu</span><span class="o">+</span><span class="n">AvO6Ai7QqQaLJ</span><span class="o">/</span><span class="n">uEaFsXJQ5cauVLsyaSrUAKrEWgdrh6A</span><span class="o">/</span><span class="n">iZOf0ZMRw2A9Q</span><span class="o">/</span><span class="n">ipALOQmFQs46ThALOxsqHcTEdM9McNeuJhrqAxB0ViEW</span><span class="o">+</span><span class="n">fma6Gpzr7SltrpWkt52kBwRdTzjwtWtc9cjcM</span><span class="o">+</span><span class="n">Lc8</span><span class="o">+</span><span class="n">PTXcPcq</span><span class="o">+</span><span class="n">bDG</span><span class="o">+</span><span class="n">TSW</span><span class="o">+</span><span class="n">I</span><span class="o">+</span><span class="n">u</span><span class="o">+</span><span class="n">gb1VbdtVwZQ2OytRk</span>
+
+<span class="n">b1</span><span class="o">+</span><span class="n">e8MZszA1o9CAnRCUSbk9czg16zw1v6e2GbuZwGfy</span><span class="o">+</span><span class="n">z8xebm9Bb8Ids5zxNpaXG1zfDqBrztcTaRFtbmcupzzHz19A0fm</span><span class="o">/</span><span class="n">wpwjS</span><span class="o">/</span><span class="n">zY7w5dx3CgNnLRmyWfhWmgc8w</span><span class="o">+</span><span class="n">HYwCA</span><span class="o">/</span><span class="n">iiT</span><span class="o">+</span><span class="n">gKLdLETeuUA</span><span class="o">+</span><span class="n">g1OKwoaFQyguIJwqizAxA9A</span><span class="o">+</span><span class="n">gA49mGwrLLjUh6mIrEAH9A7L1Q7Nwv9dno7nbdhUHMHq5cHGr6AqXGLGXWXJHSXkAicO1mWywuKz0iEsk1</span>
+
+<span class="n">THEMwSQ0RZ17w6wQIOFzTrwjevEWpcKekBkI</span><span class="o">+</span><span class="n">syXc5k</span><span class="o">/</span><span class="n">T3WAZCnwz9VVRKnEbkZUz7V16WnqzKyenT6Bnn3cbqbryox2ZAGS9eZvbTRubpb9nN27oznf99Z3AW</span><span class="o">+</span><span class="n">nNgkfmeGHzao2KDbxMcwaPukgOjCdGALvxNIMXyOBZk5XmHXErNCxYAXsa3xEWCJjJmswM2sCAkMYQpAjAIgwJE7rPqM6Mgq3PCAvPqqMuUJFUm7cJZkzPp7LMB7HM6JJ7e7Z</span>
+
+<span class="mi">7</span><span class="o">+</span><span class="n">u9VV7ksXiiHbAyHqH6HmH2HuH</span><span class="o">+</span><span class="n">HhH2AxHdJn737oJgMbPaMOsXPPPh7BsbJQH3AIeMrvJFdA0UeMyg3TheSNz8HEAdMzAiTQmwwbAcTiTkgrB8waeygYfxAkghAFQxAz4JHFa0FLI0dV8WcKNva5YMISwa34kRc9cQI3et5Urj0B3V8vEPEY6Ayk6M</span><span class="o">+</span><span class="n">vrrzC6S6s</span><span class="o">+</span><span class="n">faa65YN3</span><span class="o">/</span><span class="n">pgz4ZD3obz3Ezr3UbGnMbb6cb33SZf3sb09gPO2Zno1OZYPV</span>
+
+<span class="n">njxNnRZCP81DnuAiT8PqA</span><span class="o">+</span><span class="mi">9</span><span class="n">XGttNzZb</span><span class="o">/</span><span class="n">UnNKp2Kl9GPqC9bR75CnZiwywT0awI</span><span class="o">+</span><span class="n">hPFBTPXbo5sXYLHGTBCM6hgcRJsMGPDHghA2AanKohy7xdku6LTFoQGxa4t8WhLYlqSzPAUtGu3tZrnwS5Zq8CuRXErmVwq5VcaudXBruoWUxCsNqMhHARADYDU5BIf0Y2AOCFAs4jAdsXAMbEVDxN3QzASQNgH5YJc2W4SYVpEieJU9bonXWnt1xlbmFoefX</span>
+
+<span class="n">D</span><span class="o">/</span><span class="n">gNwcLKt</span><span class="o">/</span><span class="n">eHKEbvS3QBACQBYAiAdNwNazckeCET4IkFR5ro</span><span class="o">+</span><span class="n">IDpXOsx24jzpk4LbOpNRVr4HZ6sWkR6JcH2Bb5horfFaP6wGbzN5OG8QfspzPwj96ib3aNh9zn4XIE249WfpP3n4mc56S</span><span class="o">/</span><span class="n">BeuNRKCTUIeoBA5vYxLI79RE</span><span class="o">+/</span><span class="n">aHp50tDPRNo7wbSLWxwpX97</span><span class="o">+</span><span class="n">XzGCEXXnRttaM7</span><span class="o">/</span><span class="n">Vci</span><span class="o">/</span><span class="n">R7bWdHqU5anokikH08IA8ghoTu0ZL85ncguDnhwDdxi4</span>
+
+<span class="n">vckuY0HDBBL9C1Agw4XICVGES4fcK7CXlfA3YwlFc27dMDqj5jlAUSTvQLhiR1yq8oK6vS9njGNxa9ygIfMPhHyj4x84</span><span class="o">+</span><span class="n">CfITEnxT5p9329JL9lMMdwC4hcIwj3OLm9xjBfcO</span><span class="o">+</span><span class="n">QDoHmA7ckPe4eLuBB2jzClVWv1BcrK26hqC8uEgPTOk2GBp5nA1OIUPQGmCYc6YzgVgiHEID6AzmeraOLHD9JKls69cOFBbQ2j</span><span class="o">/</span><span class="n">Ah4XeMvsYS4jNY6ki6ToUlQ</span>
+
+<span class="n">nz8dp8y6VuAvhype8xOfcdfEPCk7b5yqPghMjiGDZKdO6YzcNsENarqdGaE</span><span class="o">/</span><span class="n">OMtPWn6LNuiq2ZNgD3iFptEhWzZIZAFSHNCgEGQ12jD1jDp9i2K1BAlc0Pqn9sETSfpFxHGClC</span><span class="o">+</span><span class="n">md</span><span class="o">/</span><span class="n">DFJUIGhhE6RNCS4kTyi7AtgmcXagYIK3B6CUR6AVgqwX8RkxqgRgFnOkygERiYBcFegWMEYHMDWB7AzgdwN4H8CMBkdYQVQPCbqCIAs4MmKojpxCgVgzAL</span>
+
+<span class="n">gOQOcyUCdK4LYOoeCgAbAjAdMdJtUHqAliTMWA1FhmIkAIA6YrBCoNUGNh2wHszYwVmWLbGyFyg8hRQsoVUKDiaWIg4oCAXa4SD7oOKZlIDgwiyCjmXQxnj0MUGwjYOzlSsXGITFJiUxug</span><span class="o">//</span><span class="n">r5Rv51x8eMIEaDhW9Il9fgHwNGkLT6TvADgWBGrK6zWiulVgqEJJBx1gigS7CuVAUiGibqVVfBsogfiG0CFNUFOvdKMtM3CGxDIhiZbURPX</span><span class="o">+</span><span class="mi">5</span><span class="n">xD0</span>
+
+<span class="n">ypnH</span><span class="o">/</span><span class="n">OZxX47Ms25oyHpaK377hli1JXIWePyFUJB8r1Mgt6JwLnFseJxOYILU0jOs3</span><span class="o">+</span><span class="n">A5BQUCzJ7ANdx</span><span class="o">/</span><span class="n">bfcUYRQhfB</span><span class="o">/</span><span class="mi">6</span><span class="o">/</span><span class="n">XP4oyRZwAArn4cyQmHzsJ26kzSfTmWFrsSYUvdYVu3hK9D5eewpXsexNTHDz2FHSAJr1NzlA0RGIrETiLxFs5CRxI0kW8Mt4gk9JruLScCJd6gi3eIHHkpCMTRISpAfvWVmqwlIxiIAGLMYFixxZ4sCWRLElmS3QHkj</span>
+
+<span class="n">MBOfXgBlmSQcjQqXEGhNa3Wh2tZgDrB5k6wcFWlxROcX4IPjuAN1Lu6sB8jQifKekccudWTnd38GYSFRYbXZDhLU791mihnbTvG2ImJs0JL6MiY</span><span class="o">/</span><span class="n">GeSGiqJy</span><span class="o">/</span><span class="n">UHrRPB70T0htnaHg1B34th9</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="n">YmE6LRDlsOOHTfpLW0Gj7Er6nZW4OpVQj9xIuyk0nt22</span><span class="o">/</span><span class="mi">7</span><span class="n">r8Wh4g</span><span class="o">+</span><span class="n">lIOw6E9c5BF4n6oC0gBAMtyEDLCmA2xoQ1</span><span class="o">+</span><span class="n">EDUjbnBGakUZRgSNJII</span><span class="o">+</span><span class="n">Q</span>
+
+<span class="n">ODPlepmDaxl</span><span class="o">+</span><span class="n">Vlp4MD</span><span class="o">+</span><span class="mi">7</span><span class="n">FRWpE2ibEBYmCTZJqkwyZZMcmCAPJkhgoZCUqGWtWhmo3ob60sK0VRbvhUzgUViKBjA8uXwopsN</span><span class="o">+</span><span class="mi">4</span><span class="n">i3WitjROmMVsZQjXGQrTHKOprh4fSPtH1j7x9E</span><span class="o">+</span><span class="n">yfVPraJplq1KGmtFRjrXUYMNNG8lY2kkFo4qVqp6lHUj2CsanwbGllOxlaPMpONrKUdX2v7RemxSlB0HFQSTygpsAfGfjFmswECaSBgmN4wPqNxOF4DiuQgU</span>
+
+<span class="n">ruVzGCVdqutXeriRxsqvjUAXwbiCNEuBw0YqWcFOn5RGhqk5g3fWuF8G7IODk4kwBGicCbRrRysngvKijWTho1iqHePqShLk7oSaqAQ4acPzGmj9VRA9AiRqKIlj19O80lZvqIokJDVpSQzNptI</span><span class="o">+</span><span class="n">kWidpZ4vaTdl1YVk4EVZB0UfxOkcTBoOjHsJfyumIQBJqw0aCpWehBj6hgMr2aGNBbzzRWrQuSRxyladCTxVo7oVfLXL</span><span class="o">+</span><span class="n">ywWoDA2uA1XCQ1y</span>
+
+<span class="mi">5</span><span class="n">VbfFIyPKx</span><span class="o">+</span><span class="n">Zls95fKqjSKoY1ssGMq2VjMEYucRG</span><span class="o">+</span><span class="n">M8oDrz15ocMOWHHDnhwI5EcFG6tLWaJUZn</span><span class="o">+</span><span class="n">MwWJtQWpzSdY80xa</span><span class="o">/</span><span class="n">NA2p8A5rC0qFfNCWiLPLH8MmKiC4RmZRQV85Q</span><span class="o">+</span><span class="n">csu4YrMeHPDVZ</span><span class="o">+</span><span class="n">CzWdQy0zELdZLMxhgbMUpZyDIltHSDbUtkO0vyHtL2nZ3tk2znG</span><span class="o">+</span><span class="n">U52R41dlClHC8U</span><span class="o">+</span><span class="n">EeQx9kIBfGTMpcIHODnDdbxSUugQwKYEsC2BHArgXEx4</span>
+
+<span class="n">F8CBBELBca438JtknQnwa6QPBoSttysnQ1OnXDWiPQbgawS4FOi5H50ewfSRdJgRxRro1Idc5BsnB7BCQNoeCN5iUH6n99O5Q00ZiNNU59yJpmnCIc</span><span class="o">+</span><span class="n">h</span><span class="o">+</span><span class="mi">5</span><span class="n">LMx5eo8ictKB5ZlqJ60lIbsy2lzFN</span><span class="o">+</span><span class="n">dnZebGCBJ2i96m846awp3kNxT5mcf4FdMQa8TPmjbBpG8DoRPRnpEk16V</span><span class="o">/</span><span class="mi">3</span><span class="n">J7TVPp</span><span class="o">+</span><span class="n">hTHAhE5EjtFyZ49</span><span class="o">+</span><span class="n">YxkAZfy9ZJ5A2hDNEFgzVwUDZO</span>
+
+<span class="n">GcFnJ</span><span class="o">+</span><span class="n">Y7gkSpBlXSyXPRiwcKMZdczAA41LlKi78hwslkENuFJOXhbcIVkPDlZLwtWVplplKN6Z2suhnrTZpMNpWrM1hj2myycNXRPDFhTpTYXiykFXC6WV4lcmYjsRuI</span><span class="o">/</span><span class="n">Ed5I2AkiyR6sxRrQPhVELVGJC05WQo1JaR</span><span class="o">/</span><span class="n">gOKPRh4NoVGNTWpjHIhY2UV41VFDsu2Y4y0WOyfKQKl2Ssu9m</span><span class="o">+</span><span class="n">yLFATGYdYo</span><span class="o">/</span><span class="n">kwjDFcI1QbYo7HoBGWNiOxEnKdkpyTg</span>
+
+<span class="n">kwB0jcA6Z95eI1rRFMcGuCDxEgD0ULg4LeDIzdiqELiFbStp1yIlmkJOiFRLASte</span><span class="o">+</span><span class="n">zdeaXKI7qlKe5G8XCaEPH6Dzh6moy5CRJiFDyP8GzI0RZ1X5AENlC87pbtJYnm8158GN</span><span class="o">+</span><span class="n">hvR3mLBaE5rdHlNFeC393mFQyhFww24Zxlll4ySW9PWUySH530yQVK2PH7LFihy4xTphOVSLigP8rCn</span><span class="o">/</span><span class="n">J3KQM06q6LfOZDXxZEaYxQb1dpC4h</span><span class="o">+</span><span class="n">q1giSOBX8oJW</span>
+
+<span class="n">cKMAwKp1JTTdQ00NZdMwhTQ2ZWSLga</span><span class="o">+</span><span class="n">VGGj8DXQ4ULghQ</span><span class="o">+</span><span class="n">nrzKyx8QeauWEaOnHGDCq3a7ClijjMAo7rb297EmU</span><span class="o">+</span><span class="mi">3</span><span class="n">JmvsqZIio9WIpvw6zmZkNJIFcDpHrAy4lrfSIulkVCRxgakWjuXArArAP1moa2c7VtlMTP1aiwjaWJ8XILZVTakxQqv8YBzlVtBEOeq0rFcxfEASIJAaulWUdtSpTN6rimziMiS</span><span class="o">+</span><span class="n">DeD4O8r5qUYNuhkMCdXGdWulXVM6j1T</span>
+
+<span class="n">MC9XHBTiFYAyBRkuk7425A0vdMfiwnjNe5IQsfmqJjVT1h5unGfvUqmkpsDRzS2gSDwmKWcM1q9RiT0pYnVA2JixHeS2l0ijAeJ1agjAUOdZ</span><span class="o">/</span><span class="n">Zgug0CsN</span><span class="o">/</span><span class="n">TXSNrVVn</span><span class="o">/</span><span class="n">EFk0KI1tdZJHamns</span><span class="o">/</span><span class="n">L</span><span class="o">+</span><span class="n">kHKAZRyv6oOpAbnLf5kMq5S0GcDSap1bq2df3G47FARgSmt4var0hATpg66kVf8u</span><span class="o">/</span><span class="n">USzf1xK8oP</span><span class="o">+</span><span class="n">qJkPtSZz7CmW</span><span class="o">+</span><span class="n">wPX0rlGTKqDUit5UwgDgp</span>
+
+<span class="n">g3BLXEiXzqTaOKOkWNoeZrozGuGsWQCua3AUvEFNF1PurpUEKINGnQbazVoWCQhIaDXBHJDWiyLNKuGajE6x9W1bcVJ</span><span class="o">/</span><span class="n">PDaKslXiriAJG7RWRqoC6KHKrs7xmYr9kA0rFDGmxaHMrEtg3wMAM4PZnLKucq8ZHIpinOumTAs4WcTUk9BmDJJrWQIGIjow2hlw6EJYadJJvHyIRYNJWZOOXAWWtohRS</span><span class="o">+</span><span class="n">HRqUyIolVlg4wVuQGy039YeA9YhAAhCH5B</span>
+
+<span class="n">D9NKoypeqNjWmbalOo7UOPMaVDEbNYxY0bPLX4U8c2zmnNSc1wBlJ81cBQlTWVQTbzy2</span><span class="o">/</span><span class="n">nEsBdUC0vNLQA6GZcFrRrLBW8fYdtsGNdk3yYtdnPcQlto7NIjdWSHtRvT7WaqQdSUzQPUDiZ0QNgovEjoUypEpyRgOFQuBtBiVDw6OuONpEMB2X1xUIOFVCGhtbxLKidbZRCJMDMazAI9sEWYHXLWCHB3gOS8rHDPNqBrUJMo1uoNLuXYAeA3O7CRG</span>
+
+<span class="n">vGnRkBdJmmpeZqr1i6lpEuxftPOl0OaV6hZQ5osV6XNQ5xqujeZczc5a6z</span><span class="o">+</span><span class="mi">2</span><span class="n">ORnU9JmWvBypxuzsmcBm1aRBIEWtLc2rWX3Voe9ugwvdGEh0JuOXQ13UpMY2JTtVEABIHTjJjU4WcQgSQNPT</span><span class="o">/</span><span class="mf">791E4</span><span class="o">/</span><span class="n">cNUu8Ceg9huwQIU</span><span class="o">/</span><span class="n">cxxdLNkhITSGYIYROBOrDBuKIuGFVaatZqdXcGKYUuDUYT5RYannU3oqUt7jNRnHTsLtInVK15TS3vcD1aX2b01g</span><span class="o">+</span>
+
+<span class="n">jfsPo3qj79EiodzUWvLbJw4IZcc</span><span class="o">+</span><span class="n">X53bIr7fRSEZPbcAt11DxJVG6Li2r31niD9mOUYD2hfmpb</span><span class="o">+</span><span class="mi">1</span><span class="n">QiCQHTj0rRAMYjUVAH6j56Mk5DX5BQ6gCUMqHxeRktYWqg2HmSthu7HYRIGCBCh</span><span class="o">+</span><span class="mi">6</span><span class="n">nMFXqYe4w2gzhYsAkpkLeQfsVYHwiduoaiDKBFDGMHQyFPDRhTOS4Il3WHnA4</span><span class="o">+</span><span class="mi">8</span><span class="n">rx6qy</span><span class="o">/</span><span class="n">dFjDl3YhARgXEHADtgthVieU7jHoIgD15ihKK6TsnBuBAg</span>
+
+<span class="mi">8</span><span class="n">CsejiLMFVLJxywZU5JB3h5WJUrkPYF2NnQyIsHCqXqiYBcFCKt5yj2GmTppqKX3czqFQOvQ3r00YGDN</span><span class="o">/</span><span class="n">cyaYtPb0JqLNYxwgz3oGjpsaJ7SuiXfO2nZql5LE1MQMsLWbFqIxe3FLinC2L7UU5an0Y2zQ2aQryF8</span><span class="o">/</span><span class="n">g5FuoJCHxy</span><span class="o">+++</span><span class="n">LYfto4Vg6OF</span><span class="o">+</span><span class="n">gQzIZJxwAfA3MLmJwDmH05lDesWdpMInZ0wPjRAPAN8Y4C</span><span class="o">/</span><span class="n">G6c</span><span class="o">/</span><span class="n">xwgBrkMlB4B4kwOYK</span><span class="o">+</span><span class="n">o</span>
+
+<span class="n">ypOhtinQ</span><span class="o">+</span><span class="n">XKZJl6py5exw8w5YeV62SbD0AOwyLHOGOGrRNuVw1bxBOfHwTtYKEzCbhN</span><span class="o">+</span><span class="mi">5</span><span class="n">Qpa7d3sEc95L5oRvvd2UNw</span><span class="o">/</span><span class="n">nIjr9s4Y8JoCxDHghM8wA6SkZSwvjfFloM4JlgzgZy31RtXOYUbTqdNTgJBBYDNocHI9XSZu0</span><span class="o">+</span><span class="n">v2h9bwH1YW</span><span class="o">+</span><span class="n">cvl6SrnlZtI8EgpV0eQOdz2dKwTnWCl01KjedfdLA13vGNzTO9DS7vSmr71pqNpsuzNQxMXkj6WJohC</span>
+
+<span class="n">fZCjyHa66ELaH4EcZwJnFj5A0PpJcDLCn6xJ11OVTbvel277jYhudc63d1ey3jEAaoEwDMBiAtDAAcjpiGwwQWQQgCKHpPEJtJVvSs9z3MCKH6zjZoKC2a</span><span class="o">+</span><span class="n">MEZdDQeUYAFRcFGkysmlEitCQMNmTZeFkvEwgAsPWTDh8vI2IZhtTknr2Th0Yi4a9RuHGSXZ6s72YbPqABzrZyCMOb8Pskg87JhEZyahFhHFWvJz2U5U93X62AwwRJvMGPAJAWccP</span>
+
+<span class="n">KU0HtrxKlVgSQNHYNBL3OC0UBR1AAsEnyLoB4xhM1gFnT0wQIO8EG4IunTiCROh7UosE3nNai0KweWUwhppZ3dH</span><span class="o">/</span><span class="n">BCAG4LjwGNumhjfOz036e9PRDJjBBtMkQdmOpr5jpojpUsa6VUGrsO</span><span class="o">/</span><span class="n">VgodKGVI8Z9aBLJSfptOQADqaZ</span><span class="o">/</span><span class="n">XUF07JvAWkowWuKJI7a5mpJoM6ATDqjEynRx6ABIJgFxAtg4ALOVgkgA5bpjKxcALsT2L7EDj5xQg0zNuO</span><span class="o">+</span><span class="n">ViC</span>
+
+<span class="n">tlrxFCOIeS29qpDHupjUlKMsmWzLFl58W</span><span class="o">/</span><span class="n">teDpxIJYCzmiVv3mqm4LLpJPWtD7Tc1nW3IwaB8BXRGlbg6wHIoDnwtmRv4SBqvUM2oujBRgdF0aQxY9P4SvTLdPA4msF3JrKJJBtaWQeDOOah9u5</span><span class="o">/</span><span class="n">NjdlYLj60yBaq0cWt6nhdyh</span><span class="o">/</span><span class="n">mkLjdMUu</span><span class="o">+</span><span class="n">ia5EhxdOpat2aWbjmxynh5ZeqzA5gko</span><span class="o">+</span><span class="n">Vq7PLNnmmzXMS8xCchiBAhQQgZgHykBM6S</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="n">Z5swdY</span>
+
+<span class="n">ZPHXTr51</span><span class="o">+</span><span class="n">E7LlVSwklcC54w</span><span class="o">/</span><span class="n">pWOFWStcRJs1BIHska9tzlwoSt</span><span class="o">+</span><span class="n">d</span><span class="o">/</span><span class="n">P</span><span class="o">/</span><span class="n">nALb8fcwySuHXX9rQ5n4</span><span class="o">/</span><span class="n">dbOv1VWS</span><span class="o">/</span><span class="n">htkxFIhGhGYpBi5QUYv8tX7tMxAZQHACxDpNMAdMIUMwFLDU5nA</span><span class="o">+</span><span class="n">gITEJjtj4AoAFQXAIHrh3B7ZTVHR6PEFIKmt0z6OsJUjw</span><span class="o">/</span><span class="mi">1</span><span class="n">dpz5qwCxpvrQv0oMLbR7CzkTwu5U7ghFk</span><span class="o">/</span><span class="n">dES25kWpRt3Si6SCFBXBsAToSq</span><span class="o">+</span><span class="n">UuGP87sD00r</span>
+
+<span class="n">UT6Z051WOLMxhulLqDMLG55curNYJayE3ZyJg1rdYgQkupE9d3nJM</span><span class="o">/</span><span class="mi">9</span><span class="n">ip1</span><span class="o">+</span><span class="n">bSM01kwokBYMXGczAhvM</span><span class="o">+</span><span class="n">sty7iFmI</span><span class="o">+</span><span class="n">lysRsBYBsDqgs4XYFZYrFJTxxk46cbOM3GtiWuvyvtu2oeMxKijI</span><span class="o">+</span><span class="n">V</span><span class="o">+</span><span class="n">bFtLNDlsbHs3G2KQCvX747zARO8nbCsFTQlhFoeGXV4jDQcLhWW4EXoY4fEGOVwZS06qtJZXTgOVy9fldyrXdyL0onTkMy1uoddbrpqq6ekwO1Xm</span>
+
+<span class="n">L9VjvWba3sW2AzrVmeQPrSECXur1o5qLO0rIxn2J5bHBGarWiTKDj9KH28FoftzAYaBPDS</span><span class="o">+</span><span class="n">Ha0tpDRDnljfHCheNXGVJMN88zdfhscBIYdIMQLZdRKbYgTV1sB3DbbOQnoHCAWB</span><span class="o">/</span><span class="n">sKaLS49DL1ww</span><span class="o">+</span><span class="mi">9</span><span class="n">ZUmWTFeP1zEsSYBv2G7UO58oITeJuk3yblN4YNTdpv03GbzNvydSamGw3BzKD1AGg4wcAdWTd59GxyaimvBnzoIOKRqtrv43A4tl7sb2P7</span>
+
+<span class="n">EcbyN</span><span class="o">+</span><span class="n">g1BOWACU9puJ3fEfFEVQiTAc6G</span><span class="o">+</span><span class="n">zmiWHSUS2P95WTkbEtNW</span><span class="o">/</span><span class="n">AMl6c7ztBJFo</span><span class="o">+</span><span class="n">rmd89maR3J6OoGgWXdei</span><span class="o">+</span><span class="n">vYNtMXLNU</span><span class="o">/</span><span class="n">eNabaccLT2LxnSeStMPv97yDJ9qHqsaV3</span><span class="o">/</span><span class="n">kNjQ12</span><span class="o">+</span><span class="n">wRTLjaReDgXCtclQUs1rTqzcbu2vi339qI7wh9</span><span class="o">+</span><span class="n">oWc8ujaZLZ</span><span class="o">+</span><span class="n">xESlpXLAPgZGW3LQeQuU7ioZZiZwCY8zjInhoFj8BWABSo6lEIJpNYPY7q26UEFjW9X</span>
+
+<span class="n">aIxJXqJ0RZKjyZSqJHUrfJvWnbQzNPXQbaFI0eCA3F2Knch4BwFhqNCyxbPdIOzr5T8rxXLbRnW68Z3BVBt</span><span class="o">/</span><span class="n">mALYGuFcevEUrOhtrMmK7TxK2lVgDPMk2m89rgfOjtnNE59vM</span><span class="o">/</span><span class="n">L6UxVsWzRQRve1DjBQdlPRZEYrHaYM7U4mcf1a8XOXPtKc8rMUbz0lzYIZqv2zsDVA6OCKmkRPa3gehlzuIQ</span><span class="o">+</span><span class="n">C4P2ngj9xcUGSiYF8BKNZVDx6BCve3Or3aaRm</span>
+
+<span class="n">bjxUWvYvyMXN7PjuNVENHm</span><span class="o">+</span><span class="n">nhX</span><span class="o">/</span><span class="n">plqy0ravbNbbIZpzeGeoMsTVQcT2LTvLHTW00etbI6hwcoTJImku3Al9DgWvf2lrVov</span><span class="o">+</span><span class="mi">2</span><span class="n">tf</span><span class="o">+</span><span class="n">APKfLbuvy17JBnhjh1WW0dTlv</span><span class="o">/</span><span class="n">n8IUq1Ln4IX3WBf6kGTLnBLEsZGcrLG92rBiC83WArkFLW1EZM7cnkrPJBIuZzSvucMrHnkGxFQdtedLqzgMIM4P8GgUsMuIDSGud2C6lAgltAjC55G6JVraqHRNkm2TYpt</span>
+
+<span class="n">U2abdNhm0zZZuLPRFyz</span><span class="o">/</span><span class="n">baQrIrkVu</span><span class="o">+</span><span class="n">xjOfUY9effip8pwO5Ra2YV20RlILt7WfYhee1SN0Lr7QHS1XaYh4bixUMoBbBNjvokLWO</span><span class="o">+</span><span class="n">kbVDwRtAg0eJENCzpei9SRLw4KsBrmnu6EIE</span><span class="o">+</span><span class="n">JYszHOPQtIZg8YFqXyx1zEDdpkqygdDW8uylL3Lx0K6mPzSGrbFwic1anlhObbvFxY</span><span class="o">/</span><span class="n">bbDMrGIzSuwgPQa2MRXZ1z0FJ7JYN2FTUzGV2CBIc</span><span class="o">/</span><span class="n">smvqngh3fb</span>
+
+<span class="n">cZEPFO1rEFmPaFiqfb7x2jJanEIDQ8dmQSLHtj7OZWHrtcH85nE4ueJP4nVz1hv67Yc3OOSgbzk2LVSYPNW9OP</span><span class="o">/</span><span class="n">D1G4I6CMPmRH</span><span class="o">/</span><span class="n">JSDq</span><span class="o">+</span><span class="n">Zrvvm672mIwOzvsz2AhMmgFu0qV25ImkIDpR5vlgsFEvVSQ</span><span class="o">+</span><span class="n">Ego0k5EwWqjz7nvLvKLiYXm8NF7994PVv2mXHAHmkO4</span><span class="o">/</span><span class="mi">5</span><span class="n">djYN773c21Xog</span><span class="o">/</span><span class="n">iuwPwTzi1bbs2yv4Pdt0M8scdvb8bsjl6M89ljNxJsjo</span>
+
+<span class="n">S8W</span><span class="o">/</span><span class="mi">7</span><span class="n">emiAPdXp1cxhtDuC1DH6pHxj</span><span class="o">+</span><span class="n">R</span><span class="o">+</span><span class="n">i35m7jhd7ZTeU7xfEGP0hkEotFUMuT2z3HnB7OdeubCCHS5lc8Q6OHEmNz5Di4dJ7s6yfobqInr87yU9gjQOEsNT97yxsSP4XQdbTKuKUIqE1Ce77xRi45v5bTgTeW9dJyeP0umOR7qlzt3LBWnAQ</span><span class="o">+</span><span class="n">Rlz9XBm2ukdn2FnOLPlP0FXu46kNfbpA2j7z0ap</span><span class="o">+</span><span class="mi">4</span><span class="n">qwvf</span><span class="o">/</span><span class="n">c6bu56Bzx4K</span><span class="o">/</span><span class="n">C973IvO9gJxF8gAL</span>
+
+<span class="mi">8</span><span class="n">uLgZniz</span><span class="o">/</span><span class="n">D4uIfUvZ9mg</span><span class="o">/</span><span class="n">CCwiqu7OHE8HBWCW5XSPRJXgdr8AyI4fSgX9sjwU8o9FPGvnlnYmU7Lu9c7Xn8gGt</span><span class="o">/</span><span class="n">OdeyUx1Tr8Gfwgtmuvx1ZiAeBMB2dWfDxA8DHcL6xr53Bfq4CX8cElaqUZfpYe9WAGcBAg6me3IH1PkEh3bFfZysxG97tK8QwLAkIwmIR1894Af7y4H0b6GePaGthNJrXjOjfoAiSJJSRuSRkZUkaSKb</span><span class="o">/</span><span class="n">rSep7esrNuq6Muhz</span>
+
+<span class="n">VzeoytfF6tvN9hAnoz7tfDc5</span><span class="o">+</span><span class="mi">77</span><span class="n">Gc7rSV7kilV5KTcLPttXbhFYqtIXOBYNAyCIlPjgnXBHSvKjzz5tfVm6PiMIXDdgye2Qv53Eq9v01xhfuNvt4UlT4zQkqVnlA9X9iSC54HVBEAdoAgC9on9T</span><span class="o">+</span><span class="n">rAEcdegKe0zPhhgLYNJsTfqqv6Cp</span><span class="o">+</span><span class="n">W</span><span class="o">/</span><span class="n">YF0jxTD4</span><span class="o">+</span><span class="n">aZWXu</span><span class="o">+</span><span class="n">sAT3lgFlxs0sA4PtXusPPtj</span><span class="o">/</span><span class="n">edPa96z21bfffz4NNcdBe</span><span class="o">+</span><span class="n">X</span><span class="o">+</span><span class="n">t2H2EOR8BOovu9</span>
+
+<span class="n">hK7QeoTtK5H2ETp0pROKHjvzU0WXstabU</span><span class="o">/</span><span class="n">UP8BA</span><span class="o">+</span><span class="mi">4</span><span class="n">tJNZpO3cKfpBaSlnjqvqTSK</span><span class="o">/</span><span class="n">z0</span><span class="o">+</span><span class="n">NXoz5wBBdl9JF2WpqQite31DV7lm</span><span class="o">+</span><span class="n">IEoZu4WhkIC6wsJlkCQwWAKgBXw79oJBdevqGrSMmxAPQFYwjAVADMBmAKwG8A7AWMBPWkvHvDS8b1gJ4fW8vMJ6je65qSaG4Unml57m7wlbzUBQUn8a8BDAUFBCBIgWtALAHASyZLe</span><span class="o">/</span><span class="n">fit4hGXvNybhGONpI7a</span>
+
+<span class="n">e0jl4jVitYvWKNiijsd6Uc3ZE3jm6jrLRxaOtnrUikuX4nChDwqENf5xAfSGpYbOlrH</span><span class="o">/</span><span class="n">p1yo0PXBqQs</span><span class="o">+</span><span class="n">MnAzAu8sV4v</span><span class="o">+</span><span class="n">Qan</span><span class="o">+</span><span class="mi">7</span><span class="n">FKH</span><span class="o">/</span><span class="n">g1Rf</span><span class="o">+</span><span class="n">wHj</span><span class="o">/</span><span class="mi">7</span><span class="n">Rqf</span><span class="o">/</span><span class="n">ibasW0XkE4o</span><span class="o">+</span><span class="mi">1</span><span class="n">msQagB4Th1YUG8uoq5CWN2EKDoeiPAUK4oZtIkDoBeHsiYEeI0BtALKCmpbqXy95qsp1e5PA17EB2yrTyWOMgm</span><span class="o">/</span><span class="n">Jc</span><span class="o">+</span><span class="n">qIA668</span><span class="o">+</span><span class="n">Qvi64m</span><span class="o">+</span><span class="n">kNL8CFwkQTgHLcy</span><span class="o">+</span><span class="n">mYhxBF1I</span>
+
+<span class="n">kHiiKQSG7TujTvApu</span><span class="o">+</span><span class="n">ctNW7bqXvhABZ</span><span class="o">+</span><span class="mi">8</span><span class="n">brM4</span><span class="o">+</span><span class="n">StKjCqHqDzrtqD</span><span class="o">+</span><span class="n">Gbr26fA0nNb4wKeLlNpyU7wbESfBrcBW5fq6fpc6Z</span><span class="o">+</span><span class="mi">4</span><span class="n">OpDrQ6XjA8FLEDgMGjPBxfuH7ne9Lq1KPSUrHm6KUIkqnAkEpWMLYt</span><span class="o">+</span><span class="n">s7mC4aKnfou5QuycjKpwuwOtmDgA5UPCAfGEoLEguc0AGCAZA5QIzBQg2wAwCwmFAP4jBei9kKC8hvIf0AswIgDvDugI4PoASgQbBD48u</span>
+
+<span class="n">gof</span><span class="o">+</span><span class="n">CcUooVyE5ByojVYFA0ocKGihZMFUpQeyoXUAyhZNKKHihs0kUEqhsoekD6hyUPD5GhuoekDGwZQWj6OSQocaGFcCXskIWhRDGqHSBg3i6Eih6QGTDYOCJjZCehooWrDyBy5rvABhJoXiHPaTEmGH6As4ISHqKy7lqH2hlofoAe0f0MZiwu7gdGFkwwCNaH6gS5GiCyoBIPgCpiRBIcBnGTfj0HRED9AWGYgYoI5grQKVFMD1IfEJpBlgIxBA</span>
+
+<span class="n">BGAbAAYBIKDAAQBWwE8Jlic0uKIHTRh1oevKQoazHAgChjICQA8exkrxazhI4E0D4OmPiQAs4atLGG4AmgMEDKSq4SF6UQ</span><span class="o">/</span><span class="n">iASBeIpAMoC0gjOPOjUAogYMhXhl4XJRAicIKbDKA4YHyAdAp4bgDnh9bHWwogX4beGfA3OCOHahO8KaEIA1OLZa1ghAcsamw0YErA</span><span class="o">/</span><span class="n">q0tFuE7h5gSLBEAy4cHhCOJQF6hMhgRkOTCAUALbCIRGoPoB8gOIKQAtgY</span>
+
+<span class="n">GPhFeMREUwCbh24f1DRoI4XYD1AZHMwDVAXqGZYbhXqDRG7hdIFzCMAf0F2GL</span><span class="o">+</span><span class="n">kbhroGgaQF0DXmeJKdZGw</span><span class="o">+</span><span class="n">gGmFcY</span><span class="o">/</span><span class="mi">0</span><span class="n">m15AyoBAYCVmwQKJE4ENXvgChA</span><span class="o">+</span><span class="n">lKJG8R</span><span class="o">/</span><span class="n">EVSgjhjgMwDwRM8GzA7gLOJkBCAN4uRAD04QABQUh2YEAA</span>
+</code></pre></div>
+
+<p>%%</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

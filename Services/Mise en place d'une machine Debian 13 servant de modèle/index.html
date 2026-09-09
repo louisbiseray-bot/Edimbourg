@@ -1,0 +1,1386 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BTS SIO SISR - Mise en place d'une agence à Edimbourg">
+      
+      
+        <meta name="author" content="Louis Biseray">
+      
+      
+      
+        <link rel="prev" href="../../Cybersecuriter/Phase%20d%27analyse%20Pr%C3%A9alable/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Mise en place d'une machine Debian 13 servant de modèle - Projet Edimbourg</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Projet Edimbourg" class="md-header__button md-logo" aria-label="Projet Edimbourg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Projet Edimbourg
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mise en place d'une machine Debian 13 servant de modèle
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/louisbiseray-bot/Edimbourg" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../readme.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%201/D%C3%A9ploiement%20d%27une%20VM%20Windows%20Core/" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Projet Edimbourg" class="md-nav__button md-logo" aria-label="Projet Edimbourg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Projet Edimbourg
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/louisbiseray-bot/Edimbourg" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../readme.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réseaux - Systèmes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Réseaux - Systèmes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%201/D%C3%A9ploiement%20d%27une%20VM%20Windows%20Core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Déploiement d'une VM Windows Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%201/Pr%C3%A9paration%20de%20la%20maquette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préparation de la maquette
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%202/WAC%20-%20Windows%20Admin%20Center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAC   Windows Admin Center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cybersecuriter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cybersecuriter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cybersecuriter/Phase%20d%27analyse%20Pr%C3%A9alable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase d'analyse Préalable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en place d'une machine Debian 13 servant de modèle
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en place d'une machine Debian 13 servant de modèle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nom-de-categorie-approprier-pour-les-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (Nom de catégorie approprier pour les outils)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enregistrement-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enregistrement Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestionnaire-de-paquets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestionnaire de Paquets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-totp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH / TOTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Table de Routage.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Table NAT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nom-de-categorie-approprier-pour-les-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (Nom de catégorie approprier pour les outils)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enregistrement-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enregistrement Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestionnaire-de-paquets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestionnaire de Paquets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-totp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH / TOTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Mise en place d'une machine Debian 13 servant de modèle</h1>
+
+<hr />
+<p><strong>Auteur :</strong> BISERAY Louis
+<strong>Date :</strong> 03/09/2026
+<strong>Sujet :</strong> Création d'une VM Debian 13 avec les modules requis pour la mise en place d'un modèle</p>
+<hr />
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Pour la mise en place de plusieurs machines nous allons avoir besoin d'un modèles permettant ainsi de cloner une machine Debian 13 déjà préparer sans avoir à reconfigurer tout manuellement à chaque installations de services</p>
+<h2 id="installations">Installations<a class="headerlink" href="#installations" title="Permanent link">&para;</a></h2>
+<h3 id="nom-de-categorie-approprier-pour-les-outils">(Nom de catégorie approprier pour les outils)<a class="headerlink" href="#nom-de-categorie-approprier-pour-les-outils" title="Permanent link">&para;</a></h3>
+<p>Nous allons tout d'abord installer les services suivant :</p>
+<ul>
+<li>HTOP</li>
+<li>TCPDUMP</li>
+<li>TMUX
+(Explique leurs utilités dans la machine)</li>
+</ul>
+<h3 id="enregistrement-logs">Enregistrement Logs<a class="headerlink" href="#enregistrement-logs" title="Permanent link">&para;</a></h3>
+<p>Nous aurons besoin d'un enregistreur de Logs pour pouvoir débugger la machine en cas d'erreur nous utiliserons le daemon RSYSLOG qui récupère les Log sous forme de fichier texte plus lisible que des fichier binaire mais il est plus difficile de trouver la source de l'erreur il nous faut jouer avec des GREP dans linux</p>
+<p>Nous voulons que les log soit envoyer dans le dossier <strong>/var/log</strong> nous allons donc préciser a la fin dossier de configuration de <strong>RSYSLOG</strong> </p>
+<p>Ouvir le dossier de configuration de <strong>RSYSLOG</strong></p>
+<div class="codehilite"><pre><span></span><code>sudoedit<span class="w"> </span>/etc/rsyslog.conf
+</code></pre></div>
+
+<p>Entrer cette ligne a la fin du fichier de configuration</p>
+<div class="codehilite"><pre><span></span><code>*.*<span class="w"> </span>/var/log/all.log
+</code></pre></div>
+
+<h3 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h3>
+<p>Dans une machine Linux il existe toujours le dossier <strong>/etc</strong> qui contient tout les dossiers et fichiers de configuration des services de la machine mais également le fichier <strong>shadow</strong> qui contient tout les mot de passes hacher des utilisateurs, il est donc impératif pour le bon fonctionnement du système que ce fichier reste intact et qu'en cas de mauvaise manipulation nous puissions revenir a un état stable.</p>
+<p>Nous allons donc mettre en place un outils de versioning nommer etckeeper</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>etckeeper
+</code></pre></div>
+
+<p>Une fois l'installation terminer il faut initialiser le depot git et déclarer notre premier Commit</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>etckeeper<span class="w"> </span>init
+sudo<span class="w"> </span>etckeeper<span class="w"> </span><span class="s2">"First Commit"</span>
+</code></pre></div>
+
+<h4 id="gestionnaire-de-paquets">Gestionnaire de Paquets<a class="headerlink" href="#gestionnaire-de-paquets" title="Permanent link">&para;</a></h4>
+<p>Il est possible de joindre a <strong>etckeeper</strong> un gestionnaire de paquets ainsi lorsque de nouveaux paquets sont installer sur <strong>/etc</strong> un commit est automatiquement effectuer pour éviter la casse lors de l'installation de nouveaux modules sur le système ce qui permettras de revenir à une version antérieur ou le modules n'était pas présent.</p>
+<p>Nous utiliserons <strong>ngnix</strong></p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx
+</code></pre></div>
+
+<p>Grace a <strong>nginx</strong> je peut maintenant revenir a une version antérieur a toute installations de paquets, il est possible de voir les logs Git maintenant que nous avons installer <strong>nginx</strong>.</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/etc
+sudo<span class="w"> </span>git<span class="w"> </span>log
+</code></pre></div>
+
+<p>Un commit effectuer lors de l'installation de <strong>nginx</strong> devrais apparaitre.</p>
+<div class="codehilite"><pre><span></span><code>commit<span class="w"> </span>acd94001bbdb8ed8c0e3196e8c760566d8b546e9<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>master<span class="o">)</span>
+Author:<span class="w"> </span>etudiant<span class="w"> </span>&lt;etudiant@template.sio.lan&gt;
+Date:<span class="w">   </span>Thu<span class="w"> </span>Sep<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">16</span>:58:42<span class="w"> </span><span class="m">2026</span><span class="w"> </span>+0200
+
+<span class="w">    </span>committing<span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc<span class="w"> </span>made<span class="w"> </span>by<span class="w"> </span><span class="s2">"apt install nginx"</span>
+
+<span class="w">    </span>Packages<span class="w"> </span>with<span class="w"> </span>configuration<span class="w"> </span>changes:
+<span class="w">    </span>+nginx-common<span class="w"> </span><span class="m">1</span>.26.3-3+dev13u7<span class="w"> </span>all
+
+<span class="w">    </span>Package<span class="w"> </span>changes:
+<span class="w">    </span>+nginx<span class="w"> </span><span class="m">1</span>.26.3-3+dev13u7<span class="w"> </span>amd64
+<span class="w">    </span>+nginx-common<span class="w"> </span><span class="m">1</span>.26.3-3+dev13u7<span class="w"> </span>all
+</code></pre></div>
+
+<p>Pour restaurer a une version précedente </p>
+<div class="codehilite"><pre><span></span><code>cs<span class="w"> </span>/etc
+sudo<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>e2d9c24<span class="w"> </span>Ajout<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>config<span class="w"> </span>SSL<span class="w"> </span>nginx
+a7d0f91<span class="w"> </span>Commit<span class="w"> </span>après<span class="w"> </span>update<span class="w"> </span>des<span class="w"> </span>paquets
+1f3c6b2<span class="w"> </span>Commit<span class="w"> </span>initial
+</code></pre></div>
+
+<p>L'enchainement de nombre et de lettre est l'ID du commit c'est avec lui que nous allons restaurer a une ancienne version.</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>git<span class="w"> </span>chekout<span class="w"> </span>&lt;ID_du_commit&gt;
+</code></pre></div>
+
+<blockquote>
+<p>[!warning] Retourner a une ancienne version remplace tout les fichier de /etc penser a faire un commit avant de revenir a une version antérieure.</p>
+</blockquote>
+<h3 id="ssh-totp">SSH / TOTP<a class="headerlink" href="#ssh-totp" title="Permanent link">&para;</a></h3>
+<p>Il faut pouvoir accéder a la machine avec SSH nous allons donc créer un utilisateur <code>adminbastion</code> qui aura les droit d'utiliser toutes les commandes systémes.</p>
+<p>Installons d'abord SSH et créons l'utilisateur en lui rajoutant les droits sudo</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server
+sudo<span class="w"> </span>adduser<span class="w"> </span>adminbastion
+sudo<span class="w"> </span>moduser<span class="w"> </span>-aG<span class="w"> </span>sudo<span class="w"> </span>adminbastion
+</code></pre></div>
+
+<p>Une fois l'utilisateur et SSH installer nous allons tenter de nous connecter depuis une autre machine avec cet utilisateur pour verifier le fonctionnement.</p>
+<div class="codehilite"><pre><span></span><code>ssh<span class="w"> </span>adminbastion@172.16.55.1
+</code></pre></div>
+
+<p>Pour se connecter il faut accepter l'empreinte de la machine ainsi que saisir le mot de passe utilisateur définis cependant l'accès aux machine n'est pas sécuriser avec un simple mot de passe.</p>
+<p>Pour sécuriser la connexion nous allons ajouter une double authentification et pour cette double authentification nous allons utiliser l'Algorithme TOTP.
+![[TOTP | 800x550]]</p>
+<p>Pour pouvoir utiliser TOTP il faut installer FreeOTP Authentificator sur son téléphone et installer le paquet qrencode sur la machine Debian 13.</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>qrencode
+</code></pre></div>
+
+<p>Dans un premier il faut installer les paquets capable de mettre en place le mécanisme OTP appeler OATH.</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libpam-oath<span class="w"> </span>oathtool
+</code></pre></div>
+
+<p>Nous allons par la suite définir un secret en hexadécimal qui devra être absolument garder secret sinon toute la sécurité de l'authentification TOTP vole en éclat.</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>-i<span class="w"> </span>
+<span class="nv">KEY</span><span class="o">=</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">20</span><span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"HOTP/T30/6 etudiant - </span><span class="si">${</span><span class="nv">KEY</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/security.users.oath
+chown<span class="w"> </span>root<span class="w"> </span>/etc/security/user.oath
+chown<span class="w"> </span><span class="m">600</span><span class="w"> </span>/etc/security/users.oath
+</code></pre></div>
+
+<p>Il faut également configurer le PAM (Pluggable Authentification Modules), c'est ce service qui contrôle les authentifications sur le serveur Debian.</p>
+<div class="codehilite"><pre><span></span><code>sudoedit<span class="w"> </span>/etc/pam.d/sshd
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># PAM Configuration for the Secure Shell Service</span>
+
+<span class="c1"># Standard Un*x authentification</span>
+<span class="c1">#@ include common-auth</span>
+
+auth<span class="w"> </span>required<span class="w"> </span>pam_unix.so<span class="w"> </span>nullok_secure
+auth<span class="w"> </span><span class="o">[</span><span class="nv">success</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span>ignore<span class="o">]</span><span class="w"> </span>pam_succeed_if.so<span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>adminbastion
+auth<span class="w"> </span>required<span class="w"> </span>pam_oath.so<span class="w"> </span><span class="nv">usersfile</span><span class="o">=</span>/etc/security/users.oath<span class="w"> </span><span class="nv">window</span><span class="o">=</span><span class="m">30</span><span class="w"> </span><span class="nv">digits</span><span class="o">=</span><span class="m">6</span>
+</code></pre></div>
+
+<p>Il faut commenter la ligne <code>#@ include common-auth</code> pour autoriser l'authentification OTP</p>
+<p>(Expliquer les lignes écrite dans le shell au dessus)</p>
+<p>Il nous reste maintenant à éditer le fichier de configuration du service SSH afin de définir l’usage de l’authentification 2FA.</p>
+<div class="codehilite"><pre><span></span><code>nano<span class="w"> </span>/etc/ssh/sshd_config
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>ChallengeResponseAuthentication<span class="w"> </span>yes
+<span class="c1">#KbdInteractiveAuthentication no</span>
+UsePAM<span class="w"> </span>yes
+</code></pre></div>
+
+<p>Nous nous assurons de commenter la ligne <em>KdbInteractiveAuthentication</em> et d’avoir les deux autres lignes activées avec la valeur yes. Nous pouvons ensuite redémarrer le service SSH.</p>
+<div class="codehilite"><pre><span></span><code>systemctl restart ssh
+</code></pre></div>
+
+<p>Enfin, il nous reste à récupérer le secret en base 32 qui nous permettra ensuite de générer sur le poste client un QR code pour notre application Android.</p>
+<div class="codehilite"><pre><span></span><code>cat<span class="w"> </span>/etc/security/users.oath
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>HOTP/T30/6<span class="w"> </span>etudiant<span class="w"> </span>–<span class="w"> </span>65f43c705ce51c9c058ec8bb4b7f64b656681866
+root@serveur:~#<span class="w"> </span>oathtool<span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">6</span><span class="w"> </span>65f43c705ce51c9c058ec8bb4b7f64b656681866
+Hex<span class="w"> </span>secret:<span class="w"> </span>65f43c705ce51c9c058ec8bb4b7f64b656681866
+Base32<span class="w"> </span>secret:<span class="w"> </span>MX2DY4C44UOJYBMOZC5UW73EWZLGQGDG
+Digits:<span class="w"> </span><span class="m">6</span>
+Window<span class="w"> </span>size:<span class="w"> </span><span class="m">0</span>
+Start<span class="w"> </span>counter:<span class="w"> </span>0x0<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="o">)</span>
+</code></pre></div>
+
+<p>Il s’agit maintenant de paramétrer correctement la machine cliente et l’application Android FreeOTP afin de rendre opérationnel l’authentification SSH 2FA.</p>
+<p>Nous allons d’abord générer sur le poste client (Ubuntu ou Kali) un fichier png contenant un QR code que nous soumettrons à l’application FreeOTP.</p>
+<div class="codehilite"><pre><span></span><code>qrencode<span class="w"> </span>-o<span class="w"> </span>etudiant.png<span class="w"> </span><span class="s1">'otpauth://totp/etudiant@192.168.1.90?secret=MX2DY4C44UOJYBMOZC5UW73EWZLGQGDG'</span>
+</code></pre></div>
+
+<p>Nous pouvons ouvrir ce fichier PNG sur le poste client puis ouvrir l’application FreeOTP+ sur le smartphone.</p>
+<p>Scanner le QR code et cliquer sur le bouton qui apparaitra pour dévoiler le one time password</p>
+<blockquote>
+<p>[!note] Ne pas oublier que ce mot de passe expire et que l'horloge des machines doivent être synchroniser</p>
+</blockquote>
+<p>Sur le client, nous pouvons lancer une connexion SSH vers le serveur avec le compte etudiant. Après avoir entré votre mot de passe, un OTP vous est demandé. Dans l’application FreeOTP+, sélectionnez la nouvelle configuration. Celle-ci vous fournit un code de 6 chiffres valable 30 secondes.</p>
+<div class="codehilite"><pre><span></span><code>ssh<span class="w"> </span>etudiant@192.168.1.90<span class="w">               </span>
+<span class="o">(</span>etudiant@192.168.1.90<span class="o">)</span><span class="w"> </span>Password:<span class="w"> </span>
+<span class="o">(</span>etudiant@192.168.1.90<span class="o">)</span><span class="w"> </span>One-time<span class="w"> </span>password<span class="w"> </span><span class="o">(</span>OATH<span class="o">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="sb">`</span>etudiant<span class="err">'</span>:<span class="w"> </span>
+Linux<span class="w"> </span>serveur<span class="w"> </span><span class="m">6</span>.1.0-17-amd64<span class="w"> </span><span class="c1">#1 SMP PREEMPT_DYNAMIC Debian 6.1.69-1 (2023-12-30) x86_64</span>
+
+The<span class="w"> </span>programs<span class="w"> </span>included<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>Debian<span class="w"> </span>GNU/Linux<span class="w"> </span>system<span class="w"> </span>are<span class="w"> </span>free<span class="w"> </span>software<span class="p">;</span>
+the<span class="w"> </span>exact<span class="w"> </span>distribution<span class="w"> </span>terms<span class="w"> </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>program<span class="w"> </span>are<span class="w"> </span>described<span class="w"> </span><span class="k">in</span><span class="w"> </span>the
+individual<span class="w"> </span>files<span class="w"> </span><span class="k">in</span><span class="w"> </span>/usr/share/doc/*/copyright.
+
+Debian<span class="w"> </span>GNU/Linux<span class="w"> </span>comes<span class="w"> </span>with<span class="w"> </span>ABSOLUTELY<span class="w"> </span>NO<span class="w"> </span>WARRANTY,<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>extent
+permitted<span class="w"> </span>by<span class="w"> </span>applicable<span class="w"> </span>law.
+Last<span class="w"> </span>login:<span class="w"> </span>Wed<span class="w"> </span>Jan<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:17:13<span class="w"> </span><span class="m">2024</span><span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.1.85
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

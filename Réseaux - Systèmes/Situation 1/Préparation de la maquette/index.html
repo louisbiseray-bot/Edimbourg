@@ -1,0 +1,1699 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BTS SIO SISR - Mise en place d'une agence à Edimbourg">
+      
+      
+        <meta name="author" content="Louis Biseray">
+      
+      
+      
+        <link rel="prev" href="../D%C3%A9ploiement%20d%27une%20VM%20Windows%20Core/">
+      
+      
+        <link rel="next" href="../../Situation%202/WAC%20-%20Windows%20Admin%20Center/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Préparation de la maquette - Projet Edimbourg</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#informations-generales" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Projet Edimbourg" class="md-header__button md-logo" aria-label="Projet Edimbourg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Projet Edimbourg
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Préparation de la maquette
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/louisbiseray-bot/Edimbourg" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../readme.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../D%C3%A9ploiement%20d%27une%20VM%20Windows%20Core/" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Projet Edimbourg" class="md-nav__button md-logo" aria-label="Projet Edimbourg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Projet Edimbourg
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/louisbiseray-bot/Edimbourg" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../readme.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réseaux - Systèmes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Réseaux - Systèmes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../D%C3%A9ploiement%20d%27une%20VM%20Windows%20Core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Déploiement d'une VM Windows Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préparation de la maquette
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préparation de la maquette
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informations-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informations Générales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-vue-densemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Vue d'ensemble
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-plan-dadressage-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Plan d'adressage IP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Plan d&#39;adressage IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detail-des-hotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détail des hôtes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-topologie-physique-cablage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Topologie physique (câblage)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurations-commentees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configurations commentées
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configurations commentées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-edg-sw-commutateur-dacces-2960-24tt-substitut-de-switch-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 edg-sw — Commutateur d'accès (2960-24TT, substitut de Switch-PT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-edg-sw-core-commutateur-cur-l3-3560-24ps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 edg-sw-core — Commutateur cœur L3 (3560-24PS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-edg-firewall-pare-feu-perimetrique-2911" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 edg-firewall — Pare-feu périmétrique (2911)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-main-firewall-pare-feu-de-sortie-internet-2911" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 main-firewall — Pare-feu de sortie Internet (2911)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-postes-et-serveurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Postes et serveurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-logique-de-securite-et-de-flux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Logique de sécurité et de flux
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Situation%202/WAC%20-%20Windows%20Admin%20Center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAC   Windows Admin Center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cybersecuriter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cybersecuriter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecuriter/Phase%20d%27analyse%20Pr%C3%A9alable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase d'analyse Préalable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Services/Mise%20en%20place%20d%27une%20machine%20Debian%2013%20servant%20de%20mod%C3%A8le/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en place d'une machine Debian 13 servant de modèle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table de Routage.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table NAT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informations-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informations Générales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-vue-densemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Vue d'ensemble
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-plan-dadressage-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Plan d'adressage IP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Plan d&#39;adressage IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detail-des-hotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détail des hôtes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-topologie-physique-cablage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Topologie physique (câblage)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurations-commentees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configurations commentées
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configurations commentées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-edg-sw-commutateur-dacces-2960-24tt-substitut-de-switch-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 edg-sw — Commutateur d'accès (2960-24TT, substitut de Switch-PT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-edg-sw-core-commutateur-cur-l3-3560-24ps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 edg-sw-core — Commutateur cœur L3 (3560-24PS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-edg-firewall-pare-feu-perimetrique-2911" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 edg-firewall — Pare-feu périmétrique (2911)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-main-firewall-pare-feu-de-sortie-internet-2911" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 main-firewall — Pare-feu de sortie Internet (2911)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-postes-et-serveurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Postes et serveurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-logique-de-securite-et-de-flux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Logique de sécurité et de flux
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Préparation de la maquette</h1>
+
+<hr />
+<h3 id="informations-generales">Informations Générales<a class="headerlink" href="#informations-generales" title="Permanent link">&para;</a></h3>
+<p><strong>Auteur :</strong> BISERAY Louis
+<strong>Date :</strong> 09/09/2026
+<strong>Sujet :</strong> Déploiement d'un serveur Windows Core 2025 </p>
+<hr />
+<h2 id="1-vue-densemble">1. Vue d'ensemble<a class="headerlink" href="#1-vue-densemble" title="Permanent link">&para;</a></h2>
+<p>La maquette <strong>CUB</strong> modélise une architecture réseau d'entreprise segmentée en trois zones de sécurité :</p>
+<ul>
+<li><strong>LAN interne</strong> (Production, AdminSys, Client) — commuté en VLANs, routé en inter-VLAN sur un commutateur de niveau 3.</li>
+<li><strong>DMZ</strong> — héberge un serveur exposé (serveur <code>DMZ</code>), isolé du LAN par un pare-feu.</li>
+<li><strong>Accès Internet</strong> — deux pare-feux en cascade (<code>edg-firewall</code> puis <code>main-firewall</code>) assurant le NAT et le filtrage vers un serveur simulant Internet.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nv">flowchart</span><span class="w"> </span><span class="nv">LR</span>
+<span class="w">    </span><span class="nv">classDef</span><span class="w"> </span><span class="nv">router</span><span class="w"> </span><span class="nv">fill</span>:<span class="sc">#1</span><span class="nv">a5276</span>,<span class="nv">stroke</span>:<span class="sc">#3498</span><span class="nv">db</span>,<span class="nv">color</span>:#<span class="nv">fff</span>
+<span class="w">    </span><span class="nv">classDef</span><span class="w"> </span><span class="nv">switch</span><span class="w"> </span><span class="nv">fill</span>:<span class="sc">#1</span><span class="nv">e8449</span>,<span class="nv">stroke</span>:<span class="sc">#2</span><span class="nv">ecc71</span>,<span class="nv">color</span>:#<span class="nv">fff</span>
+<span class="w">    </span><span class="nv">classDef</span><span class="w"> </span><span class="nv">server</span><span class="w"> </span><span class="nv">fill</span>:<span class="sc">#7</span><span class="nv">d3c98</span>,<span class="nv">stroke</span>:#<span class="nv">a569bd</span>,<span class="nv">color</span>:#<span class="nv">fff</span>
+<span class="w">    </span><span class="nv">classDef</span><span class="w"> </span><span class="nv">host</span><span class="w"> </span><span class="nv">fill</span>:<span class="sc">#616</span><span class="nv">a6b</span>,<span class="nv">stroke</span>:<span class="sc">#95</span><span class="nv">a5a6</span>,<span class="nv">color</span>:#<span class="nv">fff</span>
+
+<span class="w">    </span><span class="nv">subgraph</span><span class="w"> </span><span class="nv">LAN</span>[<span class="s2">"LAN interne"</span>]
+<span class="w">        </span><span class="nv">PCPROD</span>[<span class="s2">"PC Production&lt;br/&gt;192.168.5.1/25&lt;br/&gt;VLAN 55"</span>]:::<span class="nv">host</span>
+<span class="w">        </span><span class="nv">PCCLI</span>[<span class="s2">"PC Client&lt;br/&gt;192.168.5.129/26&lt;br/&gt;VLAN 10"</span>]:::<span class="nv">host</span>
+<span class="w">        </span><span class="nv">PCADM</span>[<span class="s2">"PC AdminSys&lt;br/&gt;192.168.5.193/28&lt;br/&gt;VLAN 20"</span>]:::<span class="nv">host</span>
+<span class="w">        </span><span class="nv">EDGSW</span>[<span class="s2">"edg-sw&lt;br/&gt;(2960-24TT)&lt;br/&gt;access + trunk"</span>]:::<span class="nv">switch</span>
+<span class="w">        </span><span class="nv">CORESW</span>[<span class="s2">"edg-sw-core&lt;br/&gt;(3560-24PS)&lt;br/&gt;SVI inter-VLAN"</span>]:::<span class="nv">switch</span>
+<span class="w">    </span><span class="k">end</span>
+
+<span class="w">    </span><span class="nv">subgraph</span><span class="w"> </span><span class="nv">PERIM</span>[<span class="s2">"Périmètre"</span>]
+<span class="w">        </span><span class="nv">EDGFW</span>[<span class="s2">"edg-firewall&lt;br/&gt;(2911)&lt;br/&gt;NAT + ACL"</span>]:::<span class="nv">router</span>
+<span class="w">    </span><span class="k">end</span>
+
+<span class="w">    </span><span class="nv">subgraph</span><span class="w"> </span><span class="nv">DMZZ</span>[<span class="s2">"DMZ"</span>]
+<span class="w">        </span><span class="nv">DMZ</span>[<span class="s2">"DMZ&lt;br/&gt;192.36.5.1/24"</span>]:::<span class="nv">server</span>
+<span class="w">    </span><span class="k">end</span>
+
+<span class="w">    </span><span class="nv">subgraph</span><span class="w"> </span><span class="nv">WAN</span>[<span class="s2">"Interco / Internet simulé"</span>]
+<span class="w">        </span><span class="nv">MAINFW</span>[<span class="s2">"main-firewall&lt;br/&gt;(2911)&lt;br/&gt;NAT + ACL"</span>]:::<span class="nv">router</span>
+<span class="w">        </span><span class="nv">SRVINT</span>[<span class="s2">"Server Internet&lt;br/&gt;172.16.31.251/22"</span>]:::<span class="nv">server</span>
+<span class="w">    </span><span class="k">end</span>
+
+<span class="w">    </span><span class="nv">PCPROD</span><span class="w"> </span><span class="o">---|</span><span class="s2">"Fa0/0 -- Fa0/1&lt;br/&gt;VLAN 55 access"</span><span class="o">|</span><span class="w"> </span><span class="nv">EDGSW</span>
+<span class="w">    </span><span class="nv">PCCLI</span><span class="w"> </span><span class="o">---|</span><span class="s2">"Fa0/1 -- Fa0/0&lt;br/&gt;VLAN 10 access"</span><span class="o">|</span><span class="w"> </span><span class="nv">EDGSW</span>
+<span class="w">    </span><span class="nv">PCADM</span><span class="w"> </span><span class="o">---|</span><span class="s2">"Fa1/1 -- Fa0/0&lt;br/&gt;VLAN 20 access"</span><span class="o">|</span><span class="w"> </span><span class="nv">EDGSW</span>
+<span class="w">    </span><span class="nv">EDGSW</span><span class="w"> </span><span class="o">---|</span><span class="s2">"Fa3/1 -- Gi0/2&lt;br/&gt;Trunk 10,20,55"</span><span class="o">|</span><span class="w"> </span><span class="nv">CORESW</span>
+<span class="w">    </span><span class="nv">CORESW</span><span class="w"> </span><span class="o">---|</span><span class="s2">"Gi0/1 -- Gi0/0&lt;br/&gt;Passerelle sortante"</span><span class="o">|</span><span class="w"> </span><span class="nv">EDGFW</span>
+<span class="w">    </span><span class="nv">EDGFW</span><span class="w"> </span><span class="o">---|</span><span class="s2">"Gi0/2 -- Fa0&lt;br/&gt;Lien DMZ"</span><span class="o">|</span><span class="w"> </span><span class="nv">DMZ</span>
+<span class="w">    </span><span class="nv">EDGFW</span><span class="w"> </span><span class="o">---|</span><span class="s2">"Gi0/1 -- Gi0/0&lt;br/&gt;Interco pare-feux"</span><span class="o">|</span><span class="w"> </span><span class="nv">MAINFW</span>
+<span class="w">    </span><span class="nv">MAINFW</span><span class="w"> </span><span class="o">---|</span><span class="s2">"Gi0/1 -- Fa0&lt;br/&gt;Sortie Internet"</span><span class="o">|</span><span class="w"> </span><span class="nv">SRVINT</span>
+</code></pre></div>
+
+<hr />
+<h2 id="2-plan-dadressage-ip">2. Plan d'adressage IP<a class="headerlink" href="#2-plan-dadressage-ip" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Réseau / VLAN</th>
+<th>CIDR</th>
+<th>Passerelle</th>
+<th>Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLAN 10 – Client</td>
+<td>192.168.5.128/26</td>
+<td>192.168.5.190</td>
+<td><code>edg-sw-core</code> Vlan10</td>
+</tr>
+<tr>
+<td>VLAN 20 – AdminSys</td>
+<td>192.168.5.192/28</td>
+<td>192.168.5.206</td>
+<td><code>edg-sw-core</code> Vlan20</td>
+</tr>
+<tr>
+<td>VLAN 55 – Production</td>
+<td>192.168.5.0/25</td>
+<td>192.168.5.126</td>
+<td><code>edg-sw-core</code> Vlan55</td>
+</tr>
+<tr>
+<td>VLAN 2 – Interco cœur ↔ pare-feu</td>
+<td>192.168.55.248/29</td>
+<td>192.168.55.254</td>
+<td><code>edg-sw-core</code> Vlan2 / <code>edg-firewall</code> Gi0/0</td>
+</tr>
+<tr>
+<td>DMZ</td>
+<td>192.36.5.0/24</td>
+<td>192.36.5.254</td>
+<td><code>edg-firewall</code> Gi0/2</td>
+</tr>
+<tr>
+<td>Interco pare-feux</td>
+<td>192.36.253.0/24</td>
+<td>— (P2P)</td>
+<td><code>edg-firewall</code> Gi0/1 ↔ <code>main-firewall</code> Gi0/0</td>
+</tr>
+<tr>
+<td>Sortie Internet simulée</td>
+<td>172.16.28.0/22</td>
+<td>172.16.31.250</td>
+<td><code>main-firewall</code> Gi0/1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="detail-des-hotes">Détail des hôtes<a class="headerlink" href="#detail-des-hotes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Hôte</th>
+<th>IP</th>
+<th>Masque</th>
+<th>Passerelle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PC Client</td>
+<td>192.168.5.129</td>
+<td>255.255.255.192 (/26)</td>
+<td>192.168.5.190</td>
+</tr>
+<tr>
+<td>PC AdminSys</td>
+<td>192.168.5.193</td>
+<td>255.255.255.240 (/28)</td>
+<td>192.168.5.206</td>
+</tr>
+<tr>
+<td>PC Production</td>
+<td>192.168.5.1</td>
+<td>255.255.255.128 (/25)</td>
+<td>192.168.5.126</td>
+</tr>
+<tr>
+<td>DMZ</td>
+<td>192.36.5.1</td>
+<td>255.255.255.0 (/24)</td>
+<td>192.36.5.254</td>
+</tr>
+<tr>
+<td>Server Internet</td>
+<td>172.16.31.251</td>
+<td>255.255.252.0 (/22)</td>
+<td>172.16.31.250</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-topologie-physique-cablage">4. Topologie physique (câblage)<a class="headerlink" href="#4-topologie-physique-cablage" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Extrémité A</th>
+<th>Port A</th>
+<th>Extrémité B</th>
+<th>Port B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PC Production</td>
+<td>FastEthernet0</td>
+<td>edg-sw-core</td>
+<td>FastEthernet0/1</td>
+</tr>
+<tr>
+<td>edg-sw-core</td>
+<td>GigabitEthernet0/1</td>
+<td>edg-firewall</td>
+<td>GigabitEthernet0/0</td>
+</tr>
+<tr>
+<td>edg-firewall</td>
+<td>GigabitEthernet0/2</td>
+<td>DMZ</td>
+<td>FastEthernet0</td>
+</tr>
+<tr>
+<td>edg-firewall</td>
+<td>GigabitEthernet0/1</td>
+<td>main-firewall</td>
+<td>GigabitEthernet0/0</td>
+</tr>
+<tr>
+<td>main-firewall</td>
+<td>GigabitEthernet0/1</td>
+<td>Server Internet</td>
+<td>FastEthernet0</td>
+</tr>
+<tr>
+<td>edg-sw-core</td>
+<td>GigabitEthernet0/2</td>
+<td>edg-sw</td>
+<td>FastEthernet3/1 (trunk)</td>
+</tr>
+<tr>
+<td>edg-sw</td>
+<td>FastEthernet0/1</td>
+<td>PC Client</td>
+<td>FastEthernet0</td>
+</tr>
+<tr>
+<td>edg-sw</td>
+<td>FastEthernet1/1</td>
+<td>PC AdminSys</td>
+<td>FastEthernet0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-configurations-commentees">5. Configurations commentées<a class="headerlink" href="#5-configurations-commentees" title="Permanent link">&para;</a></h2>
+<h3 id="51-edg-sw-commutateur-dacces-2960-24tt-substitut-de-switch-pt">5.1 <code>edg-sw</code> — Commutateur d'accès (2960-24TT, substitut de Switch-PT)<a class="headerlink" href="#51-edg-sw-commutateur-dacces-2960-24tt-substitut-de-switch-pt" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">hostname</span><span class="w"> </span><span class="n">edg</span><span class="o">-</span><span class="n">sw</span>
+<span class="o">!</span>
+<span class="kr">interface</span><span class="w"> </span><span class="n">FastEthernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="w"> </span><span class="n">switchport</span><span class="w"> </span><span class="n">access</span><span class="w"> </span><span class="n">vlan</span><span class="w"> </span><span class="mi">10</span>
+<span class="w"> </span><span class="n">switchport</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="n">access</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Port</span><span class="w"> </span><span class="n">d</span><span class="s">'accès dédié au poste "</span><span class="n">PC</span><span class="w"> </span><span class="n">Client</span><span class="s">" -&gt; VLAN 10 (utilisateurs).</span>
+<span class="s">!</span>
+<span class="s">interface FastEthernet1/1</span>
+<span class="s"> switchport access vlan 20</span>
+<span class="s"> switchport mode access</span>
+<span class="s">! Port d'</span><span class="n">accès</span><span class="w"> </span><span class="n">dédié</span><span class="w"> </span><span class="n">au</span><span class="w"> </span><span class="n">poste</span><span class="w"> </span><span class="s">"PC AdminSys"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">VLAN</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">(</span><span class="n">administration</span><span class="p">).</span>
+<span class="o">!</span>
+<span class="kr">interface</span><span class="w"> </span><span class="n">FastEthernet3</span><span class="o">/</span><span class="mi">1</span>
+<span class="w"> </span><span class="n">switchport</span><span class="w"> </span><span class="n">trunk</span><span class="w"> </span><span class="n">allowed</span><span class="w"> </span><span class="n">vlan</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">55</span>
+<span class="w"> </span><span class="n">switchport</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="n">trunk</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Lien</span><span class="w"> </span><span class="n">montant</span><span class="w"> </span><span class="p">(</span><span class="n">uplink</span><span class="p">)</span><span class="w"> </span><span class="n">vers</span><span class="w"> </span><span class="n">edg</span><span class="o">-</span><span class="n">sw</span><span class="o">-</span><span class="n">core</span><span class="p">.</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Trunk</span><span class="w"> </span><span class="mf">802.1</span><span class="n">Q</span><span class="w"> </span><span class="n">autorisant</span><span class="w"> </span><span class="n">uniquement</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">VLANs</span><span class="w"> </span><span class="n">utiles</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">)</span>
+<span class="o">!</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">limite</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">propagation</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">broadcast</span><span class="w"> </span><span class="n">aux</span><span class="w"> </span><span class="n">VLANs</span><span class="w"> </span><span class="n">réellement</span><span class="w"> </span><span class="n">utilisés</span><span class="p">.</span>
+<span class="o">!</span>
+</code></pre></div>
+
+<h3 id="52-edg-sw-core-commutateur-cur-l3-3560-24ps">5.2 <code>edg-sw-core</code> — Commutateur cœur L3 (3560-24PS)<a class="headerlink" href="#52-edg-sw-core-commutateur-cur-l3-3560-24ps" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nx">hostname</span><span class="w"> </span><span class="nx">edg</span><span class="o">-</span><span class="nx">sw</span><span class="o">-</span><span class="nx">core</span>
+<span class="p">!</span>
+<span class="nx">ip</span><span class="w"> </span><span class="nx">routing</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">Active</span><span class="w"> </span><span class="nx">le</span><span class="w"> </span><span class="nx">routage</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">sur</span><span class="w"> </span><span class="nx">le</span><span class="w"> </span><span class="nx">commutateur</span><span class="w"> </span><span class="nx">L3</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">indispensable</span><span class="w"> </span><span class="nx">pour</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">que</span><span class="w"> </span><span class="nx">les</span><span class="w"> </span><span class="nx">interfaces</span><span class="w"> </span><span class="nx">virtuelles</span><span class="w"> </span><span class="p">(</span><span class="nx">SVI</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">VLAN</span><span class="p">)</span><span class="w"> </span><span class="nx">puissent</span><span class="w"> </span><span class="nx">router</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">le</span><span class="w"> </span><span class="nx">trafic</span><span class="w"> </span><span class="nx">inter</span><span class="o">-</span><span class="nx">VLAN</span><span class="p">.</span>
+<span class="p">!</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">FastEthernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="w"> </span><span class="nx">switchport</span><span class="w"> </span><span class="nx">access</span><span class="w"> </span><span class="nx">vlan</span><span class="w"> </span><span class="mi">55</span>
+<span class="w"> </span><span class="nx">switchport</span><span class="w"> </span><span class="nx">mode</span><span class="w"> </span><span class="nx">access</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">Port</span><span class="w"> </span><span class="nx">d</span><span class="err">'</span><span class="nx">accès</span><span class="w"> </span><span class="nx">pour</span><span class="w"> </span><span class="s">"PC Production"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">VLAN</span><span class="w"> </span><span class="mi">55</span><span class="p">.</span>
+<span class="p">!</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">GigabitEthernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="w"> </span><span class="nx">switchport</span><span class="w"> </span><span class="nx">access</span><span class="w"> </span><span class="nx">vlan</span><span class="w"> </span><span class="mi">2</span>
+<span class="w"> </span><span class="nx">switchport</span><span class="w"> </span><span class="nx">mode</span><span class="w"> </span><span class="nx">access</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">Lien</span><span class="w"> </span><span class="nx">point</span><span class="o">-</span><span class="nx">à</span><span class="o">-</span><span class="nx">point</span><span class="w"> </span><span class="nx">vers</span><span class="w"> </span><span class="nx">edg</span><span class="o">-</span><span class="nx">firewall</span><span class="p">,</span><span class="w"> </span><span class="nx">isolé</span><span class="w"> </span><span class="nx">dans</span><span class="w"> </span><span class="nx">son</span><span class="w"> </span><span class="nx">propre</span><span class="w"> </span><span class="nx">VLAN</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">!</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">évite</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">mélanger</span><span class="w"> </span><span class="nx">le</span><span class="w"> </span><span class="nx">trafic</span><span class="w"> </span><span class="nx">d</span><span class="err">'</span><span class="nx">interconnexion</span><span class="w"> </span><span class="nx">avec</span><span class="w"> </span><span class="nx">le</span><span class="w"> </span><span class="nx">LAN</span><span class="w"> </span><span class="nx">utilisateur</span><span class="p">.</span>
+<span class="p">!</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">GigabitEthernet0</span><span class="o">/</span><span class="mi">2</span>
+<span class="w"> </span><span class="nx">switchport</span><span class="w"> </span><span class="nx">trunk</span><span class="w"> </span><span class="nx">allowed</span><span class="w"> </span><span class="nx">vlan</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">55</span>
+<span class="w"> </span><span class="nx">switchport</span><span class="w"> </span><span class="nx">trunk</span><span class="w"> </span><span class="nx">encapsulation</span><span class="w"> </span><span class="nx">dot1q</span>
+<span class="w"> </span><span class="nx">switchport</span><span class="w"> </span><span class="nx">mode</span><span class="w"> </span><span class="nx">trunk</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">Lien</span><span class="w"> </span><span class="nx">descendant</span><span class="w"> </span><span class="p">(</span><span class="nx">downlink</span><span class="p">)</span><span class="w"> </span><span class="nx">vers</span><span class="w"> </span><span class="nx">edg</span><span class="o">-</span><span class="nx">sw</span><span class="p">,</span><span class="w"> </span><span class="nx">en</span><span class="w"> </span><span class="nx">trunk</span><span class="w"> </span><span class="m m-Double">802.1</span><span class="nx">Q</span><span class="p">,</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">transporte</span><span class="w"> </span><span class="nx">les</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nx">VLANs</span><span class="w"> </span><span class="nx">utilisateurs</span><span class="p">.</span>
+<span class="p">!</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Vlan2</span>
+<span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">192.168.55.253</span><span class="w"> </span><span class="m m-Double">255.255.255.248</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">SVI</span><span class="w"> </span><span class="nx">d</span><span class="err">'</span><span class="nx">interconnexion</span><span class="w"> </span><span class="nx">avec</span><span class="w"> </span><span class="nx">edg</span><span class="o">-</span><span class="nx">firewall</span><span class="w"> </span><span class="p">(</span><span class="nx">réseau</span><span class="w"> </span><span class="o">/</span><span class="mi">29</span><span class="w"> </span><span class="nx">dédié</span><span class="p">).</span>
+<span class="p">!</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Vlan10</span>
+<span class="w"> </span><span class="nx">description</span><span class="w"> </span><span class="nx">Passerelle</span><span class="w"> </span><span class="nx">Vlan</span><span class="w"> </span><span class="nx">Client</span>
+<span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">192.168.5.190</span><span class="w"> </span><span class="m m-Double">255.255.255.192</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">Passerelle</span><span class="w"> </span><span class="nx">par</span><span class="w"> </span><span class="nx">défaut</span><span class="w"> </span><span class="nx">du</span><span class="w"> </span><span class="nx">VLAN</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">(</span><span class="nx">Client</span><span class="p">)</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="o">/</span><span class="mi">26</span><span class="p">.</span>
+<span class="p">!</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Vlan20</span>
+<span class="w"> </span><span class="nx">description</span><span class="w"> </span><span class="nx">Passerelle</span><span class="w"> </span><span class="nx">Vlan</span><span class="w"> </span><span class="nx">AdminSys</span>
+<span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">192.168.5.206</span><span class="w"> </span><span class="m m-Double">255.255.255.240</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">Passerelle</span><span class="w"> </span><span class="nx">par</span><span class="w"> </span><span class="nx">défaut</span><span class="w"> </span><span class="nx">du</span><span class="w"> </span><span class="nx">VLAN</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">(</span><span class="nx">AdminSys</span><span class="p">)</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="o">/</span><span class="mi">28</span><span class="p">.</span>
+<span class="p">!</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Vlan55</span>
+<span class="w"> </span><span class="nx">description</span><span class="w"> </span><span class="nx">Passerelle</span><span class="w"> </span><span class="nx">Vlan</span><span class="w"> </span><span class="nx">Production</span>
+<span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="m m-Double">192.168.5.126</span><span class="w"> </span><span class="m m-Double">255.255.255.128</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">Passerelle</span><span class="w"> </span><span class="nx">par</span><span class="w"> </span><span class="nx">défaut</span><span class="w"> </span><span class="nx">du</span><span class="w"> </span><span class="nx">VLAN</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="p">(</span><span class="nx">Production</span><span class="p">)</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="o">/</span><span class="mi">25</span><span class="p">.</span>
+<span class="p">!</span>
+<span class="nx">ip</span><span class="w"> </span><span class="nx">route</span><span class="w"> </span><span class="m m-Double">0.0.0.0</span><span class="w"> </span><span class="m m-Double">0.0.0.0</span><span class="w"> </span><span class="m m-Double">192.168.55.254</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">Route</span><span class="w"> </span><span class="nx">par</span><span class="w"> </span><span class="nx">défaut</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">tout</span><span class="w"> </span><span class="nx">trafic</span><span class="w"> </span><span class="nx">non</span><span class="o">-</span><span class="nx">local</span><span class="w"> </span><span class="nx">est</span><span class="w"> </span><span class="nx">envoyé</span><span class="w"> </span><span class="nx">vers</span>
+<span class="p">!</span><span class="w"> </span><span class="nx">edg</span><span class="o">-</span><span class="nx">firewall</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">192.168.55.254</span><span class="p">,</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">Gi0</span><span class="o">/</span><span class="mi">0</span><span class="w"> </span><span class="nx">côté</span><span class="w"> </span><span class="nx">pare</span><span class="o">-</span><span class="nx">feu</span><span class="p">).</span>
+</code></pre></div>
+
+<h3 id="53-edg-firewall-pare-feu-perimetrique-2911">5.3 <code>edg-firewall</code> — Pare-feu périmétrique (2911)<a class="headerlink" href="#53-edg-firewall-pare-feu-perimetrique-2911" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">hostname</span><span class="w"> </span><span class="n">edg</span><span class="o">-</span><span class="n">firewall</span>
+<span class="o">!</span>
+<span class="n">interface</span><span class="w"> </span><span class="n">GigabitEthernet0</span><span class="o">/</span><span class="mi">0</span>
+<span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="n">Chemin</span><span class="w"> </span><span class="n">sortant</span>
+<span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="mf">192.168</span><span class="o">.</span><span class="mf">55.254</span><span class="w"> </span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.248</span>
+<span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">inside</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Interface</span><span class="w"> </span><span class="n">côté</span><span class="w"> </span><span class="n">LAN</span><span class="w"> </span><span class="p">(</span><span class="n">réseau</span><span class="w"> </span><span class="n">d</span><span class="s1">'interco avec edg-sw-core).</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Déclarée</span><span class="w"> </span><span class="s2">"nat inside"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">trafic</span><span class="w"> </span><span class="n">considéré</span><span class="w"> </span><span class="n">comme</span><span class="w"> </span><span class="n">interne</span><span class="w"> </span><span class="n">au</span><span class="w"> </span><span class="n">NAT</span><span class="o">.</span>
+<span class="o">!</span>
+<span class="n">interface</span><span class="w"> </span><span class="n">GigabitEthernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="n">Chemin</span><span class="w"> </span><span class="n">entrant</span>
+<span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="mf">192.36</span><span class="o">.</span><span class="mf">253.50</span><span class="w"> </span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+<span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">outside</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Interface</span><span class="w"> </span><span class="n">côté</span><span class="w"> </span><span class="s2">"extérieur"</span><span class="w"> </span><span class="p">(</span><span class="n">vers</span><span class="w"> </span><span class="n">main</span><span class="o">-</span><span class="n">firewall</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"nat outside"</span><span class="o">.</span>
+<span class="o">!</span>
+<span class="n">interface</span><span class="w"> </span><span class="n">GigabitEthernet0</span><span class="o">/</span><span class="mi">2</span>
+<span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="n">Lien</span><span class="w"> </span><span class="n">DMZ</span>
+<span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="mf">192.36</span><span class="o">.</span><span class="mf">5.254</span><span class="w"> </span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Interface</span><span class="w"> </span><span class="n">vers</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">DMZ</span><span class="o">.</span><span class="w"> </span><span class="n">Pas</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">NAT</span><span class="w"> </span><span class="n">dessus</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">DMZ</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">gérée</span>
+<span class="o">!</span><span class="w"> </span><span class="n">séparément</span><span class="w"> </span><span class="p">(</span><span class="n">accès</span><span class="w"> </span><span class="n">direct</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ACL</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">filtrage</span><span class="p">,</span><span class="w"> </span><span class="n">voir</span><span class="w"> </span><span class="n">plus</span><span class="w"> </span><span class="n">bas</span><span class="p">)</span><span class="o">.</span>
+<span class="o">!</span>
+<span class="n">ip</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">inside</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="n">GigabitEthernet0</span><span class="o">/</span><span class="mi">1</span><span class="w"> </span><span class="n">overload</span>
+<span class="o">!</span><span class="w"> </span><span class="n">NAT</span><span class="w"> </span><span class="n">dynamique</span><span class="w"> </span><span class="n">avec</span><span class="w"> </span><span class="n">surcharge</span><span class="w"> </span><span class="p">(</span><span class="n">PAT</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s2">"overload"</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">toutes</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">IP</span>
+<span class="o">!</span><span class="w"> </span><span class="n">internes</span><span class="w"> </span><span class="n">autorisées</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">l</span><span class="s1">'ACL 1 sont traduites vers l'</span><span class="n">IP</span><span class="w"> </span><span class="n">publique</span>
+<span class="o">!</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">Gi0</span><span class="o">/</span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="mf">192.36</span><span class="o">.</span><span class="mf">253.50</span><span class="p">)</span><span class="o">.</span>
+<span class="o">!</span>
+<span class="n">ip</span><span class="w"> </span><span class="n">route</span><span class="w"> </span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="w"> </span><span class="mf">192.36</span><span class="o">.</span><span class="mf">253.254</span>
+<span class="n">ip</span><span class="w"> </span><span class="n">route</span><span class="w"> </span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="w"> </span><span class="mf">192.168</span><span class="o">.</span><span class="mf">55.253</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Deux</span><span class="w"> </span><span class="n">routes</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">défaut</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">vers</span><span class="w"> </span><span class="n">l</span><span class="s1">'extérieur (192.36.253.254,</span>
+<span class="o">!</span><span class="w"> </span><span class="n">non</span><span class="w"> </span><span class="n">utilisée</span><span class="w"> </span><span class="n">ici</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="n">main</span><span class="o">-</span><span class="n">firewall</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">vrai</span><span class="w"> </span><span class="n">relais</span><span class="p">),</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">vers</span>
+<span class="o">!</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">cœur</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">réseau</span><span class="w"> </span><span class="n">LAN</span><span class="w"> </span><span class="p">(</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">55.253</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edg</span><span class="o">-</span><span class="n">sw</span><span class="o">-</span><span class="n">core</span><span class="p">,</span><span class="w"> </span><span class="n">VLAN2</span><span class="p">)</span><span class="o">.</span>
+<span class="o">!</span>
+<span class="n">access</span><span class="o">-</span><span class="n">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">deny</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="mf">192.36</span><span class="o">.</span><span class="mf">5.1</span>
+<span class="n">access</span><span class="o">-</span><span class="n">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">permit</span><span class="w"> </span><span class="mf">192.168</span><span class="o">.</span><span class="mf">5.0</span><span class="w"> </span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.255</span>
+<span class="o">!</span><span class="w"> </span><span class="n">ACL</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="n">utilisée</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">NAT</span><span class="p">)</span><span class="w"> </span><span class="p">:</span>
+<span class="o">!</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">refuse</span><span class="w"> </span><span class="n">explicitement</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">serveur</span><span class="w"> </span><span class="n">DMZ</span><span class="w"> </span><span class="p">(</span><span class="mf">192.36</span><span class="o">.</span><span class="mf">5.1</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">il</span><span class="w"> </span><span class="n">ne</span><span class="w"> </span><span class="n">doit</span>
+<span class="o">!</span><span class="w">    </span><span class="n">jamais</span><span class="w"> </span><span class="err">ê</span><span class="n">tre</span><span class="w"> </span><span class="n">traduit</span><span class="o">/</span><span class="n">masqué</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">sortie</span><span class="w"> </span><span class="p">(</span><span class="n">règle</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">séparation</span><span class="w"> </span><span class="n">DMZ</span><span class="o">/</span><span class="n">LAN</span><span class="p">)</span><span class="o">.</span>
+<span class="o">!</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">autorise</span><span class="w"> </span><span class="n">l</span><span class="s1">'ensemble du LAN 192.168.5.0/24 à sortir via NAT.</span>
+<span class="o">!</span><span class="w"> </span><span class="n">ATTENTION</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">masque</span><span class="w"> </span><span class="n">générique</span><span class="w"> </span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.255</span><span class="w"> </span><span class="n">couvre</span><span class="w"> </span><span class="mf">192.168</span><span class="o">.</span><span class="mf">5.0</span><span class="o">/</span><span class="mi">24</span><span class="p">,</span>
+<span class="o">!</span><span class="w"> </span><span class="n">ce</span><span class="w"> </span><span class="n">qui</span><span class="w"> </span><span class="n">englobe</span><span class="w"> </span><span class="n">bien</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">sous</span><span class="o">-</span><span class="n">réseaux</span><span class="w"> </span><span class="n">VLAN</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">)</span><span class="w"> </span><span class="n">puisqu</span><span class="s1">'ils</span>
+<span class="o">!</span><span class="w"> </span><span class="n">sont</span><span class="w"> </span><span class="n">tous</span><span class="w"> </span><span class="n">inclus</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">ce</span><span class="w"> </span><span class="n">bloc</span><span class="w"> </span><span class="o">/</span><span class="mf">24.</span>
+</code></pre></div>
+
+<h3 id="54-main-firewall-pare-feu-de-sortie-internet-2911">5.4 <code>main-firewall</code> — Pare-feu de sortie Internet (2911)<a class="headerlink" href="#54-main-firewall-pare-feu-de-sortie-internet-2911" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">hostname</span><span class="w"> </span><span class="n">main</span><span class="o">-</span><span class="n">firewall</span>
+<span class="o">!</span>
+<span class="n">interface</span><span class="w"> </span><span class="n">GigabitEthernet0</span><span class="o">/</span><span class="mi">0</span>
+<span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="n">Liaison</span><span class="w"> </span><span class="n">Entrant</span>
+<span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="mf">192.36</span><span class="o">.</span><span class="mf">253.254</span><span class="w"> </span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+<span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">inside</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Interface</span><span class="w"> </span><span class="n">côté</span><span class="w"> </span><span class="n">edg</span><span class="o">-</span><span class="n">firewall</span><span class="w"> </span><span class="p">(</span><span class="n">réseau</span><span class="w"> </span><span class="n">d</span><span class="s1">'interco 192.36.253.0/24).</span>
+<span class="o">!</span>
+<span class="n">interface</span><span class="w"> </span><span class="n">GigabitEthernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="n">Liaison</span><span class="w"> </span><span class="n">Sortant</span><span class="w"> </span><span class="n">Internet</span>
+<span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="mf">172.16</span><span class="o">.</span><span class="mf">31.250</span><span class="w"> </span><span class="mf">255.255</span><span class="o">.</span><span class="mf">252.0</span>
+<span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">outside</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Interface</span><span class="w"> </span><span class="n">côté</span><span class="w"> </span><span class="s2">"Internet"</span><span class="w"> </span><span class="p">(</span><span class="n">simulé</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">Server</span><span class="w"> </span><span class="n">Internet</span><span class="p">)</span><span class="o">.</span>
+<span class="o">!</span>
+<span class="n">ip</span><span class="w"> </span><span class="n">nat</span><span class="w"> </span><span class="n">inside</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="n">GigabitEthernet0</span><span class="o">/</span><span class="mi">1</span><span class="w"> </span><span class="n">overload</span>
+<span class="o">!</span><span class="w"> </span><span class="n">PAT</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">masque</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">trafic</span><span class="w"> </span><span class="n">entrant</span><span class="w"> </span><span class="n">depuis</span><span class="w"> </span><span class="n">edg</span><span class="o">-</span><span class="n">firewall</span><span class="w"> </span><span class="n">derrière</span>
+<span class="o">!</span><span class="w"> </span><span class="n">l</span><span class="s1">'IP publique 172.16.31.250.</span>
+<span class="o">!</span>
+<span class="n">ip</span><span class="w"> </span><span class="n">route</span><span class="w"> </span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="w"> </span><span class="mf">192.36</span><span class="o">.</span><span class="mf">253.50</span>
+<span class="o">!</span><span class="w"> </span><span class="n">Route</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">défaut</span><span class="w"> </span><span class="n">vers</span><span class="w"> </span><span class="n">edg</span><span class="o">-</span><span class="n">firewall</span><span class="w"> </span><span class="p">(</span><span class="n">Gi0</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">192.36</span><span class="o">.</span><span class="mf">253.50</span><span class="p">)</span><span class="w"> </span><span class="n">pour</span>
+<span class="o">!</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">retour</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">trafic</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="n">cohérent</span><span class="w"> </span><span class="n">avec</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">NAT</span><span class="w"> </span><span class="n">déjà</span><span class="w"> </span><span class="n">appliqué</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">amont</span><span class="o">.</span>
+<span class="o">!</span>
+<span class="n">access</span><span class="o">-</span><span class="n">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">deny</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="mf">192.36</span><span class="o">.</span><span class="mf">5.1</span>
+<span class="n">access</span><span class="o">-</span><span class="n">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">permit</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="mf">192.36</span><span class="o">.</span><span class="mf">253.50</span>
+<span class="o">!</span><span class="w"> </span><span class="n">ACL</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">refuse</span><span class="w"> </span><span class="n">toujours</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">serveur</span><span class="w"> </span><span class="n">DMZ</span><span class="p">,</span><span class="w"> </span><span class="n">autorise</span><span class="w"> </span><span class="n">uniquement</span>
+<span class="o">!</span><span class="w"> </span><span class="n">l</span><span class="s1">'adresse de edg-firewall (déjà elle-même NATée en amont)</span>
+<span class="o">!</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">filtrage</span><span class="w"> </span><span class="n">strict</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">seul</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">pare</span><span class="o">-</span><span class="n">feu</span><span class="w"> </span><span class="n">périmétrique</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">sortir</span>
+<span class="o">!</span><span class="w">    </span><span class="n">vers</span><span class="w"> </span><span class="n">Internet</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">main</span><span class="o">-</span><span class="n">firewall</span><span class="o">.</span>
+</code></pre></div>
+
+<h3 id="55-postes-et-serveurs">5.5 Postes et serveurs<a class="headerlink" href="#55-postes-et-serveurs" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code># PC Production   : 192.168.5.1/25    GW 192.168.5.126   (VLAN 55)
+# PC Client        : 192.168.5.129/26  GW 192.168.5.190   (VLAN 10)
+# PC AdminSys      : 192.168.5.193/28  GW 192.168.5.206   (VLAN 20)
+# DMZ              : 192.36.5.1/24     GW 192.36.5.254     + DHCP 192.36.5.0/24
+# Server Internet  : 172.16.31.251/22  GW 172.16.31.250    + DHCP 172.16.28.0/22
+</code></pre></div>
+
+<p><em>(Adressage statique saisi directement dans les propriétés IP de chaque hôte/serveur ; pas de commandes CLI associées côté PC-PT/Server-PT.)</em></p>
+<hr />
+<h2 id="6-logique-de-securite-et-de-flux">6. Logique de sécurité et de flux<a class="headerlink" href="#6-logique-de-securite-et-de-flux" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Trois VLANs utilisateurs isolés</strong> (10 = Client, 20 = AdminSys, 55 = Production), routés uniquement via les SVI de <code>edg-sw-core</code>.</li>
+<li><strong>Double NAT en cascade</strong> : le LAN sort via <code>edg-firewall</code> (PAT sur 192.36.253.50), puis re-NAT via <code>main-firewall</code> (PAT sur 172.16.31.250) avant d'atteindre le serveur Internet simulé.</li>
+<li><strong>DMZ non NATée et exclue explicitement du NAT sortant</strong> (<code>access-list 1 deny host 192.36.5.1</code> sur les deux pare-feux) : le serveur DMZ ne doit jamais emprunter la même règle de sortie que le LAN, sous risque de ne pas être joignable.</li>
+<li><strong>Trunks restreints</strong> aux VLANs strictement nécessaires (<code>allowed vlan 10,20,55</code>), plutôt que d'autoriser tous les VLANs par défaut.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

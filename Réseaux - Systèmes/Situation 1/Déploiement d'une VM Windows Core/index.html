@@ -1,0 +1,1393 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BTS SIO SISR - Mise en place d'une agence à Edimbourg">
+      
+      
+        <meta name="author" content="Louis Biseray">
+      
+      
+      
+      
+        <link rel="next" href="../Pr%C3%A9paration%20de%20la%20maquette/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Déploiement d'une VM Windows Core - Projet Edimbourg</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#informations-generales" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Projet Edimbourg" class="md-header__button md-logo" aria-label="Projet Edimbourg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Projet Edimbourg
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Déploiement d'une VM Windows Core
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/louisbiseray-bot/Edimbourg" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../readme.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Projet Edimbourg" class="md-nav__button md-logo" aria-label="Projet Edimbourg" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Projet Edimbourg
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/louisbiseray-bot/Edimbourg" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../readme.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réseaux - Systèmes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Réseaux - Systèmes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Déploiement d'une VM Windows Core
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Déploiement d'une VM Windows Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informations-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informations Générales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-creer-une-vm-windows-core-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Créer une VM Windows Core 2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-verifier-la-configuration-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Vérifier la configuration IP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-installation-des-drivers-carte-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Installation des Drivers Carte réseau
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-parametrer-la-carte-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Paramétrer la Carte Réseau
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-changer-le-nom-de-la-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Changer le nom de la machine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-verification-des-recommandation-de-lanssi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Vérification des recommandation de l'ANSSI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Vérification des recommandation de l&#39;ANSSI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#62-verifier-les-fonctionnalites-de-securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Vérifier les fonctionnalités de sécurité
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-mettre-a-jour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Mettre à jour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-securiser-le-compte-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Sécuriser le compte Admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pr%C3%A9paration%20de%20la%20maquette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préparation de la maquette
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Situation%202/WAC%20-%20Windows%20Admin%20Center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAC   Windows Admin Center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cybersecuriter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cybersecuriter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecuriter/Phase%20d%27analyse%20Pr%C3%A9alable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase d'analyse Préalable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Services/Mise%20en%20place%20d%27une%20machine%20Debian%2013%20servant%20de%20mod%C3%A8le/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en place d'une machine Debian 13 servant de modèle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table de Routage.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table NAT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informations-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informations Générales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-creer-une-vm-windows-core-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Créer une VM Windows Core 2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-verifier-la-configuration-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Vérifier la configuration IP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-installation-des-drivers-carte-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Installation des Drivers Carte réseau
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-parametrer-la-carte-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Paramétrer la Carte Réseau
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-changer-le-nom-de-la-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Changer le nom de la machine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-verification-des-recommandation-de-lanssi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Vérification des recommandation de l'ANSSI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Vérification des recommandation de l&#39;ANSSI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#62-verifier-les-fonctionnalites-de-securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Vérifier les fonctionnalités de sécurité
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-mettre-a-jour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Mettre à jour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-securiser-le-compte-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Sécuriser le compte Admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Déploiement d'une VM Windows Core</h1>
+
+<hr />
+<h3 id="informations-generales">Informations Générales<a class="headerlink" href="#informations-generales" title="Permanent link">&para;</a></h3>
+<p><strong>Auteur :</strong> BISERAY Louis
+<strong>Date :</strong> 09/09/2026
+<strong>Sujet :</strong> Déploiement d'un serveur Windows Core 2025 </p>
+<hr />
+<h2 id="1-creer-une-vm-windows-core-2025">1. Créer une VM Windows Core 2025<a class="headerlink" href="#1-creer-une-vm-windows-core-2025" title="Permanent link">&para;</a></h2>
+<h2 id="2-verifier-la-configuration-ip">2. Vérifier la configuration IP<a class="headerlink" href="#2-verifier-la-configuration-ip" title="Permanent link">&para;</a></h2>
+<p>Tout d'abord il faut vérifier la configuration IP de notre machine avec la commande suivante</p>
+<div class="codehilite"><pre><span></span><code><span class="n">ipconfig</span>
+</code></pre></div>
+
+<p>Le résultat afficher est vide affichant seulement ceci : <code>Configuration IP de Windows</code>, cela signifie qu'il faut installer le <code>Virt IO</code> pour que la machine se voit attribuer une configuration IP.</p>
+<h2 id="3-installation-des-drivers-carte-reseau">3. Installation des Drivers Carte réseau<a class="headerlink" href="#3-installation-des-drivers-carte-reseau" title="Permanent link">&para;</a></h2>
+<p>Il faut en premier lieu vérifier les lecteurs pour savoir le quel contient le <code>Virt IO</code></p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Get-Volume</span>
+</code></pre></div>
+
+<p>Un lecteur nommer <code>D     virtio-win-x-x-xxx</code> doit apparaitre dans le résultat de la commande, le <code>D</code> devant <code>virtio-win-x-x-xxx</code> correspond au répertoire dans le quel ce situe le <code>virtio</code></p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd </span><span class="n">D</span><span class="p">:\</span>   <span class="c">#Se situer dans le répertoire D:\</span>
+<span class="nb">ls </span>      <span class="c">#Afficher tout les fichier et dossier du répertoire</span>
+</code></pre></div>
+
+<p>Une grande liste va s'afficher avec tout les ficher et dossier dans le répertoire <code>D</code> , le fichier qui nous intéresse est <code>virtio-win-guest-tools.exe</code> c'est avec cette installateur que nous allons installer <code>VirtIO</code></p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Start-Process</span>
+<span class="n">FilePath</span> <span class="p">:</span> <span class="n">virtio-win-guest-tools</span><span class="p">.</span><span class="n">exe</span>
+</code></pre></div>
+
+<p>Un installateur devrait ce lancer.
+Une fois le l'installation terminer il faut mettre en place le service <code>QEMU-GA</code> </p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Set-Service</span> <span class="n">-Name</span> <span class="s2">"QEMU-GA"</span> <span class="n">-StartupType</span> <span class="n">Automatic</span>
+<span class="nb">Start-Service</span> <span class="n">QEMU-GA</span>
+<span class="n">ipconfig</span>
+</code></pre></div>
+
+<p>Maintenant une configuration réseau devrait s'afficher après <code>Configuration IP de Windows</code></p>
+<h2 id="4-parametrer-la-carte-reseau">4. Paramétrer la Carte Réseau<a class="headerlink" href="#4-parametrer-la-carte-reseau" title="Permanent link">&para;</a></h2>
+<p>Entrer les paramètres réseau qui suivent dans la carte réseau du Windows core</p>
+<div class="codehilite"><pre><span></span><code>IP : 192.168.55.1 
+Passerelle : 192.168.55.126
+DNS 8.8.8.8
+</code></pre></div>
+
+<p>Pour modifier l'interface de la carte :</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">New-NetIPAddress</span> <span class="n">-InterfaceAlias</span> <span class="s2">"Ethernet"</span> <span class="n">-IPAddress</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">10</span> <span class="n">-PrefixLength</span> <span class="n">24</span> <span class="n">-DefaultGateway</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+
+<p>Et pour ajouter les serveurs DNS :</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Set-DnsClientServerAddress</span> <span class="n">-InterfaceAlias</span> <span class="s2">"Ethernet"</span> <span class="n">-ServerAddresses</span> <span class="p">(</span><span class="s2">"8.8.8.8"</span><span class="p">,</span><span class="s2">"8.8.4.4"</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="5-changer-le-nom-de-la-machine">5. Changer le nom de la machine<a class="headerlink" href="#5-changer-le-nom-de-la-machine" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="nb">Rename-Computer</span> <span class="n">-NewName</span> <span class="s2">"NOUVEAU-NOM"</span> <span class="n">-Restart</span>
+</code></pre></div>
+
+<p>Sans le paramètre <code>-Restart</code>, le changement sera pris en compte seulement au prochain redémarrage manuel </p>
+<h2 id="6-verification-des-recommandation-de-lanssi">6. Vérification des recommandation de l'ANSSI<a class="headerlink" href="#6-verification-des-recommandation-de-lanssi" title="Permanent link">&para;</a></h2>
+<p>Ajout de deux serveur NTP pour la redondance ainsi qu'une meilleur synchronisation</p>
+<div class="codehilite"><pre><span></span><code><span class="n">w32tm</span> <span class="p">/</span><span class="n">config</span> <span class="p">/</span><span class="n">manualpeerlist</span><span class="p">:</span><span class="s2">"serveur1.ntp.com,0x8 serveur2.ntp.com,0x8"</span> <span class="p">/</span><span class="n">syncfromflags</span><span class="p">:</span><span class="n">manual</span> <span class="p">/</span><span class="n">reliable</span><span class="p">:</span><span class="n">yes</span> <span class="p">/</span><span class="n">update</span>
+</code></pre></div>
+
+<p>Pour vérifier la date taper la commande </p>
+<div class="codehilite"><pre><span></span><code>date
+</code></pre></div>
+
+<p>Si tout est bien paramétrer l'heure actuel devrait s'afficher.</p>
+<h3 id="62-verifier-les-fonctionnalites-de-securite">6.2 Vérifier les fonctionnalités de sécurité<a class="headerlink" href="#62-verifier-les-fonctionnalites-de-securite" title="Permanent link">&para;</a></h3>
+<p>Il nous faut maintenant vérifier <code>l'UAC</code> qui demande le mot de passe de l'administrateur aux utilisateurs qui demande l'exécution d'un programme ou qui essayent de modifier un paramètres qui demande des droits plus élever.</p>
+<p>Voici la commande pour savoir  <code>UAC</code> est activer sur le Windows</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Get-ItemProperty</span> <span class="s2">"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">EnableLUA</span>
+</code></pre></div>
+
+<p>Le résultat obtenu devrait être celui ci :</p>
+<div class="codehilite"><pre><span></span><code><span class="n">EnableLUA</span>
+<span class="n">_________</span>
+        <span class="n">1</span>
+</code></pre></div>
+
+<p>Dans le cas ou UAC est désactiver taper cette commande qui le réactiveras</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s2">"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"</span> <span class="n">-Name</span> <span class="s2">"EnableLUA"</span> <span class="n">-Value</span> <span class="n">1</span>
+
+<span class="nb">Restart-Computer</span>
+</code></pre></div>
+
+<p>Revérifier <code>l'UAC</code> pour confirmer que la commande a bien été appliquer</p>
+<p>Enfin il faut vérifier que le pare-feu est bien activer sur les 3 service Domaine, Private et Public</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Get-NetFirewallProfile</span>
+</code></pre></div>
+
+<p>Cela devrait afficher l'état (<code>Enabled</code>) pour les 3 profils :</p>
+<ul>
+<li><strong>Domain</strong> (réseau de domaine)</li>
+<li><strong>Private</strong> (réseau privé)</li>
+<li><strong>Public</strong> (réseau public)</li>
+</ul>
+<h3 id="63-mettre-a-jour">6.3 Mettre à jour<a class="headerlink" href="#63-mettre-a-jour" title="Permanent link">&para;</a></h3>
+<p>Server Core n'a généralement pas accès direct à Internet configuré pour NuGet, donc on installe d'abord le fournisseur NuGet puis le module :</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Install-PackageProvider</span> <span class="n">-Name</span> <span class="n">NuGet</span> <span class="n">-Force</span>
+<span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSWindowsUpdate</span> <span class="n">-Force</span>
+</code></pre></div>
+
+<p>Importer le module Windows Update</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Import-Module</span> <span class="n">PSWindowsUpdate</span>
+</code></pre></div>
+
+<p><strong>Vérifier que le module est bien chargé :</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Get-Command</span> <span class="n">-Module</span> <span class="n">PSWindowsUpdate</span>
+</code></pre></div>
+
+<p>Vérifier les mise à jour disponible </p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Get-WindowsUpdate</span>
+</code></pre></div>
+
+<p>Une version de la commande plus détailler</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Get-WindowsUpdate</span> <span class="n">-Verbose</span>
+</code></pre></div>
+
+<p>Installer tout les mise à jour proposer</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Install-WindowsUpdate</span> <span class="n">-AcceptAll</span> <span class="n">-IgnoreReboot</span>
+</code></pre></div>
+
+<h3 id="64-securiser-le-compte-admin">6.4 Sécuriser le compte Admin<a class="headerlink" href="#64-securiser-le-compte-admin" title="Permanent link">&para;</a></h3>
+<p>Taper cette commande pour faire apparaitre tout les local User avec leur Nom et SSID</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Get-LocalUser</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">SID</span><span class="p">,</span> <span class="n">Enabled</span>
+</code></pre></div>
+
+<p>Enfin pour renommer le compte Admin Local</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">Rename-user</span> <span class="n">-Name</span> <span class="s2">"Administrateur"</span> <span class="n">-NewName</span> <span class="s2">"ADM-SRV-00"</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
