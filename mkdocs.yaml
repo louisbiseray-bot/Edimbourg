@@ -1,0 +1,31 @@
+site_name: Projet Edimbourg
+site_description: BTS SIO SISR - Mise en place d'une agence à Edimbourg
+site_author: Louis Biseray
+repo_url: https://github.com/louisbiseray-bot/Edimbourg
+
+docs_dir: docs_edimbourg
+
+theme:
+  name: material
+  language: fr
+  palette:
+    primary: indigo
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+
+nav:
+  - Accueil: Readme.md
+  - Documentation: docs_edimbourg\Réseaux - Systèmes\Situation 1\Déploiement d'une VM Windows Core.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - codehilite
+
+plugins:
+  - search
+
+  
