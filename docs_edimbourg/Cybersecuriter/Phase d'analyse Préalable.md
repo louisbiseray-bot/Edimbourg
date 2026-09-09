@@ -12,7 +12,7 @@ ___
 
 ___ 
 
-**2. Expliquer ce qui a poussé le service RSI à opter pour une solution UTM par rapport à un simple pare-feu stateful traditionnel**
+### 1. Expliquer ce qui a poussé le service RSI à opter pour une solution UTM par rapport à un simple pare-feu stateful traditionnel
 
 - Un pare-feu traditionnel est un service permet de filtrer et de contrôler les trafics entrants et sortants et d'y appliquer des règles précise dans une machine ou un réseau, dans notre cas nous nous plaçons dans un réseau. 
    Un pare-feu **UTM** lui est plus qu'un unique service c'est une solution de sécurité qui contient   plusieurs outils ainsi qu'un pare-feu traditionnel permettant la surveillance et la sécurisation d'un réseau l'**UTM** agit également sur des couches supérieur sur le modèle **OSI** atteignant la couche **7** contre la couche **4** pour un pare-feu classique.
@@ -22,7 +22,7 @@ ___
    Une solution **UTM** permet de couvrir un champ d'action bien plus grand et d'apporter à une entreprise une solution globale permettant de centraliser facilement les journaux d'attaques, cependant centraliser autant d'outils peut générer un **SPOF** (Single Point Of Failure), avec un UTM nous limitons la surface d'attaque mais nous ne corrigeons pas le problème nous ne faisons que le déplacer.
 
 
-**3. Donner 2 arguments en faveur d'un boîtier UTM Stormshield par rapport  à ceux proposer par des entreprises concurrentes telles que Palo Alto ou CheckPoint**
+### 2. Donner 2 arguments en faveur d'un boîtier UTM Stormshield par rapport  à ceux proposer par des entreprises concurrentes telles que Palo Alto ou CheckPoint
 
 - Tout d'abord un l'entreprise **Stormshield** est une entreprise Française contrairement à **Palo Alto** qui est une entreprise Américaine et **Checkpoint** qui est une entreprise Israélienne, les objectifs de l'entreprise CUB est de maximiser la **souveraineté** de sont système informatique et la **réglementation** de l'**ANSSI** recommande d'utiliser des services Français pour une simplicité législative les lois informatiques ne s'applique pas pareilles dans différents pays, notamment les **Etats** **Unis** et la **France** qui ont des **réglementation** très différentes.
 
@@ -39,13 +39,13 @@ ___
 
   Pour les entreprises un suivis et une formation solide sont très importante pour que les employer puisse utiliser les technologies de Stormshield tout en respectant les règles de sécurité.
 
-**4. Expliquer pourquoi la présence d'un réseau local unique pose des problèmes de sécurité**
+### 3. Expliquer pourquoi la présence d'un réseau local unique pose des problèmes de sécurité
 
 - La présence d'un seul réseau local est dangereux, sans segmentation du réseau un pirate qui s'infiltre dans le systèmes aurait accès à tout les services sans limitations, une segmentation permet de limiter les accès et d'autoriser seulement les services qui ont besoin de communiquer entre eux et en cas de piratage de limiter la zone d'action du pirate.
 
   Pour segmenter le réseau nous allons utiliser le VLSM qui consiste à séparer une plage d'adresse en d'autres plus petites.
 
-**5. Réaliser le schéma logique représentant la nouvelle proposition de segmentation**
+### 4. Réaliser le schéma logique représentant la nouvelle proposition de segmentation
 
 - Dans une prévision d'évolution du réseau il faut prévoir le double du nombre d'hôtes prévu
 
