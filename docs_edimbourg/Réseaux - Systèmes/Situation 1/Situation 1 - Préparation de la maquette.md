@@ -57,15 +57,15 @@ flowchart LR
 
 ## 2. Plan d'adressage IP
 
-| Réseau / VLAN                    | CIDR              | Passerelle     | Interface                                    |
-| -------------------------------- | ----------------- | -------------- | -------------------------------------------- |
-| VLAN 10 – Client                 | 192.168.5.128/26  | 192.168.5.190  | `edg-sw-core` Vlan10                         |
-| VLAN 20 – AdminSys               | 192.168.5.192/28  | 192.168.5.206  | `edg-sw-core` Vlan20                         |
-| VLAN 55 – Production             | 192.168.5.0/25    | 192.168.5.126  | `edg-sw-core` Vlan55                         |
-| VLAN 2 – Interco cœur ↔ pare-feu | 192.168.55.248/29 | 192.168.55.254 | `edg-sw-core` Vlan2 / `edg-firewall` Gi0/0   |
-| DMZ                              | 192.36.5.0/24     | 192.36.5.254   | `edg-firewall` Gi0/2                         |
-| Interco pare-feux                | 192.36.253.0/24   | — (P2P)        | `edg-firewall` Gi0/1 ↔ `main-firewall` Gi0/0 |
-| Sortie Internet simulée          | 172.16.28.0/22    | 172.16.31.250  | `main-firewall` Gi0/1                        |
+| Réseau / VLAN                  | CIDR              | Passerelle     | Interface                                    |
+| ------------------------------ | ----------------- | -------------- | -------------------------------------------- |
+| VLAN 10 – Client               | 192.168.5.128/26  | 192.168.5.190  | `edg-sw-core` Vlan10                         |
+| VLAN 20 – AdminSys             | 192.168.5.192/28  | 192.168.5.206  | `edg-sw-core` Vlan20                         |
+| VLAN 55 – Production           | 192.168.5.0/25    | 192.168.5.126  | `edg-sw-core` Vlan55                         |
+| VLAN 2 – Interco cœur pare-feu | 192.168.55.248/29 | 192.168.55.254 | `edg-sw-core` Vlan2 / `edg-firewall` Gi0/0   |
+| DMZ                            | 192.36.5.0/24     | 192.36.5.254   | `edg-firewall` Gi0/2                         |
+| Interco pare-feux              | 192.36.253.0/24   | — (P2P)        | `edg-firewall` Gi0/1 ↔ `main-firewall` Gi0/0 |
+| Sortie Internet simulée        | 172.16.28.0/22    | 172.16.31.250  | `main-firewall` Gi0/1                        |
 
 ### Détail des hôtes
 
