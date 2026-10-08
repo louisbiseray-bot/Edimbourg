@@ -48,8 +48,6 @@ nav:
 plugins:
   - search:
       lang: fr
-  - minify:
-      minify_html: true
 
 markdown_extensions:
   - admonition
