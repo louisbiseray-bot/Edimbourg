@@ -1,6 +1,6 @@
 site_name: Agence Édimbourg - BTS SIO SISR
 site_description: Documentation du projet de mise en place d'une agence à Édimbourg
-site_author: Équipe BTS SIO SISR
+site_author: BISERAY Louis - ACKIN Enes
 site_url: https://louisbiseray-bot.github.io/Edimbourg/
 
 docs_dir: docs_edimbourg
@@ -70,4 +70,4 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/louisbiseray-bot/Edimbourg
 
-copyright: "&copy; 2024 Projet BTS SIO SISR - Tous droits réservés"
+copyright: "&copy; 2026 Projet BTS SIO SISR - Tous droits réservés"
