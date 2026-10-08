@@ -1,0 +1,73 @@
+site_name: Agence Édimbourg - BTS SIO SISR
+site_description: Documentation du projet de mise en place d'une agence à Édimbourg
+site_author: Équipe BTS SIO SISR
+site_url: https://louisbiseray-bot.github.io/Edimbourg/
+
+docs_dir: docs_edimbourg
+site_dir: site
+
+theme:
+  name: material
+  language: fr
+  locale: fr_FR
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Mode clair
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Mode sombre
+
+nav:
+  - Accueil: index.md
+  - Réseaux - Systèmes: Réseaux - Systèmes/
+  - Cybersécurité: Cybersecuriter/
+  - Schémas: Schéma/
+  - Services: Services/
+  - Images: Image/
+  - Configuration Réseau:
+      - Plan d'adressage - CUB: "Plan d'adressage - CUB.md"
+      - Table NAT - CUB: "Table NAT - CUB.md"
+      - Table de Routage - CUB: "Table de Routage - CUB.md"
+      - Table de Translation - CUB: "Table de Translation - CUB.md"
+
+plugins:
+  - search:
+      lang: fr
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.emoji:
+      emoji_index: pymdownx.emoji.twemoji
+      emoji_generator: pymdownx.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+  - attr_list
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/louisbiseray-bot/Edimbourg
+
+copyright: "&copy; 2024 Projet BTS SIO SISR - Tous droits réservés"
