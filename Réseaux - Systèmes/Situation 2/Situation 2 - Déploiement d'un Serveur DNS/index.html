@@ -1,0 +1,1592 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation du projet de mise en place d'une agence à Édimbourg">
+      
+      
+        <meta name="author" content="BISERAY Louis - ACKIN Enes">
+      
+      
+        <link rel="canonical" href="https://louisbiseray-bot.github.io/Edimbourg/R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%202/Situation%202%20-%20D%C3%A9ploiement%20d%27un%20Serveur%20DNS/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Situation 2 Déploiement d'un Serveur DNS - Agence Édimbourg - BTS SIO SISR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#informations-generales" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Agence Édimbourg - BTS SIO SISR" class="md-header__button md-logo" aria-label="Agence Édimbourg - BTS SIO SISR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agence Édimbourg - BTS SIO SISR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Situation 2   Déploiement d'un Serveur DNS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Mode clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mode sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Réseaux - Systèmes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Réseaux - Systèmes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Cybersecuriter/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cybersécurité
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Schéma/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Schémas
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Services/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Services
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Image/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Images
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Plan%20d%27adressage%20-%20CUB/" class="md-tabs__link">
+          
+  
+  
+  Configuration Réseau
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Agence Édimbourg - BTS SIO SISR" class="md-nav__button md-logo" aria-label="Agence Édimbourg - BTS SIO SISR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Agence Édimbourg - BTS SIO SISR
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Réseaux - Systèmes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réseaux - Systèmes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecuriter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cybersécurité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Schéma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schémas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Image/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Réseau
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration Réseau
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Plan%20d%27adressage%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan d'adressage - CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table%20NAT%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table NAT - CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table%20de%20Routage%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table de Routage - CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table%20de%20Translation%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table de Translation - CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informations-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informations Générales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-objectif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objectif
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-prerequis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Prérequis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Prérequis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametres-utilises-dans-cette-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paramètres utilisés dans cette documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-preparation-du-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Préparation du système
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Préparation du système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-mise-a-jour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Mise à jour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-verifier-la-configuration-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Vérifier la configuration réseau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-verifier-que-le-port-53-est-libre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Vérifier que le port 53 est libre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-fichier-de-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Fichier de configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-explication-des-principaux-parametres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Explication des principaux paramètres
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-controle-a-distance-unbound-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Contrôle à distance (unbound-control)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-validation-de-la-configuration-et-demarrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Validation de la configuration et démarrage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-entrees-dns-locales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Entrées DNS locales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Tests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-resolution-locale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Résolution locale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-resolution-depuis-un-client-du-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Résolution depuis un client du réseau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-test-du-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Test du cache
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-test-dnssec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Test DNSSEC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-test-du-controle-dacces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Test du contrôle d'accès
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-configuration-des-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Configuration des clients
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Configuration des clients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-serveur-lui-meme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Serveur lui-même
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-clients-du-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Clients du réseau
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-exploitation-et-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Exploitation et maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Exploitation et maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-commandes-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Commandes utiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-mises-a-jour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Mises à jour
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-depannage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Dépannage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-recapitulatif-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Récapitulatif des fichiers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Situation 2   Déploiement d'un Serveur DNS</h1>
+
+<hr />
+<h3 id="informations-generales">Informations Générales<a class="headerlink" href="#informations-generales" title="Permanent link">&para;</a></h3>
+<p><strong>Auteur :</strong> BISERAY Louis
+<strong>Date :</strong> 10/09/2026
+<strong>Sujet :</strong> Déploiement d'un Serveur DNS sur Debian 13</p>
+<hr />
+<h2 id="1-objectif">1. Objectif<a class="headerlink" href="#1-objectif" title="Permanent link">&para;</a></h2>
+<p>Cette documentation décrit l'installation et la configuration d'un <strong>serveur DNS Resolver sur Debian 13 à l'aide d'</strong>Unbound**.</p>
+<p>Le serveur a pour rôle de :</p>
+<ul>
+<li>résoudre les requêtes DNS des clients du réseau local en interrogeant directement les serveurs racine et les serveurs faisant autorité ;</li>
+<li>mettre en cache les réponses pour accélérer les résolutions suivantes ;</li>
+<li>valider les réponses avec <strong>DNSSEC</strong> ;</li>
+<li>ne répondre qu'aux clients autorisés (pas de resolver ouvert sur Internet).</li>
+</ul>
+<blockquote>
+<p><strong>Note :</strong> ce serveur est un <em>resolver</em>, pas un serveur <em>faisant autorité</em>. Il n'héberge pas de zone DNS publique.</p>
+</blockquote>
+<hr />
+<h2 id="2-prerequis">2. Prérequis<a class="headerlink" href="#2-prerequis" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Système</td>
+<td>Debian 13</td>
+</tr>
+<tr>
+<td>Accès</td>
+<td>Root ou utilisateur avec <code>sudo</code></td>
+</tr>
+<tr>
+<td>Réseau</td>
+<td>Adresse IP <strong>statique</strong></td>
+</tr>
+<tr>
+<td>Connectivité sortante</td>
+<td>UDP/TCP 53 vers Internet</td>
+</tr>
+<tr>
+<td>Filtrage</td>
+<td>Géré par le pare-feu Stormshield (UDP/TCP 53 entrant depuis le LAN, sortant vers Internet)</td>
+</tr>
+<tr>
+<td>Logiciel</td>
+<td>Unbound</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parametres-utilises-dans-cette-documentation">Paramètres utilisés dans cette documentation<a class="headerlink" href="#parametres-utilises-dans-cette-documentation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur d'exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom d'hôte</td>
+<td><code>dns01</code></td>
+</tr>
+<tr>
+<td>IP du serveur</td>
+<td><code>192.168.1.10</code></td>
+</tr>
+<tr>
+<td>Réseau client autorisé</td>
+<td><code>192.168.1.0/24</code></td>
+</tr>
+<tr>
+<td>Domaine local</td>
+<td><code>lan.example</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-preparation-du-systeme">3. Préparation du système<a class="headerlink" href="#3-preparation-du-systeme" title="Permanent link">&para;</a></h2>
+<h3 id="31-mise-a-jour">3.1 Mise à jour<a class="headerlink" href="#31-mise-a-jour" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>full-upgrade<span class="w"> </span>-y
+</code></pre></div>
+<h3 id="32-verifier-la-configuration-reseau">3.2 Vérifier la configuration réseau<a class="headerlink" href="#32-verifier-la-configuration-reseau" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>-br<span class="w"> </span>a
+hostnamectl
+</code></pre></div>
+<p>L'adresse IP du serveur doit être fixe. Exemple avec <code>/etc/network/interfaces</code> :</p>
+<div class="highlight"><pre><span></span><code>auto ens18
+iface ens18 inet static
+    address 192.168.1.10/24
+    gateway 192.168.1.1
+</code></pre></div>
+<h3 id="33-verifier-que-le-port-53-est-libre">3.3 Vérifier que le port 53 est libre<a class="headerlink" href="#33-verifier-que-le-port-53-est-libre" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">':53 '</span>
+</code></pre></div>
+<p>Aucune sortie ne doit apparaître. Si un service occupe déjà le port (par exemple <code>systemd-resolved</code>), le désactiver :</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>--now<span class="w"> </span>systemd-resolved
+</code></pre></div>
+<hr />
+<h2 id="4-installation">4. Installation<a class="headerlink" href="#4-installation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>unbound<span class="w"> </span>dnsutils
+</code></pre></div>
+<ul>
+<li><code>unbound</code> : le serveur resolver ;</li>
+<li><code>dnsutils</code> : fournit <code>dig</code> pour les tests.</li>
+</ul>
+<p>Vérification de la version installée et de l'état du service :</p>
+<div class="highlight"><pre><span></span><code>unbound<span class="w"> </span>-V
+systemctl<span class="w"> </span>status<span class="w"> </span>unbound
+</code></pre></div>
+<hr />
+<h2 id="5-configuration">5. Configuration<a class="headerlink" href="#5-configuration" title="Permanent link">&para;</a></h2>
+<p>Debian charge automatiquement tous les fichiers <code>*.conf</code> du dossier <code>/etc/unbound/unbound.conf.d/</code>. On crée donc un fichier dédié plutôt que de modifier <code>unbound.conf</code>.</p>
+<div class="highlight"><pre><span></span><code>sudoedit<span class="w"> </span>/etc/unbound/unbound.conf.d/resolver.conf
+</code></pre></div>
+<h3 id="51-fichier-de-configuration">5.1 Fichier de configuration<a class="headerlink" href="#51-fichier-de-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">server</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># --- Écoute ---</span>
+<span class="w">    </span><span class="nt">interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
+<span class="w">    </span><span class="nt">interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.10</span>
+<span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">53</span>
+
+<span class="w">    </span><span class="nt">do-ip4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">do-ip6</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
+<span class="w">    </span><span class="nt">do-udp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">do-tcp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+
+<span class="w">    </span><span class="c1"># --- Contrôle d'accès ---</span>
+<span class="w">    </span><span class="nt">access-control</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.0/8 allow</span>
+<span class="w">    </span><span class="nt">access-control</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.0/24 allow</span>
+<span class="w">    </span><span class="nt">access-control</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0 refuse</span>
+
+<span class="w">    </span><span class="c1"># --- Confidentialité / durcissement ---</span>
+<span class="w">    </span><span class="nt">hide-identity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">hide-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">qname-minimisation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">harden-glue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">harden-dnssec-stripped</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">harden-below-nxdomain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">aggressive-nsec</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">use-caps-for-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
+
+<span class="w">    </span><span class="c1"># --- Performances / cache ---</span>
+<span class="w">    </span><span class="nt">num-threads</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">msg-cache-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64m</span>
+<span class="w">    </span><span class="nt">rrset-cache-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128m</span>
+<span class="w">    </span><span class="nt">cache-min-ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">300</span>
+<span class="w">    </span><span class="nt">cache-max-ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">86400</span>
+<span class="w">    </span><span class="nt">prefetch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">prefetch-key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+
+<span class="w">    </span><span class="c1"># --- Logs ---</span>
+<span class="w">    </span><span class="nt">verbosity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">use-syslog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">log-queries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
+</code></pre></div>
+<h3 id="52-explication-des-principaux-parametres">5.2 Explication des principaux paramètres<a class="headerlink" href="#52-explication-des-principaux-parametres" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>interface</code></td>
+<td>Adresses sur lesquelles Unbound écoute.</td>
+</tr>
+<tr>
+<td><code>access-control</code></td>
+<td>Définit qui peut interroger le serveur. Tout ce qui n'est pas autorisé est refusé.</td>
+</tr>
+<tr>
+<td><code>hide-identity</code> / <code>hide-version</code></td>
+<td>Empêche la divulgation du nom et de la version du serveur.</td>
+</tr>
+<tr>
+<td><code>qname-minimisation</code></td>
+<td>N'envoie aux serveurs amont que la partie du nom strictement nécessaire (meilleure confidentialité).</td>
+</tr>
+<tr>
+<td><code>harden-*</code></td>
+<td>Rejette les réponses suspectes ou incohérentes.</td>
+</tr>
+<tr>
+<td><code>prefetch</code></td>
+<td>Renouvelle en avance les entrées de cache bientôt expirées.</td>
+</tr>
+<tr>
+<td><code>cache-min-ttl</code></td>
+<td>Impose un TTL minimum de 5 minutes pour limiter les requêtes répétées.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-controle-a-distance-unbound-control">5.3 Contrôle à distance (unbound-control)<a class="headerlink" href="#53-controle-a-distance-unbound-control" title="Permanent link">&para;</a></h3>
+<p>Pour pouvoir utiliser <code>unbound-control</code> (statistiques, vidage du cache), créer :</p>
+<div class="highlight"><pre><span></span><code>sudoedit<span class="w"> </span>/etc/unbound/unbound.conf.d/remote-control.conf
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">remote-control</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">control-enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="w">    </span><span class="nt">control-interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/run/unbound.sock</span>
+</code></pre></div>
+<hr />
+<h2 id="6-validation-de-la-configuration-et-demarrage">6. Validation de la configuration et démarrage<a class="headerlink" href="#6-validation-de-la-configuration-et-demarrage" title="Permanent link">&para;</a></h2>
+<p>Toujours valider la syntaxe avant de redémarrer :</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>unbound-checkconf
+</code></pre></div>
+<p>Résultat attendu :</p>
+<div class="highlight"><pre><span></span><code>unbound-checkconf: no errors in /etc/unbound/unbound.conf
+</code></pre></div>
+<p>Activation et démarrage du service :</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>unbound
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>unbound
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>unbound
+</code></pre></div>
+<p>Vérifier l'écoute sur le port 53 :</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>unbound
+</code></pre></div>
+<hr />
+<h2 id="7-entrees-dns-locales">7. Entrées DNS locales<a class="headerlink" href="#7-entrees-dns-locales" title="Permanent link">&para;</a></h2>
+<p>Pour résoudre des noms internes sans serveur DNS dédié, ajouter dans <code>/etc/unbound/unbound.conf.d/local.conf</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">server</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">local-zone</span><span class="p">:</span><span class="w"> </span><span class="s">"lan.example."</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">static</span>
+
+<span class="w">    </span><span class="nt">local-data</span><span class="p">:</span><span class="w"> </span><span class="s">"dns01.lan.example.</span><span class="nv">     </span><span class="s">IN</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">192.168.1.10"</span>
+<span class="w">    </span><span class="nt">local-data</span><span class="p">:</span><span class="w"> </span><span class="s">"nas.lan.example.</span><span class="nv">       </span><span class="s">IN</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">192.168.1.20"</span>
+<span class="w">    </span><span class="nt">local-data-ptr</span><span class="p">:</span><span class="w"> </span><span class="s">"192.168.1.10</span><span class="nv"> </span><span class="s">dns01.lan.example."</span>
+<span class="w">    </span><span class="nt">local-data-ptr</span><span class="p">:</span><span class="w"> </span><span class="s">"192.168.1.20</span><span class="nv"> </span><span class="s">nas.lan.example."</span>
+</code></pre></div>
+<p>Puis :</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>unbound-checkconf<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>unbound
+</code></pre></div>
+<blockquote>
+<p>Avec <code>static</code>, tout nom non déclaré dans la zone <code>lan.example.</code> renverra <code>NXDOMAIN</code>.</p>
+</blockquote>
+<hr />
+<h2 id="8-tests">8. Tests<a class="headerlink" href="#8-tests" title="Permanent link">&para;</a></h2>
+<h3 id="81-resolution-locale">8.1 Résolution locale<a class="headerlink" href="#81-resolution-locale" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>@127.0.0.1<span class="w"> </span>debian.org
+</code></pre></div>
+<p>Vérifier :</p>
+<ul>
+<li><code>status: NOERROR</code> ;</li>
+<li>une section <code>ANSWER</code> non vide.</li>
+</ul>
+<h3 id="82-resolution-depuis-un-client-du-reseau">8.2 Résolution depuis un client du réseau<a class="headerlink" href="#82-resolution-depuis-un-client-du-reseau" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>@192.168.1.10<span class="w"> </span>debian.org
+</code></pre></div>
+<h3 id="83-test-du-cache">8.3 Test du cache<a class="headerlink" href="#83-test-du-cache" title="Permanent link">&para;</a></h3>
+<p>Exécuter deux fois la même requête et comparer le temps de réponse :</p>
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>@192.168.1.10<span class="w"> </span>debian.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"Query time"</span>
+dig<span class="w"> </span>@192.168.1.10<span class="w"> </span>debian.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"Query time"</span>
+</code></pre></div>
+<p>Le second résultat doit être nettement plus faible (généralement <code>0 msec</code>).</p>
+<h3 id="84-test-dnssec">8.4 Test DNSSEC<a class="headerlink" href="#84-test-dnssec" title="Permanent link">&para;</a></h3>
+<p>Domaine correctement signé : le flag <code>ad</code> (Authenticated Data) doit être présent.</p>
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>@192.168.1.10<span class="w"> </span>+dnssec<span class="w"> </span>debian.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>flags
+</code></pre></div>
+<p>Domaine volontairement mal signé : la réponse doit être <code>SERVFAIL</code>.</p>
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>@192.168.1.10<span class="w"> </span>sigfail.verteiltesysteme.net
+</code></pre></div>
+<p>Domaine correctement signé de contrôle (doit répondre <code>NOERROR</code> avec le flag <code>ad</code>) :</p>
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>@192.168.1.10<span class="w"> </span>sigok.verteiltesysteme.net
+</code></pre></div>
+<h3 id="85-test-du-controle-dacces">8.5 Test du contrôle d'accès<a class="headerlink" href="#85-test-du-controle-dacces" title="Permanent link">&para;</a></h3>
+<p>Depuis une machine <strong>hors</strong> du réseau autorisé, la requête doit être refusée (<code>REFUSED</code>) ou ne pas aboutir (timeout si le Stormshield bloque le flux).</p>
+<hr />
+<h2 id="9-configuration-des-clients">9. Configuration des clients<a class="headerlink" href="#9-configuration-des-clients" title="Permanent link">&para;</a></h2>
+<h3 id="91-serveur-lui-meme">9.1 Serveur lui-même<a class="headerlink" href="#91-serveur-lui-meme" title="Permanent link">&para;</a></h3>
+<p>Éditer <code>/etc/resolv.conf</code> :</p>
+<div class="highlight"><pre><span></span><code>nameserver 127.0.0.1
+</code></pre></div>
+<h3 id="92-clients-du-reseau">9.2 Clients du réseau<a class="headerlink" href="#92-clients-du-reseau" title="Permanent link">&para;</a></h3>
+<p>Renseigner <code>192.168.1.10</code> comme serveur DNS :</p>
+<ul>
+<li>soit manuellement sur chaque machine ;</li>
+<li>soit via le serveur DHCP (option 6 <em>domain-name-servers</em>), ce qui est la méthode recommandée.</li>
+</ul>
+<hr />
+<h2 id="10-exploitation-et-maintenance">10. Exploitation et maintenance<a class="headerlink" href="#10-exploitation-et-maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="101-commandes-utiles">10.1 Commandes utiles<a class="headerlink" href="#101-commandes-utiles" title="Permanent link">&para;</a></h3>
+<p>bash</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Statistiques</span>
+sudo<span class="w"> </span>unbound-control<span class="w"> </span>stats_noreset
+
+<span class="c1"># Vider le cache d'un domaine</span>
+sudo<span class="w"> </span>unbound-control<span class="w"> </span>flush<span class="w"> </span>debian.org
+
+<span class="c1"># Vider tout le cache</span>
+sudo<span class="w"> </span>unbound-control<span class="w"> </span>flush_zone<span class="w"> </span>.
+
+<span class="c1"># Recharger la configuration sans coupure</span>
+sudo<span class="w"> </span>unbound-control<span class="w"> </span>reload
+</code></pre></div>
+<h3 id="102-logs">10.2 Logs<a class="headerlink" href="#102-logs" title="Permanent link">&para;</a></h3>
+<p>bash</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>unbound<span class="w"> </span>-f
+</code></pre></div>
+<p>La verbosité reste fixée à <code>1</code> (<code>verbosity: 1</code>) en fonctionnement normal. Pour un débogage ponctuel, il est possible d'activer temporairement <code>log-queries: yes</code>, puis de recharger le service. <strong>Penser à le remettre à <code>no</code> ensuite</strong>, car les logs de requêtes contiennent des données personnelles.</p>
+<h3 id="103-mises-a-jour">10.3 Mises à jour<a class="headerlink" href="#103-mises-a-jour" title="Permanent link">&para;</a></h3>
+<p>bash</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</code></pre></div>
+<hr />
+<h2 id="11-depannage">11. Dépannage<a class="headerlink" href="#11-depannage" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptôme</th>
+<th>Cause probable</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unbound</code> ne démarre pas</td>
+<td>Erreur de syntaxe</td>
+<td><code>sudo unbound-checkconf</code>, puis <code>journalctl -u unbound</code></td>
+</tr>
+<tr>
+<td><code>address already in use</code></td>
+<td>Port 53 déjà utilisé</td>
+<td><code>ss -tulpn \| grep :53</code>, arrêter le service concurrent</td>
+</tr>
+<tr>
+<td><code>REFUSED</code> côté client</td>
+<td>IP du client absente d'<code>access-control</code></td>
+<td>Ajouter le réseau et recharger</td>
+</tr>
+<tr>
+<td>Timeout côté client</td>
+<td>Flux bloqué par le Stormshield ou mauvaise <code>interface</code></td>
+<td>Vérifier la règle de filtrage (UDP/TCP 53) sur le Stormshield et les lignes <code>interface</code></td>
+</tr>
+<tr>
+<td><code>SERVFAIL</code> sur tous les domaines</td>
+<td>Pas de sortie Internet ou DNSSEC en échec</td>
+<td>Tester <code>dig @127.0.0.1 debian.org +cd</code> ; vérifier l'heure système (NTP)</td>
+</tr>
+<tr>
+<td><code>SERVFAIL</code> DNSSEC généralisé</td>
+<td>Horloge incorrecte</td>
+<td><code>timedatectl</code> et activer la synchronisation NTP</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="12-recapitulatif-des-fichiers">12. Récapitulatif des fichiers<a class="headerlink" href="#12-recapitulatif-des-fichiers" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fichier</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/etc/unbound/unbound.conf</code></td>
+<td>Configuration principale (inclut le dossier <code>unbound.conf.d</code>)</td>
+</tr>
+<tr>
+<td><code>/etc/unbound/unbound.conf.d/resolver.conf</code></td>
+<td>Configuration du resolver</td>
+</tr>
+<tr>
+<td><code>/etc/unbound/unbound.conf.d/local.conf</code></td>
+<td>Entrées DNS locales (optionnel)</td>
+</tr>
+<tr>
+<td><code>/etc/unbound/unbound.conf.d/remote-control.conf</code></td>
+<td>Activation d'<code>unbound-control</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="13-conclusion">13. Conclusion<a class="headerlink" href="#13-conclusion" title="Permanent link">&para;</a></h2>
+<p>Le serveur Debian 13 fournit désormais un service de résolution DNS récursif, avec cache, validation DNSSEC et accès restreint au réseau local. Les tests de la section 8 permettent de valider le bon fonctionnement avant la mise en production.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Projet BTS SIO SISR - Tous droits réservés
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/louisbiseray-bot/Edimbourg" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

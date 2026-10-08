@@ -1,0 +1,2089 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation du projet de mise en place d'une agence à Édimbourg">
+      
+      
+        <meta name="author" content="BISERAY Louis - ACKIN Enes">
+      
+      
+        <link rel="canonical" href="https://louisbiseray-bot.github.io/Edimbourg/Cybersecuriter/Situation%203/Situation%203%20-%20Configuration%20Stormshield/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Situation 3 Configuration Stormshield - Agence Édimbourg - BTS SIO SISR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#informations-generales" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Agence Édimbourg - BTS SIO SISR" class="md-header__button md-logo" aria-label="Agence Édimbourg - BTS SIO SISR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agence Édimbourg - BTS SIO SISR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Situation 3   Configuration Stormshield
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Mode clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mode sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Réseaux - Systèmes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Réseaux - Systèmes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cybersécurité
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Schéma/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Schémas
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Services/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Services
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Image/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Images
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Plan%20d%27adressage%20-%20CUB/" class="md-tabs__link">
+          
+  
+  
+  Configuration Réseau
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Agence Édimbourg - BTS SIO SISR" class="md-nav__button md-logo" aria-label="Agence Édimbourg - BTS SIO SISR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Agence Édimbourg - BTS SIO SISR
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Réseaux - Systèmes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réseaux - Systèmes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cybersécurité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Schéma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schémas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Image/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Réseau
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration Réseau
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Plan%20d%27adressage%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan d'adressage - CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table%20NAT%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table NAT - CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table%20de%20Routage%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table de Routage - CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Table%20de%20Translation%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table de Translation - CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informations-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informations Générales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-objectif-et-perimetre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objectif et périmètre
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-plan-dadressage-de-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Plan d'adressage de référence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Plan d&#39;adressage de référence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-interfaces-du-stormshield" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Interfaces du Stormshield
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-reseaux-a-connaitre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Réseaux à connaître
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-prerequis-et-acces-initial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prérequis et accès initial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Prérequis et accès initial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-cablage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Câblage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-premiere-connexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Première connexion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configuration-des-interfaces-in-out-dmz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Configuration des interfaces (IN / OUT / DMZ)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Configuration des interfaces (IN / OUT / DMZ)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-interface-in-lan-interne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Interface IN – LAN interne
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-interface-out-sortie-vers-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Interface OUT – Sortie vers Internet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-interface-dmz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Interface DMZ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Vérification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configuration-des-objets-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configuration des objets réseau
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configuration des objets réseau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-objets-predefinis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Objets prédéfinis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-objets-a-creer-machines-hote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Objets à créer – Machines (Hôte)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-objets-a-creer-reseaux-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Objets à créer – Réseaux (Réseau)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-objets-a-creer-groupes-groupe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Objets à créer – Groupes (Groupe)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configuration-du-routage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Configuration du routage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Configuration du routage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-route-par-defaut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Route par défaut
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-cote-edg-sw-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Côté edg-sw-core
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-configuration-du-nat-et-du-pat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Configuration du NAT et du PAT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Configuration du NAT et du PAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-principe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Principe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-regle-1-pas-de-nat-entre-le-lan-et-la-dmz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Règle 1 – Pas de NAT entre le LAN et la DMZ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-regle-2-pas-de-nat-pour-la-dmz-exclusion-du-nat-sortant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Règle 2 – Pas de NAT pour la DMZ (exclusion du NAT sortant)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-regle-3-pat-du-lan-vers-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Règle 3 – PAT du LAN vers Internet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-tableau-recapitulatif-de-la-politique-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Tableau récapitulatif de la politique NAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-politique-de-filtrage-a-voir-avec-les-professeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Politique de filtrage (A voir avec les professeurs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-tests-de-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Tests de validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Tests de validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-verifier-le-nat-pat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Vérifier le NAT / PAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-consulter-les-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Consulter les logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-depannage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Dépannage
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Situation 3   Configuration Stormshield</h1>
+
+<hr />
+<h3 id="informations-generales">Informations Générales<a class="headerlink" href="#informations-generales" title="Permanent link">&para;</a></h3>
+<p><strong>Auteur :</strong> BISERAY Louis
+<strong>Date :</strong> 09/09/2026
+<strong>Sujet :</strong> Configuration du pare-feu Stormshield </p>
+<hr />
+<h2 id="1-objectif-et-perimetre">1. Objectif et périmètre<a class="headerlink" href="#1-objectif-et-perimetre" title="Permanent link">&para;</a></h2>
+<p>Le Stormshield doit assurer trois fonctions :</p>
+<ol>
+<li><strong>Segmenter</strong> le réseau en trois zones : <strong>IN</strong> (LAN interne), <strong>OUT</strong> (vers Internet / <code>main-firewall</code>) et <strong>DMZ</strong>.</li>
+<li><strong>Router</strong> le trafic entre ces zones et vers les VLAN du LAN (via <code>edg-sw-core</code>).</li>
+<li><strong>Translater</strong> (NAT / PAT) le trafic sortant du LAN, et <strong>ne pas translater</strong> la DMZ, conformément à la logique de la maquette.</li>
+</ol>
+<hr />
+<h2 id="2-plan-dadressage-de-reference">2. Plan d'adressage de référence<a class="headerlink" href="#2-plan-dadressage-de-reference" title="Permanent link">&para;</a></h2>
+<h3 id="21-interfaces-du-stormshield">2.1 Interfaces du Stormshield<a class="headerlink" href="#21-interfaces-du-stormshield" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>Nom d'interface SNS</th>
+<th>Adresse IP / masque</th>
+<th>Voisin direct</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IN</strong></td>
+<td><code>in</code></td>
+<td><code>192.168.55.254/29</code></td>
+<td><code>edg-sw-core</code> (Vlan2 – <code>192.168.55.253</code>)</td>
+<td>Interco vers le LAN</td>
+</tr>
+<tr>
+<td><strong>OUT</strong></td>
+<td><code>out</code></td>
+<td><code>192.36.253.50/24</code></td>
+<td><code>main-firewall</code> Gi0/0 (<code>192.36.253.254</code>)</td>
+<td>Sortie vers Internet</td>
+</tr>
+<tr>
+<td><strong>DMZ</strong></td>
+<td><code>dmz1</code></td>
+<td><code>192.36.5.254/24</code></td>
+<td>Serveur DMZ (<code>192.36.5.1</code>)</td>
+<td>Zone démilitarisée</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-reseaux-a-connaitre">2.2 Réseaux à connaître<a class="headerlink" href="#22-reseaux-a-connaitre" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Réseau</th>
+<th>CIDR</th>
+<th>Passerelle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLAN 55 – Production</td>
+<td><code>192.168.5.0/25</code></td>
+<td><code>192.168.5.126</code> (SVI edg-sw-core)</td>
+</tr>
+<tr>
+<td>VLAN 10 – Client</td>
+<td><code>192.168.5.128/26</code></td>
+<td><code>192.168.5.190</code> (SVI edg-sw-core)</td>
+</tr>
+<tr>
+<td>VLAN 20 – AdminSys</td>
+<td><code>192.168.5.192/28</code></td>
+<td><code>192.168.5.206</code> (SVI edg-sw-core)</td>
+</tr>
+<tr>
+<td>VLAN 2 – Interco cœur/pare-feu</td>
+<td><code>192.168.55.248/29</code></td>
+<td><code>192.168.55.254</code> (Stormshield)</td>
+</tr>
+<tr>
+<td>DMZ</td>
+<td><code>192.36.5.0/24</code></td>
+<td><code>192.36.5.254</code> (Stormshield)</td>
+</tr>
+<tr>
+<td>Interco pare-feux</td>
+<td><code>192.36.253.0/24</code></td>
+<td>point à point</td>
+</tr>
+<tr>
+<td>Internet simulé</td>
+<td><code>172.16.28.0/22</code></td>
+<td><code>172.16.31.250</code> (main-firewall)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-prerequis-et-acces-initial">3. Prérequis et accès initial<a class="headerlink" href="#3-prerequis-et-acces-initial" title="Permanent link">&para;</a></h2>
+<h3 id="31-cablage">3.1 Câblage<a class="headerlink" href="#31-cablage" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Port Stormshield</th>
+<th>Zone</th>
+<th>Connecté à</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Port « IN »</td>
+<td>IN</td>
+<td><code>edg-sw-core</code> Gi0/1 (port en <code>access vlan 2</code>)</td>
+</tr>
+<tr>
+<td>Port « OUT »</td>
+<td>OUT</td>
+<td><code>main-firewall</code> Gi0/0</td>
+</tr>
+<tr>
+<td>Port « DMZ1 »</td>
+<td>DMZ</td>
+<td>Serveur DMZ (câble direct ou commutateur dédié)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-premiere-connexion">3.2 Première connexion<a class="headerlink" href="#32-premiere-connexion" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Brancher un PC directement sur l'interface <strong>IN</strong> du Stormshield et lui donner une IP dans le même réseau que l'adresse d'usine. <em>(Adresse d'usine usuelle sur l'interface IN : <code>10.0.0.254/8</code> – à vérifier dans la fiche du modèle.)</em></li>
+<li>Ouvrir <code>https://10.0.0.254/admin</code>.</li>
+<li>S'authentifier (compte <code>admin</code>, mot de passe d'usine à <strong>changer</strong>).</li>
+</ol>
+<hr />
+<h2 id="4-configuration-des-interfaces-in-out-dmz">4. Configuration des interfaces (IN / OUT / DMZ)<a class="headerlink" href="#4-configuration-des-interfaces-in-out-dmz" title="Permanent link">&para;</a></h2>
+<p>Menu : <strong>Configuration → Réseau → Interfaces</strong></p>
+<h3 id="41-interface-in-lan-interne">4.1 Interface IN – LAN interne<a class="headerlink" href="#41-interface-in-lan-interne" title="Permanent link">&para;</a></h3>
+<p>Double-cliquer sur l'interface <code>in</code> :</p>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom</td>
+<td><code>in</code></td>
+</tr>
+<tr>
+<td>Commentaire</td>
+<td><code>Interco vers edg-sw-core (VLAN 2)</code></td>
+</tr>
+<tr>
+<td>Interface</td>
+<td><strong>Interne</strong></td>
+</tr>
+<tr>
+<td>Adresse IPv4</td>
+<td><strong>Adresse fixe</strong></td>
+</tr>
+<tr>
+<td>Adresse IP / masque</td>
+<td><code>192.168.55.254</code> / <code>255.255.255.248</code></td>
+</tr>
+</tbody>
+</table>
+<p>Cliquer sur <strong>Appliquer</strong>.</p>
+<h3 id="42-interface-out-sortie-vers-internet">4.2 Interface OUT – Sortie vers Internet<a class="headerlink" href="#42-interface-out-sortie-vers-internet" title="Permanent link">&para;</a></h3>
+<p>Double-cliquer sur l'interface <code>out</code> :</p>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom</td>
+<td><code>out</code></td>
+</tr>
+<tr>
+<td>Commentaire</td>
+<td><code>Lien vers main-firewall</code></td>
+</tr>
+<tr>
+<td>Interface</td>
+<td><strong>Externe (publique)</strong></td>
+</tr>
+<tr>
+<td>Adresse IPv4</td>
+<td><strong>Adresse fixe</strong> (et non DHCP)</td>
+</tr>
+<tr>
+<td>Adresse IP / masque</td>
+<td><code>192.36.253.50</code> / <code>255.255.255.0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Cliquer sur <strong>Appliquer</strong>.</p>
+<h3 id="43-interface-dmz">4.3 Interface DMZ<a class="headerlink" href="#43-interface-dmz" title="Permanent link">&para;</a></h3>
+<p>Double-cliquer sur l'interface <code>dmz1</code> :</p>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom</td>
+<td><code>dmz1</code></td>
+</tr>
+<tr>
+<td>Commentaire</td>
+<td><code>Zone DMZ</code></td>
+</tr>
+<tr>
+<td>Interface</td>
+<td><strong>Interne</strong></td>
+</tr>
+<tr>
+<td>Adresse IPv4</td>
+<td><strong>Adresse fixe</strong></td>
+</tr>
+<tr>
+<td>Adresse IP / masque</td>
+<td><code>192.36.5.254</code> / <code>255.255.255.0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Cliquer sur <strong>Appliquer</strong>.</p>
+<h3 id="44-verification">4.4 Vérification<a class="headerlink" href="#44-verification" title="Permanent link">&para;</a></h3>
+<p>Dans <strong>Configuration → Réseau → Interfaces</strong>, les trois interfaces doivent apparaître avec leur adresse et un état <strong>actif</strong> (lien up). Contrôle rapide depuis <strong>Tableau de bord → Réseau</strong>.</p>
+<hr />
+<h2 id="5-configuration-des-objets-reseau">5. Configuration des objets réseau<a class="headerlink" href="#5-configuration-des-objets-reseau" title="Permanent link">&para;</a></h2>
+<p>Menu : <strong>Configuration → Objets → Objets réseau</strong></p>
+<p>Les objets rendent les règles de filtrage et de NAT lisibles et maintenables. </p>
+<h3 id="51-objets-predefinis">5.1 Objets prédéfinis<a class="headerlink" href="#51-objets-predefinis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Objet</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Firewall_in</code></td>
+<td>IP du firewall sur l'interface IN (<code>192.168.55.254</code>)</td>
+</tr>
+<tr>
+<td><code>Firewall_out</code></td>
+<td>IP du firewall sur l'interface OUT (<code>192.36.253.50</code>)</td>
+</tr>
+<tr>
+<td><code>Firewall_dmz1</code></td>
+<td>IP du firewall sur l'interface DMZ (<code>192.36.5.254</code>)</td>
+</tr>
+<tr>
+<td><code>Network_in</code></td>
+<td>Réseau directement connecté à IN (<code>192.168.55.248/29</code>)</td>
+</tr>
+<tr>
+<td><code>Network_dmz1</code></td>
+<td>Réseau directement connecté à DMZ (<code>192.36.5.0/24</code>)</td>
+</tr>
+<tr>
+<td><code>Internet</code></td>
+<td>Tout ce qui n'est pas un réseau interne/protégé</td>
+</tr>
+<tr>
+<td><code>Any</code></td>
+<td>Tout</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-objets-a-creer-machines-hote">5.2 Objets à créer – Machines (<code>Hôte</code>)<a class="headerlink" href="#52-objets-a-creer-machines-hote" title="Permanent link">&para;</a></h3>
+<p>Cliquer sur <strong>Ajouter → Machine</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Adresse IP</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host_sw_core_vlan2</code></td>
+<td><code>192.168.55.253</code></td>
+<td>SVI Vlan2 de <code>edg-sw-core</code> (prochain saut vers le LAN)</td>
+</tr>
+<tr>
+<td><code>host_main_firewall</code></td>
+<td><code>192.36.253.254</code></td>
+<td>Passerelle par défaut (Gi0/0 de <code>main-firewall</code>)</td>
+</tr>
+<tr>
+<td><code>host_srv_dmz</code></td>
+<td><code>192.36.5.1</code></td>
+<td>Serveur hébergé en DMZ</td>
+</tr>
+<tr>
+<td><code>host_srv_internet</code></td>
+<td><code>172.16.31.251</code></td>
+<td>Serveur simulant Internet</td>
+</tr>
+<tr>
+<td><code>host_pc_adminsys</code></td>
+<td><code>192.168.5.193</code></td>
+<td>Poste d'administration (VLAN 20)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-objets-a-creer-reseaux-reseau">5.3 Objets à créer – Réseaux (<code>Réseau</code>)<a class="headerlink" href="#53-objets-a-creer-reseaux-reseau" title="Permanent link">&para;</a></h3>
+<p>Cliquer sur <strong>Ajouter → Réseau</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Adresse réseau</th>
+<th>Masque</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>net_vlan10_client</code></td>
+<td><code>192.168.5.128</code></td>
+<td><code>/26</code></td>
+<td>VLAN 10 – Client</td>
+</tr>
+<tr>
+<td><code>net_vlan20_adminsys</code></td>
+<td><code>192.168.5.192</code></td>
+<td><code>/28</code></td>
+<td>VLAN 20 – AdminSys</td>
+</tr>
+<tr>
+<td><code>net_vlan55_prod</code></td>
+<td><code>192.168.5.0</code></td>
+<td><code>/25</code></td>
+<td>VLAN 55 – Production</td>
+</tr>
+<tr>
+<td><code>net_interco_core</code></td>
+<td><code>192.168.55.248</code></td>
+<td><code>/29</code></td>
+<td>VLAN 2 – Interco cœur/pare-feu</td>
+</tr>
+<tr>
+<td><code>net_dmz</code></td>
+<td><code>192.36.5.0</code></td>
+<td><code>/24</code></td>
+<td>DMZ</td>
+</tr>
+<tr>
+<td><code>net_interco_fw</code></td>
+<td><code>192.36.253.0</code></td>
+<td><code>/24</code></td>
+<td>Interco entre pare-feux</td>
+</tr>
+<tr>
+<td><code>net_internet_sim</code></td>
+<td><code>172.16.28.0</code></td>
+<td><code>/22</code></td>
+<td>Internet simulé</td>
+</tr>
+</tbody>
+</table>
+<h3 id="54-objets-a-creer-groupes-groupe">5.4 Objets à créer – Groupes (<code>Groupe</code>)<a class="headerlink" href="#54-objets-a-creer-groupes-groupe" title="Permanent link">&para;</a></h3>
+<p>Cliquer sur <strong>Ajouter → Groupe</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Nom du groupe</th>
+<th>Membres</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grp_lan_users</code></td>
+<td><code>net_vlan10_client</code>, <code>net_vlan20_adminsys</code>, <code>net_vlan55_prod</code></td>
+<td>Tous les VLAN utilisateurs (sources des règles NAT et filtrage)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>L'usage du groupe évite de dupliquer trois règles. Si un VLAN est ajouté plus tard, il suffit de l'ajouter au groupe.</p>
+</blockquote>
+<hr />
+<h2 id="6-configuration-du-routage">6. Configuration du routage<a class="headerlink" href="#6-configuration-du-routage" title="Permanent link">&para;</a></h2>
+<p>Menu : <strong>Configuration → Réseau → Routage</strong></p>
+<p>Le Stormshield connaît seulement ses réseaux directement connectés (IN, OUT, DMZ). Il faut lui indiquer :</p>
+<ul>
+<li>où envoyer le trafic Internet → <strong>passerelle par défaut</strong> vers <code>main-firewall</code> ;</li>
+<li>où se trouvent les VLAN du LAN → <strong>routes statiques</strong> vers <code>edg-sw-core</code>.</li>
+</ul>
+<h3 id="61-route-par-defaut">6.1 Route par défaut<a class="headerlink" href="#61-route-par-defaut" title="Permanent link">&para;</a></h3>
+<p>Onglet <strong>Routes statiques → Passerelle par défaut</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Route par défaut</td>
+<td><code>host_main_firewall</code> (<code>192.36.253.254</code>)</td>
+</tr>
+<tr>
+<td>### 6.2 Routes statiques vers les VLAN du LAN</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Onglet <strong>Routes statiques IPv4 → Ajouter</strong> (une route par VLAN) :</p>
+<table>
+<thead>
+<tr>
+<th>Réseau de destination</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Commentaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>net_vlan55_prod</code></td>
+<td><code>host_sw_core_vlan2</code></td>
+<td><code>in</code></td>
+<td>Retour vers VLAN 55</td>
+</tr>
+<tr>
+<td><code>net_vlan10_client</code></td>
+<td><code>host_sw_core_vlan2</code></td>
+<td><code>in</code></td>
+<td>Retour vers VLAN 10</td>
+</tr>
+<tr>
+<td><code>net_vlan20_adminsys</code></td>
+<td><code>host_sw_core_vlan2</code></td>
+<td><code>in</code></td>
+<td>Retour vers VLAN 20</td>
+</tr>
+</tbody>
+</table>
+<p>Cliquer sur <strong>Appliquer</strong> après chaque ajout.</p>
+<h3 id="63-cote-edg-sw-core">6.3 Côté <code>edg-sw-core</code><a class="headerlink" href="#63-cote-edg-sw-core" title="Permanent link">&para;</a></h3>
+<p>La route par défaut du commutateur cœur doit pointer vers l'IP IN du Stormshield :</p>
+<div class="highlight"><pre><span></span><code>ip route 0.0.0.0 0.0.0.0 192.168.55.254
+</code></pre></div>
+<hr />
+<h2 id="7-configuration-du-nat-et-du-pat">7. Configuration du NAT et du PAT<a class="headerlink" href="#7-configuration-du-nat-et-du-pat" title="Permanent link">&para;</a></h2>
+<p>Menu : <strong>Configuration → Politique de sécurité → Filtrage et NAT → onglet NAT</strong></p>
+<h3 id="71-principe">7.1 Principe<a class="headerlink" href="#71-principe" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Flux</th>
+<th>Traitement</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LAN =&gt; DMZ</td>
+<td><strong>Pas de NAT</strong></td>
+<td>Routage direct, les IP source restent visibles</td>
+</tr>
+<tr>
+<td>DMZ =&gt; tous</td>
+<td><strong>Pas de NAT</strong></td>
+<td>La DMZ est exclue du NAT sortant (cohérent avec <code>access-list 1 deny host 192.36.5.1</code> de la maquette)</td>
+</tr>
+<tr>
+<td>LAN =&gt; Internet (<code>out</code>)</td>
+<td><strong>PAT</strong> sur <code>Firewall_out</code> = <code>192.36.253.50</code></td>
+<td>Toutes les IP du LAN sortent derrière une seule IP, comme sur <code>edg-firewall</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ce qui est ensuite fait par <code>main-firewall</code> : un second PAT sur <code>172.16.31.250</code> (double NAT en cascade).</p>
+<h3 id="72-regle-1-pas-de-nat-entre-le-lan-et-la-dmz">7.2 Règle 1 – Pas de NAT entre le LAN et la DMZ<a class="headerlink" href="#72-regle-1-pas-de-nat-entre-le-lan-et-la-dmz" title="Permanent link">&para;</a></h3>
+<p>Cliquer sur <strong>Nouvelle règle → Règle standard</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Colonne</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>État</td>
+<td><strong>On</strong></td>
+</tr>
+<tr>
+<td>Trafic d'origine =&gt; Source</td>
+<td><code>grp_lan_users</code></td>
+</tr>
+<tr>
+<td>Trafic d'origine =&gt; Destination</td>
+<td><code>net_dmz</code></td>
+</tr>
+<tr>
+<td>Trafic d'origine =&gt; Interface d'entrée</td>
+<td><code>in</code></td>
+</tr>
+<tr>
+<td>Port destination</td>
+<td><code>Any</code></td>
+</tr>
+<tr>
+<td>Trafic après translation =&gt; Source</td>
+<td><code>Any</code> (aucune translation)</td>
+</tr>
+<tr>
+<td>Trafic après translation =&gt; Destination</td>
+<td><code>Any</code> (aucune translation)</td>
+</tr>
+<tr>
+<td>Commentaire</td>
+<td><code>Pas de NAT LAN vers DMZ</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-regle-2-pas-de-nat-pour-la-dmz-exclusion-du-nat-sortant">7.3 Règle 2 – Pas de NAT pour la DMZ (exclusion du NAT sortant)<a class="headerlink" href="#73-regle-2-pas-de-nat-pour-la-dmz-exclusion-du-nat-sortant" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Colonne</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>État</td>
+<td><strong>On</strong></td>
+</tr>
+<tr>
+<td>Source d'origine</td>
+<td><code>net_dmz</code></td>
+</tr>
+<tr>
+<td>Destination d'origine</td>
+<td><code>Any</code></td>
+</tr>
+<tr>
+<td>Interface d'entrée</td>
+<td><code>dmz1</code></td>
+</tr>
+<tr>
+<td>Interface de sortie</td>
+<td><code>any</code></td>
+</tr>
+<tr>
+<td>Source après translation</td>
+<td><code>Any</code> (aucune translation)</td>
+</tr>
+<tr>
+<td>Commentaire</td>
+<td><code>DMZ exclue du NAT sortant</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="74-regle-3-pat-du-lan-vers-internet">7.4 Règle 3 – PAT du LAN vers Internet<a class="headerlink" href="#74-regle-3-pat-du-lan-vers-internet" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Colonne</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>État</td>
+<td><strong>On</strong></td>
+</tr>
+<tr>
+<td>Trafic d'origine =&gt; Source</td>
+<td><code>grp_lan_users</code></td>
+</tr>
+<tr>
+<td>Trafic d'origine =&gt; Destination</td>
+<td><code>Any</code></td>
+</tr>
+<tr>
+<td>Trafic d'origine =&gt; Interface d'entrée</td>
+<td><code>in</code></td>
+</tr>
+<tr>
+<td>Trafic d'origine =&gt; Interface de sortie (<em>« Trafic après translation »</em>)</td>
+<td><code>out</code></td>
+</tr>
+<tr>
+<td>Source translatée</td>
+<td><code>Firewall_out</code></td>
+</tr>
+<tr>
+<td>Port source translaté</td>
+<td><code>ephemeral_fw</code> (ports éphémères) – <strong>mode « aléatoire »</strong></td>
+</tr>
+<tr>
+<td>Destination translatée</td>
+<td><code>Any</code> (inchangée)</td>
+</tr>
+<tr>
+<td>Commentaire</td>
+<td><code>PAT LAN vers Internet (sur 192.36.253.50)</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Sélectionner <strong>Firewall_out</strong> comme source translatée équivaut à <code>ip nat inside source list 1 interface Gi0/1 overload</code> sur le routeur Cisco de la maquette.</p>
+</blockquote>
+<h3 id="75-tableau-recapitulatif-de-la-politique-nat">7.5 Tableau récapitulatif de la politique NAT<a class="headerlink" href="#75-tableau-recapitulatif-de-la-politique-nat" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>N°</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Entrée =&gt; Sortie</th>
+<th>Source translatée</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>grp_lan_users</code></td>
+<td><code>net_dmz</code></td>
+<td><code>in</code> =&gt; <code>dmz1</code></td>
+<td>—</td>
+<td>Pas de NAT LAN =&gt; DMZ</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>net_dmz</code></td>
+<td><code>Any</code></td>
+<td><code>dmz1</code> =&gt; <code>any</code></td>
+<td>—</td>
+<td>Pas de NAT DMZ</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>grp_lan_users</code></td>
+<td><code>Any</code></td>
+<td><code>in</code> =&gt; <code>out</code></td>
+<td><code>Firewall_out</code> (PAT)</td>
+<td>PAT LAN =&gt;Internet</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-politique-de-filtrage-a-voir-avec-les-professeurs">8. Politique de filtrage (A voir avec les professeurs)<a class="headerlink" href="#8-politique-de-filtrage-a-voir-avec-les-professeurs" title="Permanent link">&para;</a></h2>
+<p>Menu : <strong>Configuration → Politique de sécurité → Filtrage et NAT → onglet Filtrage</strong></p>
+<table>
+<thead>
+<tr>
+<th>N°</th>
+<th>Action</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Service</th>
+<th>Commentaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Passer</strong></td>
+<td><code>host_pc_adminsys</code></td>
+<td><code>Firewall_in</code></td>
+<td><code>https</code>, <code>ssh</code></td>
+<td>Administration du firewall depuis AdminSys uniquement</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Bloquer</strong></td>
+<td><code>Any</code></td>
+<td><code>Firewall_*</code> (tous)</td>
+<td><code>https</code>, <code>ssh</code></td>
+<td>Interdit l'administration depuis d'autres zones</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Passer</strong></td>
+<td><code>grp_lan_users</code></td>
+<td><code>net_dmz</code></td>
+<td><code>http</code>, <code>https</code>, <code>icmp</code> <em>(ajuster)</em></td>
+<td>Le LAN accède aux services de la DMZ</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Bloquer</strong></td>
+<td><code>net_dmz</code></td>
+<td><code>grp_lan_users</code></td>
+<td><code>Any</code></td>
+<td>La DMZ ne doit <strong>jamais</strong> initier de connexion vers le LAN</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Passer</strong></td>
+<td><code>grp_lan_users</code></td>
+<td><code>Internet</code></td>
+<td><code>http</code>, <code>https</code>, <code>dns</code>, <code>icmp</code></td>
+<td>Navigation et résolution DNS</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Bloquer</strong></td>
+<td><code>Any</code></td>
+<td><code>Any</code></td>
+<td><code>Any</code></td>
+<td>Règle finale « tout interdire » (avec journalisation)</td>
+</tr>
+</tbody>
+</table>
+<p>Cliquer sur <strong>Appliquer</strong> pour activer la politique.</p>
+<hr />
+<h2 id="9-tests-de-validation">9. Tests de validation<a class="headerlink" href="#9-tests-de-validation" title="Permanent link">&para;</a></h2>
+<p>Réaliser les tests dans cet ordre (du plus simple au plus complet) :</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Test</th>
+<th>Depuis</th>
+<th>Commande</th>
+<th>Résultat attendu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Lien IN</td>
+<td><code>edg-sw-core</code></td>
+<td><code>ping 192.168.55.254</code></td>
+<td>Réponse</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Lien OUT</td>
+<td>Stormshield (<em>Outils =&gt; Ping</em>)</td>
+<td>ping <code>192.36.253.254</code></td>
+<td>Réponse</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Lien DMZ</td>
+<td>Stormshield</td>
+<td>ping <code>192.36.5.1</code></td>
+<td>Réponse</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Route de retour LAN</td>
+<td>Stormshield</td>
+<td>ping <code>192.168.5.190</code> (SVI Vlan10)</td>
+<td>Réponse</td>
+</tr>
+<tr>
+<td>5</td>
+<td>LAN =&gt; DMZ</td>
+<td>PC Production</td>
+<td><code>ping 192.36.5.1</code></td>
+<td>Réponse (sans NAT)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>LAN =&gt; Internet</td>
+<td>PC Client</td>
+<td><code>ping 172.16.31.251</code></td>
+<td>Réponse (double PAT)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>DMZ =&gt; LAN</td>
+<td>Serveur DMZ</td>
+<td>ping <code>192.168.5.1</code></td>
+<td><strong>Échec attendu</strong> (règle 4)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Isolation admin</td>
+<td>PC Client</td>
+<td><code>https://192.168.55.254/admin</code></td>
+<td><strong>Échec attendu</strong> (règle 2)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="91-verifier-le-nat-pat">9.1 Vérifier le NAT / PAT<a class="headerlink" href="#91-verifier-le-nat-pat" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Supervision =&gt; Supervision des connexions</strong> : repérer la connexion du test 6. L'adresse source translatée doit être <code>192.36.253.50</code>.</li>
+<li>Sur <code>main-firewall</code> (Cisco) :</li>
+</ul>
+<div class="highlight"><pre><span></span><code>show ip nat translations
+</code></pre></div>
+<p>La source affichée côté extérieur doit être <code>172.16.31.250</code>.</p>
+<h3 id="92-consulter-les-logs">9.2 Consulter les logs<a class="headerlink" href="#92-consulter-les-logs" title="Permanent link">&para;</a></h3>
+<p><strong>Journaux =&gt; Trafic réseau</strong> : filtrer sur l'adresse source du test pour voir la règle appliquée (n° de règle de filtrage et NAT) et l'action (Passer / Bloquer).</p>
+<hr />
+<h2 id="10-depannage">10. Dépannage<a class="headerlink" href="#10-depannage" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptôme</th>
+<th>Cause probable</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Le LAN ne sort pas du tout</td>
+<td>Route par défaut du Stormshield absente/erronée</td>
+<td>Vérifier [[#6.2 Routes statiques vers les VLAN du LAN]]</td>
+</tr>
+<tr>
+<td>Ping OK vers le firewall mais pas au-delà</td>
+<td>Règle de filtrage manquante</td>
+<td>Consulter les journaux, ajouter la règle [[#8. Politique de filtrage (A voir avec les professeurs)]]</td>
+</tr>
+<tr>
+<td>La requête part mais aucune réponse</td>
+<td>Pas de route de retour vers les VLAN</td>
+<td>Vérifier [[#6.2 Routes statiques vers les VLAN du LAN]]</td>
+</tr>
+<tr>
+<td>Sortie Internet OK mais IP source non translatée</td>
+<td>Règle PAT absente ou placée <strong>après</strong> une règle « sans NAT » plus large</td>
+<td>Réordonner les règles NAT [[#7.5 Tableau récapitulatif de la politique NAT]]</td>
+</tr>
+<tr>
+<td><code>main-firewall</code> refuse le trafic</td>
+<td>Son ACL 1 n'autorise que <code>192.36.253.50</code></td>
+<td>Vérifier que le PAT utilise bien <code>Firewall_out</code></td>
+</tr>
+<tr>
+<td>DMZ non joignable depuis le LAN</td>
+<td>NAT appliqué à tort sur LAN→DMZ</td>
+<td>Vérifier la règle 1 [[#7.2 Règle 1 – Pas de NAT entre le LAN et la DMZ]]</td>
+</tr>
+<tr>
+<td>Perte d'accès à l'interface web après changement d'IP</td>
+<td>Normal (nouvelle IP IN)</td>
+<td>Se reconnecter via <code>https://192.168.55.254/admin</code> depuis le VLAN 20</td>
+</tr>
+<tr>
+<td>Interface « down »</td>
+<td>Câble / mauvais port / mauvais type d'interface</td>
+<td>Contrôler le câblage [[#3.1 Câblage]]</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Projet BTS SIO SISR - Tous droits réservés
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/louisbiseray-bot/Edimbourg" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
