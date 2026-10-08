@@ -305,3 +305,13 @@ git branch : Savoir dans qu'elle branche on se situe
 git switch : Permet de changerde branche
 git merge : Fusionne une branche avec la branch main
 
+Git : outil qui suit l’historique des modifications d’un projet.
+GitHub : site qui héberge des projets Git et permet de collaborer.
+Commit : enregistrement d’un ensemble de modifications dans l’historique.
+Branche (branch) : copie de travail parallèle pour développer ou tester sans modifier directement la branche principale.
+Fusion (merge) : opération qui réunit les modifications de deux branches.
+Pull request : proposition de fusionner une branche dans une autre, souvent après relecture et discussion sur GitHub.
+
+Un Git add suivi d'un git commit n'envoie pas la version enregistrer sur le depot GitHub et par conséquent les autres administrateurs n'ont pas la visibiliter car git add sert a jouter le fichier au versionning de Git et commit enregistre dans Git mais pour l'envoyer.
+
+Pour développer une nouvelles fonctionnalité il est imperatif de créer une nouvelle branche pour pouvoir développer cette partie sans conflit et sans risque de casser le projet.
