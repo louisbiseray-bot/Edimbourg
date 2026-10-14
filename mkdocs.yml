@@ -34,18 +34,6 @@ theme:
         icon: material/brightness-4
         name: Mode sombre
 
-nav:
-  - Accueil: index.md
-  - Réseaux - Systèmes: Réseaux - Systèmes/
-  - Cybersécurité: Cybersecuriter/
-  - Schémas: Schéma/
-  - Services: Services/
-  - Configuration Réseau:
-      - Plan d'adressage - CUB: "Plan d'adressage - CUB.md"
-      - Table NAT - CUB: "Table NAT - CUB.md"
-      - Table de Routage - CUB: "Table de Routage - CUB.md"
-      - Table de Translation - CUB: "Table de Translation - CUB.md"
-
 plugins:
   - search:
       lang: fr
