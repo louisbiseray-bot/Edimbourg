@@ -1,0 +1,2417 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation du projet de mise en place d'une agence à Édimbourg">
+      
+      
+        <meta name="author" content="BISERAY Louis - ACKIN Enes">
+      
+      
+        <link rel="canonical" href="https://louisbiseray-bot.github.io/Edimbourg/R%C3%A9seaux%20-%20Syst%C3%A8mes/Situation%203/Situation%203%20-%20Mise%20en%20place%20de%20GIT/">
+      
+      
+        <link rel="prev" href="../../Situation%202/Situation%202%20-%20Pr%C3%A9paration%20machine%20virtuel%20-%20Windows%20Admin%20Center/">
+      
+      
+        <link rel="next" href="../../../Sch%C3%A9ma/Sch%C3%A9ma%20AD/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../Image/cub.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Situation 3 Mise en place de GIT - Agence Édimbourg - BTS SIO SISR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#informations-generales" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Agence Édimbourg - BTS SIO SISR" class="md-header__button md-logo" aria-label="Agence Édimbourg - BTS SIO SISR" data-md-component="logo">
+      
+  <img src="../../../Image/cub.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agence Édimbourg - BTS SIO SISR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Situation 3   Mise en place de GIT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Mode clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mode sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Documentation de l'agence d'Edimbourg
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Cybersecuriter/Situation%201/Phase%20d%27analyse%20Pr%C3%A9alable/" class="md-tabs__link">
+          
+  
+  
+  Cybersecuriter
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Exploitation%20Services/Situation%201/Situation%201%20-%20D%C3%A9ploiement%20d%27un%20Serveur%20DNS/" class="md-tabs__link">
+          
+  
+  
+  Exploitation Services
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Plan%20d%27adressage%20-%20CUB/" class="md-tabs__link">
+          
+  
+  
+  Réseaux   Systèmes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Sch%C3%A9ma/Sch%C3%A9ma%20AD/" class="md-tabs__link">
+          
+  
+  
+  Schéma
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Services/Mise%20en%20place%20DNS%20maitre/" class="md-tabs__link">
+          
+  
+  
+  Services
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Agence Édimbourg - BTS SIO SISR" class="md-nav__button md-logo" aria-label="Agence Édimbourg - BTS SIO SISR" data-md-component="logo">
+      
+  <img src="../../../Image/cub.png" alt="logo">
+
+    </a>
+    Agence Édimbourg - BTS SIO SISR
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation de l'agence d'Edimbourg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cybersecuriter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cybersecuriter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecuriter/Situation%201/Phase%20d%27analyse%20Pr%C3%A9alable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase d'analyse Préalable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecuriter/Situation%202/Premier%20param%C3%A9trage%20d%27un%20Pare-Feu%20StormShield/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Premier paramétrage d'un Pare Feu StormShield
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecuriter/Situation%203/Situation%203%20-%20Configuration%20Stormshield/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 3   Configuration Stormshield
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecuriter/Situation%204/Situation%204%20-%20Guacamole%20Apache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestion des accès, Traçabilité, Enregistrement des sessions et Authentification Forte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecuriter/Situation%204/Situation%204%20-%20Mise%20en%20place%20d%27un%20bastion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en place d'un bastion Guacamole
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exploitation Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Exploitation Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Exploitation%20Services/Situation%201/Situation%201%20-%20D%C3%A9ploiement%20d%27un%20Serveur%20DNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1   Déploiement d'un Serveur DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réseaux   Systèmes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Réseaux   Systèmes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Plan%20d%27adressage%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan d'adressage   CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Table%20NAT%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table NAT   CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Table%20de%20Routage%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table de Routage   CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Table%20de%20Translation%20-%20CUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table de Translation   CUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Situation%201/Situation%201%20-%20D%C3%A9ploiement%20d%27une%20VM%20Windows%20Core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1   Déploiement d'une VM Windows Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Situation%201/Situation%201%20-%20Pr%C3%A9paration%20de%20la%20maquette/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 1   Préparation de la maquette
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Situation%202/Situation%202%20-%20D%C3%A9ploiement%20WAC%20-%20Windows%20Admin%20Center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 2   Déploiement WAC   Windows Admin Center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Situation%202/Situation%202%20-%20Pr%C3%A9paration%20machine%20virtuel%20-%20Windows%20Admin%20Center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 2   Préparation machine virtuel   Windows Admin Center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Situation 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 3   Mise en place de GIT
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Situation 3   Mise en place de GIT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informations-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informations Générales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tracabilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Traçabilité
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creation-du-depot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Création du dépot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ajout-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ajout / Commit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Modification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fonctionnement-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fonctionnement Git
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-annulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Annulation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. GITHUB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-liaison-git-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Liaison Git / GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-modification-et-synchronisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Modification et Synchronisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recuperation-dun-depot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Récupération d'un dépot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Branches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Pull-Request
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-conflit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Conflit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-synthese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Synthèse
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schéma
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schéma
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sch%C3%A9ma/Sch%C3%A9ma%20AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schéma AD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Sch%C3%A9ma/TOTP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TOTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Services/Mise%20en%20place%20DNS%20maitre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en place DNS maitre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Services/Mise%20en%20place%20d%27une%20machine%20Debian%2013%20servant%20de%20mod%C3%A8le/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mise en place d'une machine Debian 13 servant de modèle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informations-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informations Générales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tracabilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Traçabilité
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creation-du-depot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Création du dépot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ajout-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ajout / Commit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Modification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fonctionnement-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fonctionnement Git
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-annulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Annulation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. GITHUB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-liaison-git-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Liaison Git / GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-modification-et-synchronisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Modification et Synchronisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-recuperation-dun-depot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Récupération d'un dépot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Branches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Pull-Request
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-conflit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Conflit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-synthese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Synthèse
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Situation 3   Mise en place de GIT</h1>
+
+<h3 id="informations-generales">Informations Générales<a class="headerlink" href="#informations-generales" title="Permanent link">&para;</a></h3>
+<p><strong>Auteur :</strong> BISERAY Louis
+<strong>Date :</strong> 07/10/2026
+<strong>Sujet :</strong> Mise en place d'un Mkdocs sur GIT</p>
+<hr />
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>Pour commencer il faut installer la dernierr version de Git sur son appareil pour cette documentation ce sera pour le systéme d'exploitation Windows 11.</p>
+<p>Une fois Git installer il faut vérifier sa version, cela nous permet de savoir si Git est bien installer et qu'il est dans la bonne version.</p>
+<div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="p">-</span><span class="n">-version</span>
+</code></pre></div>
+<p>Réponse attendu : </p>
+<div class="highlight"><pre><span></span><code><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">xxxxx</span><span class="p">\</span><span class="n">Edimbourg</span><span class="p">&gt;</span> <span class="n">git</span> <span class="p">-</span><span class="n">-version</span>
+<span class="n">git</span> <span class="n">version</span> <span class="n">2</span><span class="p">.</span><span class="n">52</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">windows</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>Git va servir à sauvegarder un état antérieur de notre projet pour y revenir quand nous le voulons, le versionning est surtout utiliser en cas d'erreur ou de perte de documentation.</p>
+<h2 id="2-tracabilite">2. Traçabilité<a class="headerlink" href="#2-tracabilite" title="Permanent link">&para;</a></h2>
+<p>Git à besoin d'un nom d'utilisateur et d'une adresse mail pour autoriser les commits, ses information sont primordiales car on souhaite savoir qui a modifier, quand et qu'elle ressources sans ceci nous perdons toute tracabilité sur notre dépot/projet.
+De plus certain utilisateurs n'on pas les mêmes branches et autorisation sur de dépot un utilisateurs peut seulement avoir le droit de cloner et de créer des suggestions tandis qu'un autre a l'autoriter sur tout le dépot.</p>
+<p>Pour déclarer l'identité de la personne qui va faire le commit nous utilisons ces commandes :</p>
+<div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="n">config</span> <span class="p">-</span><span class="n">-global</span> <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="s2">"votre nom"</span>
+<span class="n">git</span> <span class="n">config</span> <span class="p">-</span><span class="n">-global</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span> <span class="s2">"votre mail"</span>
+</code></pre></div>
+<h2 id="3-creation-du-depot">3. Création du dépot<a class="headerlink" href="#3-creation-du-depot" title="Permanent link">&para;</a></h2>
+<p>Un dépot va nous servir a sauvegarder les versions des fichiers de notre projet sur internet sur la plateforme GitHub qui est disponible pour tout le monde (sauf si le dépot créer est préciser comme privé), l'utilité d'un Github est de pouvoir rassembler plusieurs personnes à travailler sur un même projet sans devoir se partager de fichiers et pouvoir suivre le travail de chacun et Git lui sert a créer des version des fichiers les deux peuvent fonctionner ensemble mais ils n'ont pas la même utiliter</p>
+<p>Il nous faut d'abord créer un dossier <code>C:/users/xxxxx/CUB/scripts</code>, remplir ce dossier avec les commandes <strong>powershell</strong> suivantes :</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Write-Host</span> <span class="s2">"Diagnostic réseau CUB"</span>
+<span class="n">hostname</span>
+<span class="nb">Get-Date</span>
+<span class="nb">Get-NetIpConfiguration</span>
+</code></pre></div>
+<p>Puis initialiser le depot :</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd </span><span class="n">C</span><span class="p">:/</span><span class="n">users</span><span class="p">/</span><span class="n">xxxxx</span><span class="p">/</span><span class="n">CUB</span><span class="p">/</span><span class="n">scripts</span>
+<span class="n">git</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">status</span>
+</code></pre></div>
+<p><code>Git init</code> permet de transformer le fichier en dépot suivi par le système de versionning de Git.
+<code>Git status</code> permet de connaitre l'état du dépot : Si des fichiers sont à commit, les commits précedent, sur quelle branche on se situe</p>
+<h2 id="4-ajout-commit">4. Ajout / Commit<a class="headerlink" href="#4-ajout-commit" title="Permanent link">&para;</a></h2>
+<p>Nous allons par la suite ajouter le fichier au suivi de GIT aprés l'avoir initialiser avec <code>git init</code> :</p>
+<div class="highlight"><pre><span></span><code>git add diagnostics-reseau.ps1
+git status
+</code></pre></div>
+<p>Aprés la commande git add nous pouvons voir que le fichier et maintenant signaler comme nouveau fichier il est a présent répertorier dans le dépot des version GIT.</p>
+<div class="highlight"><pre><span></span><code>git commit -m "Création du script de diagnostic réseau"
+git log
+git log --oneline
+</code></pre></div>
+<p>Un commit permet d'envoyer le fichier dans le suivi de version de git.
+L'écriture d'un commentaire sur le commit permet de savoir qu'elles modifications ont été apporter sans vérifier tout le document et tracer dans qu'elle version du document nous nous trouvons.</p>
+<h2 id="5-modification">5. Modification<a class="headerlink" href="#5-modification" title="Permanent link">&para;</a></h2>
+<p>Essayons maitenant de modifier le fichier <code>diagnostics-reseau.ps1</code> en rajoutant les lignes suivantes :</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Write-Host</span> <span class="s2">"Diagnostic réseau CUB"</span>
+<span class="n">hostname</span>
+<span class="nb">Get-Date</span>
+<span class="nb">Get-NetIpConfiguration</span>
+<span class="nb">Write-Host</span> <span class="s2">"Test de la pile TCP/IP"</span>
+<span class="n">ping</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
+</code></pre></div>
+<p>Nous vérifions les modifications du dépot avec :</p>
+<div class="highlight"><pre><span></span><code>git status 
+git diff
+</code></pre></div>
+<p>Avec le git status nous pouvons voir que Git a détecter une modification du ficher <code>diagnostics-reseau</code> et git diff permet de voir ce qui à changer dand le fichier (les lignes supprimer en rouge et les lignes rajouter en vert ).</p>
+<p>Rajoutons ces modifications au dépot :</p>
+<div class="highlight"><pre><span></span><code>git add .\diagnostics-reseau.ps1
+git commit -m "Ajout du test TCP IP local"
+git log -oneline
+</code></pre></div>
+<p>Avec le git log nous pouvons voir que deux versions sont maitenant disponible dans le dépot : </p>
+<div class="highlight"><pre><span></span><code>c01f22a (HEAD -&gt; master) Ajout du test TCP IP local
+ba23699 Création du scipt de diagnostic réseau
+</code></pre></div>
+<h2 id="6-fonctionnement-git">6. Fonctionnement Git<a class="headerlink" href="#6-fonctionnement-git" title="Permanent link">&para;</a></h2>
+<p>Pour comprendre Git il faut avant tout comprendre les commandes de base :</p>
+<p>Git status : Permet de savoir l'état actuel du dépot
+Git diff : Montre les modifications effectuer entre la version actuelle et la version enregistrer
+Git add : Ajout le fichier pour être commit 
+Git commit : Permet d'envoyer le fichier sur le depot avec un commentaire pour préciser les modifications / la raison de la création du fichier
+Git log : Affiche tout les commit effectuer sur le dépot Git</p>
+<h2 id="7-annulation">7. Annulation<a class="headerlink" href="#7-annulation" title="Permanent link">&para;</a></h2>
+<p>Une des utiliter du versionning est de revenir sur un état précédent pour corriger une erreur.
+Ajoutons une lignes dans le fichier sans commit </p>
+<div class="highlight"><pre><span></span><code><span class="nb">Write-Host</span> <span class="s2">"Test Incorrect"</span>
+</code></pre></div>
+<p>Pour vérifier que la modification a bien été effectuer nous allons utiliser git diff et pout revenir a la version d'avant nous allons utiliser une nouvelle commande : <code>git restore</code></p>
+<div class="highlight"><pre><span></span><code>git diff
+git restore diagnostics-reseau.ps1
+git status
+</code></pre></div>
+<p>La commande <code>restore</code> va nous permettre de revenir à la dernière version enregistrer, en effectuant cette commande nous allons supprimer définitivement la modifications car nous n'avous pas commit le changement pour garder cette modification en mémoire ils fallait effectuer un <code>git commit</code>.</p>
+<h2 id="8-github">8. GITHUB<a class="headerlink" href="#8-github" title="Permanent link">&para;</a></h2>
+<p>GitHub est une platforme qui permet d'héberger ces projets et qui facilite le travail d'équipe tandis que Git est un outils de versionning qui s'installe directement sur votre machine pour sauvegarder les version de vos fichiers.</p>
+<p>Il existe deux types de dépot sur GitHub, Privé qui n'est visible seulement par le créateur et les utilisateurs autoriser à visualiser et à modifier le dépot et Public qui est visible par tout les utilisateurs de GitHub et qui peut etre cloner par tout les utilisateurs sans restriction.</p>
+<p>Une faille critique lorsque l'on publie des scripts en tant qu'administrateur réseau est de laisser des secrets ou des mots de passes sur les scripts visible par tout les utilisateurs.</p>
+<p>En mesure d'exemple voici 3 informations sensisbles à ne pas partager sur GitHub :
+    - Les secrets et mots de passes
+    - Les configurations de switch / routeur / firewall
+    - Des informations personnelles (Eviter le social Engineering)</p>
+<h2 id="9-liaison-git-github">9. Liaison Git / GitHub<a class="headerlink" href="#9-liaison-git-github" title="Permanent link">&para;</a></h2>
+<p>Nous allons maitenant lier nos sauvegarde Git avec notre dépot GitHub en utilisant la nouvelle commande <code>git remote add origin Adresse_du_depot</code>, Git remote add origin ajoute la branche local <code>origin</code> du dépot <strong>CUB-Scripts-Administration</strong> sur notre machine </p>
+<div class="highlight"><pre><span></span><code>git remote add origin https://github.com/louisbiseray-bot/CUB-Scripts-Administration
+git remote -v
+</code></pre></div>
+<p>La commande remote -v nous permet de voir les dépots distant (remote) qui sont initialiser.</p>
+<div class="highlight"><pre><span></span><code>git branch
+git branch -M main  #Si le nom main n'apparait pas
+git branch #Vérifier si la modification a été apporter
+</code></pre></div>
+<p>Maitenant nous voulons pousser notre projet sur GitHub en le passant de notre branche local (origin) sur notre branche distante (main), pour cela nous allons utiliser la commande <code>git push</code> qui nous permet d'envoyer notre projet sur GitHub.</p>
+<div class="highlight"><pre><span></span><code>git push -u origin main
+</code></pre></div>
+<p>C'est Git push qui permet d'envoyer les commits locaux vers GitHub, git commit permet seulement d'enregistrer des versions de fichier nous pouvons par la suite pousser ces enregistrements sur github avec git push.</p>
+<h2 id="9-modification-et-synchronisation">9. Modification et Synchronisation<a class="headerlink" href="#9-modification-et-synchronisation" title="Permanent link">&para;</a></h2>
+<p>Nous allons rajouter une autre ligne a notre scritp :</p>
+<div class="highlight"><pre><span></span><code>Write-Host "Test de la passerelle"
+Test-NetConnection 192.168.x.126
+</code></pre></div>
+<p>Et nous allons enregistrer cette modification dans git :</p>
+<div class="highlight"><pre><span></span><code>git status 
+git --no-pager diff #Le --no-pager permet de seulement afficher le résultat
+git add diagnostics-reseau
+git commit -m "Ajout du test de la passerelle"
+</code></pre></div>
+<p>PS : Cette modification n'est pas visible sur GitHub tant que le push n'est pas encore effectuer.</p>
+<div class="highlight"><pre><span></span><code>git push origin main
+git log --oneline
+</code></pre></div>
+<p>Résultat attendu : </p>
+<div class="highlight"><pre><span></span><code>86d2b9b (HEAD -&gt; main, origin/main, origin/HEAD) Ajout du test de la passerelle
+ea08518 Ajout du diagnostic DNS
+c01f22a Ajout du test TCP IP local
+ba23699 Création du scipt de diagnostic réseau
+</code></pre></div>
+<h2 id="10-recuperation-dun-depot">10. Récupération d'un dépot<a class="headerlink" href="#10-recuperation-dun-depot" title="Permanent link">&para;</a></h2>
+<p>Pour récupérer un dépot GitHub déja existant nous allons utiliser la commande <code>git clone Adresse_du_depot</code>, la différence entre <code>clone</code> et <code>init</code> est que init permet de créer un depot tandis que clone le copie sur la machine dans le dossier dans le quel on se situe.</p>
+<p>Dans les deux cas avant de travailler sur un depot il faut utiliser la commande <code>pull</code> qui permet de récupérer les dernière modification du dépot, dans le cas contraire git nous interdit de pousser notre travail pour eviter les conflits de noms et d'emplacements.</p>
+<h2 id="11-branches">11. Branches<a class="headerlink" href="#11-branches" title="Permanent link">&para;</a></h2>
+<p>Nous allons créer une nouvelle branche dédier pour les diagnostics DNS nommer <code>feature-diagnostic-dns</code> le feature devant est une convention de nommage pour le branche GitHub.</p>
+<div class="highlight"><pre><span></span><code>git switch -c feature-diagnostic-dns
+git branch
+</code></pre></div>
+<p><code>Git branch</code> nous permet de savoir dans qu'elle branche nous nous situons et <code>git switch</code> nous permet de changer de branche, dans ce cas d'utilisation de <code>git switch</code> nous rajoutons <code>-c</code> pour créer la branche <strong>feature-diagnostic-dns</strong>, pour voir qu'elle branche est utiliser lors d'un git branch une petite etoile est afficher devant la branch actuelle.</p>
+<p>L'intéret d'une branche est de tester les features avant de les lancer sur la branche main qui est la branche de production et cela évite également de rentrer en conflit avec le travail d'un autre utilisateur.</p>
+<p>Nous allons tester cette branche en ajoutant un test DNS dans notre scripts :</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Write-Host</span> <span class="s2">"Test de résolution DNS"</span>
+<span class="nb">Resolve-Dnsname</span> <span class="n">www</span><span class="p">.</span><span class="n">google</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div>
+<p>Et l'ajouter sur notre branche :</p>
+<div class="highlight"><pre><span></span><code>git add diagnostics-reseau.ps1
+git commit -m "Ajout du test de résolution DNS"
+git switch main
+git merge feature-diagnostic-dns
+git log --oneline --graph --all
+</code></pre></div>
+<p>Une nouvelle commande qui permet de mélanger deux branches est <code>git merge</code> qui permet de mélanger les fichier des deux branches de manière fluide sans avoir à tout réecrire.</p>
+<h2 id="14-pull-request">14. Pull-Request<a class="headerlink" href="#14-pull-request" title="Permanent link">&para;</a></h2>
+<p>Créons une nouvelle branche nommer <code>feature-informations-systeme</code>.</p>
+<p><div class="highlight"><pre><span></span><code>git branch -c `feature-informations-systeme`
+````
+
+Ajoutons au script une nouvelle feature :
+</code></pre></div>
+Write-Host "Informations Systeme"
+Get-ComputerInfo
+<div class="highlight"><pre><span></span><code>Nous allons commit les changement et les ajouter dans la branche que nous venons de créer :
+</code></pre></div>
+git add diagnostic-reseau.ps1
+git commit -m "Ajout des informations système"
+git push -u origin feature-informations-systeme
+```</p>
+<p>Maintenant cette branche est visible sur GitHub avec toute les modifications apporter avec Git, contrairement a une branche locale celle ci est consulatable par tout les utilisateurs de GitHub.</p>
+<p>Sur GitHub nous allons initier une Pull-Request, l'intéret d'une Pull-Request est de visualiser les changement puis de les valider avant qu'ils n'arrivent sur la branche main en duo les utilisateurs vont valider ou non la Pull-Request de l'autre, l'interet principal est surtout de vérifier que aucun conflit ou mauvaise pratique ne vas se mélanger à la branche main.</p>
+<h2 id="15-conflit">15. Conflit<a class="headerlink" href="#15-conflit" title="Permanent link">&para;</a></h2>
+<p>Lors d'un merge des conflits peuvent apparaitre dans ce cas l'administrateur du depot ou le propriétaire de la branche doit trancher entre les deux versions, une fois la résolutions faite à la main il faut commit pour enregistrer les changements. Git ne peut choisir de meilleur version car il lui est impossible de savoir laqu'elle modification est la plus pertinante pour le projet.</p>
+<h2 id="16-synthese">16. Synthèse<a class="headerlink" href="#16-synthese" title="Permanent link">&para;</a></h2>
+<p>git init : Initialise un depot dans le dossier où la commande a été entrer
+git status : Connaitre le status en cours du GIT
+git diff : Voir les modifications apporter au fichier avant de commit
+git add : Ajoute ce fichier au Git
+git commit : Envoie la version actuel du fichier dans Git
+git log --oneline : Montre tout les commit en une seule ligne chacun
+git restore : Ramene le dossier a sa version antérieure
+git clone : Clone un depot dans le dossier
+git pull : Récupère la dernière version du dépot Git
+git push : Envoi les commit vers le dépot
+git branch : Savoir dans qu'elle branche on se situe
+git switch : Permet de changerde branche
+git merge : Fusionne une branche avec la branch main</p>
+<p>Git : outil qui suit l’historique des modifications d’un projet.
+GitHub : site qui héberge des projets Git et permet de collaborer.
+Commit : enregistrement d’un ensemble de modifications dans l’historique.
+Branche (branch) : copie de travail parallèle pour développer ou tester sans modifier directement la branche principale.
+Fusion (merge) : opération qui réunit les modifications de deux branches.
+Pull request : proposition de fusionner une branche dans une autre, souvent après relecture et discussion sur GitHub.</p>
+<p>Un Git add suivi d'un git commit n'envoie pas la version enregistrer sur le depot GitHub et par conséquent les autres administrateurs n'ont pas la visibiliter car git add sert a jouter le fichier au versionning de Git et commit enregistre dans Git mais pour l'envoyer.</p>
+<p>Pour développer une nouvelles fonctionnalité il est imperatif de créer une nouvelle branche pour pouvoir développer cette partie sans conflit et sans risque de casser le projet.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Projet BTS SIO SISR - Tous droits réservés
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/louisbiseray-bot/Edimbourg" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
