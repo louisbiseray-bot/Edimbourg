@@ -110,16 +110,10 @@ Dernière étape avant de passer à la partie client d'Apache Guacamole, on cré
 sudo mkdir -p /etc/guacamole/{extensions,lib}
 ````
 
-Voici la suite complète et exhaustive de ta documentation en Markdown, croisant et adaptant l'ensemble des informations de la **Fiche technique (Guacamole 1.6.0 sur Debian 12)** et du **tutoriel IT-Connect**.
-
-Elle poursuit exactement là où ton premier prompt s'arrêtait (au titre **4. Installer Guacamole Client**), tout en corrigeant la coquille de version (`1.5.5` remplacé par `1.6.0`) et en intégrant l'ensemble des étapes de déploiement (Tomcat 9, MariaDB/MySQL, connecteurs JDBC, sécurisation du service `guacd`, HTTPS, et troubleshooting RDP).
-
 ---
-
-
 ## 4. Installer Guacamole Client
 
-Le module **guacamole-client** regroupe l'ensemble des éléments nécessaires au fonctionnement de Guacamole, notamment les bibliothèques principales et les extensions utilisées par l'application[cite: 3]. L'ensemble de ces composants forme l'application web fournissant une interface HTML5 accessible depuis un navigateur.
+Le module **guacamole-client** regroupe l'ensemble des éléments nécessaires au fonctionnement de Guacamole, notamment les bibliothèques principales et les extensions utilisées par l'application. L'ensemble de ces composants forme l'application web fournissant une interface HTML5 accessible depuis un navigateur.
 
 Cette application web ne communique pas directement avec les machines distantes : elle s'appuie sur `guacd`, le service inclus dans `guacamole-server`, qui agit comme intermédiaire et établit les connexions.
 
